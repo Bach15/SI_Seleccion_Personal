@@ -36,7 +36,6 @@ public class MenuAdminController implements Initializable {
         // TODO
     } 
     
-    @FXML
     void boton_Cuenta(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Configuración/cuenta_main.fxml"));
         Scene scene = new Scene(root);
@@ -46,7 +45,6 @@ public class MenuAdminController implements Initializable {
         stage.show();   
     }
 
-    @FXML
     void boton_Evaluaciones(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/tipo_Evaluaciones_main.fxml"));
         Scene scene = new Scene(root);
@@ -56,7 +54,6 @@ public class MenuAdminController implements Initializable {
         stage.show();  
     }
 
-    @FXML
     void boton_Perfiles(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Perfiles/perfil_main.fxml"));
         Scene scene = new Scene(root);
@@ -66,7 +63,6 @@ public class MenuAdminController implements Initializable {
         stage.show();
     }
 
-    @FXML
     void boton_Seleccion(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/proceso_Seleccion.fxml"));
         Scene scene = new Scene(root);
@@ -76,17 +72,6 @@ public class MenuAdminController implements Initializable {
         stage.show();
     }
 
-    @FXML
-    void boton_Usuario(MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Configuración/Administrar_Cuenta.fxml"));
-        Scene scene = new Scene(root);
-        
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show(); 
-    }
-
-    @FXML
     void boton_salida(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seguridad/Login.fxml"));
         Scene scene = new Scene(root);
@@ -95,5 +80,33 @@ public class MenuAdminController implements Initializable {
         stage.setScene(scene);
         stage.show(); 
     }
+
+    private void click_Usuario(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Configuración/Administrar_Cuenta.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void click_menu(javafx.scene.input.MouseEvent event) {
+    }
+
+    @FXML
+    private void click_salida(javafx.scene.input.MouseEvent event) {
+    }
+
+
+    @FXML
+    private void boton_cancelar(ActionEvent event) {
+    }
+
+    @FXML
+    private void boton_guardar(ActionEvent event) {
+    }
+
+    
     
 }

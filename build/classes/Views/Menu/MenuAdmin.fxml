@@ -16,7 +16,7 @@
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #CACFD2;">
          <children>
-            <Button layoutX="534.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#boton_Usuario" prefHeight="50.0" prefWidth="54.0" />
+            <Button layoutX="534.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#click_Usuario" prefHeight="50.0" prefWidth="54.0" />
             <Pane prefHeight="87.0" prefWidth="600.0" style="-fx-background-color: #5499C7;">
                <children>
                   <Label layoutX="14.0" layoutY="9.0" prefHeight="70.0" prefWidth="165.0" text="MENU">
@@ -35,18 +35,12 @@
             <Button layoutX="358.0" layoutY="126.0" mnemonicParsing="false" onAction="#boton_Perfiles" prefHeight="80.0" prefWidth="124.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Perfiles" />
             <Button layoutX="110.0" layoutY="261.0" mnemonicParsing="false" onAction="#boton_Cuenta" prefHeight="80.0" prefWidth="124.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Administrador de &#10;Cuentas" textAlignment="CENTER" />
             <Button layoutX="358.0" layoutY="261.0" mnemonicParsing="false" onAction="#boton_Evaluaciones" prefHeight="80.0" prefWidth="124.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Evaluaciones" />
-            <ImageView fitHeight="43.0" fitWidth="54.0" layoutX="543.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Images/profile-icon.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="43.0" fitWidth="39.0" layoutX="541.0" layoutY="337.0" onMouseClicked="#boton_Usuario" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent; -fx-cursor: hand;">
+            <ImageView fitHeight="43.0" fitWidth="39.0" layoutX="541.0" layoutY="337.0" onMouseClicked="#click_Usuario" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent; -fx-cursor: hand;">
                <image>
                   <Image url="@../../Images/profile.png" />
                </image>
             </ImageView>
          </children>
       </Pane>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
