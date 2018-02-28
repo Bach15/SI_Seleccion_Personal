@@ -1,0 +1,29 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.buttonLogIn{
+    -fx-background-color: 
+        rgba(76, 85, 99,0.75);
+    -fx-background-radius: 20;          
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+
+.buttonLogIn:hover{
+    -fx-cursor: hand;
+    -fx-background-color: 
+        rgba(76, 99, 84,0.75);
+}
+
+.textField{ 
+    -fx-background-radius: 10;
+    -fx-border-width: 2px;
+}
+
+.textField:focus{
+    -fx-border-color: rgb(122, 135, 155);
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuAdminController">
+    <stylesheets>
+        <URL value="@menu.css" />
+    </stylesheets>
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #CACFD2;">
+         <children>
+            <Button layoutX="534.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#boton_Usuario" prefHeight="50.0" prefWidth="54.0" />
+            <Pane prefHeight="87.0" prefWidth="600.0" style="-fx-background-color: #5499C7;">
+               <children>
+                  <Label layoutX="14.0" layoutY="9.0" prefHeight="70.0" prefWidth="165.0" text="MENU">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="BtnLogOut" layoutX="515.0" layoutY="12.0" mnemonicParsing="false" onAction="#boton_salida" prefHeight="64.0" prefWidth="71.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Button layoutX="110.0" layoutY="126.0" mnemonicParsing="false" onAction="#boton_Seleccion" prefHeight="80.0" prefWidth="124.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Proceso de &#10;selección" textAlignment="CENTER" />
+            <Button layoutX="358.0" layoutY="126.0" mnemonicParsing="false" onAction="#boton_Perfiles" prefHeight="80.0" prefWidth="124.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Perfiles" />
+            <Button layoutX="110.0" layoutY="261.0" mnemonicParsing="false" onAction="#boton_Cuenta" prefHeight="80.0" prefWidth="124.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Administrador de &#10;Cuentas" textAlignment="CENTER" />
+            <Button layoutX="358.0" layoutY="261.0" mnemonicParsing="false" onAction="#boton_Evaluaciones" prefHeight="80.0" prefWidth="124.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Evaluaciones" />
+            <ImageView fitHeight="43.0" fitWidth="54.0" layoutX="543.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/profile-icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="39.0" layoutX="541.0" layoutY="337.0" onMouseClicked="#boton_Usuario" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent; -fx-cursor: hand;">
+               <image>
+                  <Image url="@../../Images/profile.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

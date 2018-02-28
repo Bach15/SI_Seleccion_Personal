@@ -1,0 +1,25 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.buttonMenu {
+    -fx-background-color: #BFC9CA;
+    -fx-background-radius: 12px;
+    -fx-border-color: #CD6155;
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+}
+
+.buttonMenu:hover {
+    -fx-background-color: #CEF6F5;
+    -fx-scale-y: 1.1;
+}
+
+.buttonMenu:pressed {
+    -fx-scale-y: 0.9;
+    -fx-scale-x: 0.9;
+}
