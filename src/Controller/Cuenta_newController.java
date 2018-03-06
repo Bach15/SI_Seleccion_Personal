@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +25,9 @@ import javafx.stage.Stage;
  * @author Carlos
  */
 public class Cuenta_newController implements Initializable {
+
+    @FXML
+    private Button BtnLogOut;
 
     /**
      * Initializes the controller class.
@@ -43,18 +47,9 @@ public class Cuenta_newController implements Initializable {
         stage.show();
     }
 
-    @FXML
-    void boton_siguiente(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Configuración/cuenta_new_usuario.fxml"));
-        Scene scene = new Scene(root);
-        
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
 
     @FXML
-    void click_menu(MouseEvent event) throws IOException {
+    void click_menu(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Menu/MenuAdmin.fxml"));
         Scene scene = new Scene(root);
         
@@ -64,8 +59,18 @@ public class Cuenta_newController implements Initializable {
     }
 
     @FXML
-    void click_salida(MouseEvent event) throws IOException {
+    void click_salida(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seguridad/Login.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void boton_guardar(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Configuración/cuenta_main.fxml"));
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

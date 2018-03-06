@@ -85,5 +85,15 @@ public class Cuenta_mainController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    private void boton_editar(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Configuración/cuenta_edit.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
     
 }

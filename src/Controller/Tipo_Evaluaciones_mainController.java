@@ -43,16 +43,6 @@ public class Tipo_Evaluaciones_mainController implements Initializable {
     private TextArea textBoxDir;
     @FXML
     private Button boton_editar;
-    @FXML
-    private Label labelErrorRazonS;
-    @FXML
-    private Label labelErrorRuc;
-    @FXML
-    private Label labelErrorCorreo;
-    @FXML
-    private Label labelErrorTel;
-    @FXML
-    private Label labelErrorDir;
 
     /**
      * Initializes the controller class.
@@ -87,6 +77,26 @@ public class Tipo_Evaluaciones_mainController implements Initializable {
     @FXML
     private void boton_Nuevo_Tipo_Evaluacion(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/tipo_Evaluaciones_nuevo.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show(); 
+    }
+
+    @FXML
+    private void boton_editar_tipoEvaluacion(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/tipo_Evaluaciones_editar.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show(); 
+    }
+
+    @FXML
+    private void boton_evaluaciones(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/evaluacion_main.fxml"));
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

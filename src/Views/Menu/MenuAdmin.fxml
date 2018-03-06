@@ -31,10 +31,10 @@
                   </Button>
                </children>
             </Pane>
-            <Button layoutX="110.0" layoutY="126.0" mnemonicParsing="false" onAction="#boton_Seleccion" prefHeight="80.0" prefWidth="124.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Proceso de &#10;selección" textAlignment="CENTER" />
-            <Button layoutX="358.0" layoutY="126.0" mnemonicParsing="false" onAction="#boton_Perfiles" prefHeight="80.0" prefWidth="124.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Perfiles" />
-            <Button layoutX="110.0" layoutY="261.0" mnemonicParsing="false" onAction="#boton_Cuenta" prefHeight="80.0" prefWidth="124.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Administrador de &#10;Cuentas" textAlignment="CENTER" />
-            <Button layoutX="358.0" layoutY="261.0" mnemonicParsing="false" onAction="#boton_Evaluaciones" prefHeight="80.0" prefWidth="124.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Evaluaciones" />
+            <Button layoutX="110.0" layoutY="126.0" mnemonicParsing="false" onAction="#boton_Seleccion" prefHeight="80.0" prefWidth="149.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Proceso de &#10;selección" textAlignment="CENTER" />
+            <Button layoutX="333.0" layoutY="126.0" mnemonicParsing="false" onAction="#boton_Perfiles" prefHeight="80.0" prefWidth="149.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Perfiles" />
+            <Button layoutX="110.0" layoutY="261.0" mnemonicParsing="false" onAction="#boton_Cuenta" prefHeight="80.0" prefWidth="149.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Administrador de &#10;Cuentas" textAlignment="CENTER" />
+            <Button layoutX="333.0" layoutY="261.0" mnemonicParsing="false" onAction="#boton_Evaluaciones" prefHeight="80.0" prefWidth="149.0" styleClass="buttonMenu" stylesheets="@menu.css" text="Evaluaciones" />
             <ImageView fitHeight="43.0" fitWidth="39.0" layoutX="541.0" layoutY="337.0" onMouseClicked="#click_Usuario" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent; -fx-cursor: hand;">
                <image>
                   <Image url="@../../Images/profile.png" />

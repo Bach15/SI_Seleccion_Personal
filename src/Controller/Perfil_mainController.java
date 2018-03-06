@@ -43,16 +43,6 @@ public class Perfil_mainController implements Initializable {
     private TextArea textBoxDir;
     @FXML
     private Button boton_editar;
-    @FXML
-    private Label labelErrorRazonS;
-    @FXML
-    private Label labelErrorRuc;
-    @FXML
-    private Label labelErrorCorreo;
-    @FXML
-    private Label labelErrorTel;
-    @FXML
-    private Label labelErrorDir;
 
     /**
      * Initializes the controller class.
@@ -85,6 +75,16 @@ public class Perfil_mainController implements Initializable {
     @FXML
     private void boton_nuevo_perfil(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Perfiles/perfil_nuevo.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void boton_Editar(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Perfiles/perfil_editar.fxml"));
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

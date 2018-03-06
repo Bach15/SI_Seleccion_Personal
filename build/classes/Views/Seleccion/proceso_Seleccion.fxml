@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Proceso_SeleccionController">
    <children>
       <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <items>
@@ -24,14 +24,14 @@
                      <children>
                         <Pane prefHeight="78.0" prefWidth="223.0" style="-fx-background-color: #5499C7;">
                            <children>
-                              <Label layoutX="27.0" layoutY="4.0" prefHeight="70.0" prefWidth="169.0" text="Menu">
+                              <Label layoutX="27.0" layoutY="4.0" onMouseClicked="#click_menu" prefHeight="70.0" prefWidth="169.0" text="Menu">
                                  <font>
                                     <Font name="System Bold" size="48.0" />
                                  </font>
                               </Label>
                            </children>
                         </Pane>
-                        <Button layoutX="-3.0" layoutY="99.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="230.0" text="Proceso de selección" />
+                        <Button layoutX="-3.0" layoutY="99.0" mnemonicParsing="false" onAction="#click_Proceso" prefHeight="36.0" prefWidth="230.0" text="Proceso de selección" />
                         <Button layoutX="-3.0" layoutY="135.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="230.0" text="Historico de los procesos" />
                      </children>
                   </Pane>
@@ -43,7 +43,7 @@
                      <children>
                         <Pane prefHeight="79.0" prefWidth="442.0" style="-fx-background-color: #5499C7;">
                            <children>
-                              <Button fx:id="BtnLogOut" layoutX="353.0" layoutY="8.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="73.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
+                              <Button fx:id="BtnLogOut" layoutX="353.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#click_salida" prefHeight="64.0" prefWidth="73.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
                                  <font>
                                     <Font name="System Bold Italic" size="12.0" />
                                  </font>

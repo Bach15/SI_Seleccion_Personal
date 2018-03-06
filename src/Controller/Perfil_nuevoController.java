@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +25,9 @@ import javafx.stage.Stage;
  * @author Carlos
  */
 public class Perfil_nuevoController implements Initializable {
+
+    @FXML
+    private Button BtnLogOut;
 
     /**
      * Initializes the controller class.
@@ -54,7 +58,7 @@ public class Perfil_nuevoController implements Initializable {
     }
 
     @FXML
-    void click_menu(MouseEvent event) throws IOException {
+    void click_menu(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Menu/MenuAdmin.fxml"));
         Scene scene = new Scene(root);
         
@@ -64,7 +68,7 @@ public class Perfil_nuevoController implements Initializable {
     }
 
     @FXML
-    void click_salida(MouseEvent event) throws IOException {
+    void click_salida(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seguridad/Login.fxml"));
         Scene scene = new Scene(root);
         
@@ -72,4 +76,5 @@ public class Perfil_nuevoController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
 }

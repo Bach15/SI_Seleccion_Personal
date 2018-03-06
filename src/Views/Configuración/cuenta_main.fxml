@@ -82,7 +82,7 @@
                   <Label layoutX="11.0" layoutY="83.0" prefHeight="18.0" prefWidth="142.0" text="Nombre" />
                   <TextField editable="false" layoutX="11.0" layoutY="118.0" prefHeight="26.0" prefWidth="162.0" />
                   <Label layoutX="17.0" layoutY="168.0" prefHeight="18.0" prefWidth="162.0" text="Apellido Paterno" />
-                  <Button fx:id="boton_editar" disable="true" layoutX="25.0" layoutY="568.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="177.0" text="Editar Cuenta" />
+                  <Button fx:id="boton_editar" layoutX="25.0" layoutY="568.0" mnemonicParsing="false" onAction="#boton_editar" prefHeight="26.0" prefWidth="177.0" text="Editar Cuenta" />
                   <Label fx:id="labelErrorRazonS" layoutX="179.0" layoutY="131.0" text="*" textFill="RED" visible="false">
                      <font>
                         <Font size="18.0" />

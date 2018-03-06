@@ -16,9 +16,9 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="1100.0" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Perfil_mainController">
+<AnchorPane maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="984.0" prefHeight="800.0" prefWidth="984.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Perfil_mainController">
    <children>
-      <SplitPane dividerPositions="0.2505567928730512" focusTraversable="true" maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="1100.0" prefHeight="800.0" prefWidth="1100.0">
+      <SplitPane dividerPositions="0.635623869801085" focusTraversable="true" maxHeight="800.0" maxWidth="1108.0" minHeight="800.0" minWidth="982.0" prefHeight="800.0" prefWidth="982.0">
          <items>
             <ScrollPane maxHeight="800.0" maxWidth="700.0" minHeight="800.0" minWidth="700.0" prefHeight="800.0" prefWidth="700.0">
                <content>
@@ -68,7 +68,7 @@
                   </AnchorPane>
                </content>
             </ScrollPane>
-            <AnchorPane maxHeight="800.0" maxWidth="400.0" minHeight="800.0" minWidth="400.0" prefHeight="800.0" prefWidth="400.0">
+            <AnchorPane maxHeight="800.0" maxWidth="400.0" minHeight="800.0" minWidth="270.0" prefHeight="800.0" prefWidth="305.0">
                <children>
                   <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="169.0" style="&#10;" text="Detalles" textAlignment="CENTER" wrapText="false">
                      <font>
@@ -82,32 +82,7 @@
                   <TextField fx:id="textBoxRazonS" editable="false" layoutX="11.0" layoutY="118.0" prefHeight="26.0" prefWidth="162.0" />
                   <Label layoutX="11.0" layoutY="193.0" prefHeight="18.0" prefWidth="162.0" text="Descripción" />
                   <TextArea fx:id="textBoxDir" editable="false" layoutX="14.0" layoutY="226.0" prefHeight="92.0" prefWidth="178.0" />
-                  <Button fx:id="boton_editar" disable="true" layoutX="23.0" layoutY="373.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="177.0" text="Editar Perfil" />
-                  <Label fx:id="labelErrorRazonS" layoutX="179.0" layoutY="131.0" text="*" textFill="RED" visible="false">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelErrorRuc" layoutX="179.0" layoutY="212.0" text="*" textFill="RED" visible="false">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelErrorCorreo" layoutX="179.0" layoutY="308.0" text="*" textFill="RED" visible="false">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelErrorTel" layoutX="179.0" layoutY="397.0" text="*" textFill="RED" visible="false">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelErrorDir" layoutX="193.0" layoutY="486.0" text="*" textFill="RED" visible="false">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
+                  <Button fx:id="boton_editar" layoutX="23.0" layoutY="373.0" mnemonicParsing="false" onAction="#boton_Editar" prefHeight="26.0" prefWidth="177.0" text="Editar Perfil" />
                </children>
             </AnchorPane>
          </items>

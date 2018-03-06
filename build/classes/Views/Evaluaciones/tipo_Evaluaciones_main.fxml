@@ -16,9 +16,9 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="1100.0" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Tipo_Evaluaciones_mainController">
+<AnchorPane maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="1030.0" prefHeight="800.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Tipo_Evaluaciones_mainController">
    <children>
-      <SplitPane dividerPositions="0.2505567928730512" focusTraversable="true" maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="1100.0" prefHeight="800.0" prefWidth="1100.0">
+      <SplitPane dividerPositions="0.2505567928730512" focusTraversable="true" maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="1028.0" prefHeight="800.0" prefWidth="1028.0">
          <items>
             <ScrollPane maxHeight="800.0" maxWidth="700.0" minHeight="800.0" minWidth="700.0" prefHeight="800.0" prefWidth="700.0">
                <content>
@@ -61,14 +61,14 @@
                                     <Font name="System Bold" size="36.0" />
                                  </font>
                               </Label>
-                              <Button layoutX="43.0" layoutY="249.0" mnemonicParsing="false" onAction="#boton_Nuevo_Tipo_Evaluacion" prefHeight="25.0" prefWidth="162.0" text="Nuevo Tipo de Evaluacion" />
+                              <Button layoutX="43.0" layoutY="249.0" mnemonicParsing="false" onAction="#boton_Nuevo_Tipo_Evaluacion" prefHeight="25.0" prefWidth="245.0" text="Nuevo Tipo de Evaluacion" />
                            </children>
                         </Pane>
                      </children>
                   </AnchorPane>
                </content>
             </ScrollPane>
-            <AnchorPane maxHeight="800.0" maxWidth="400.0" minHeight="800.0" minWidth="400.0" prefHeight="800.0" prefWidth="400.0">
+            <AnchorPane maxHeight="800.0" maxWidth="400.0" minHeight="800.0" minWidth="328.0" prefHeight="800.0" prefWidth="328.0">
                <children>
                   <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="169.0" style="&#10;" text="Detalles" textAlignment="CENTER" wrapText="false">
                      <font>
@@ -79,35 +79,11 @@
                      </textFill>
                   </Label>
                   <Label layoutX="11.0" layoutY="83.0" prefHeight="18.0" prefWidth="142.0" text="Evaluación" />
-                  <TextField fx:id="textBoxRazonS" editable="false" layoutX="11.0" layoutY="118.0" prefHeight="26.0" prefWidth="162.0" />
+                  <TextField fx:id="textBoxRazonS" editable="false" layoutX="11.0" layoutY="118.0" prefHeight="26.0" prefWidth="219.0" />
                   <Label layoutX="11.0" layoutY="193.0" prefHeight="18.0" prefWidth="162.0" text="Descripción" />
-                  <TextArea fx:id="textBoxDir" editable="false" layoutX="14.0" layoutY="226.0" prefHeight="92.0" prefWidth="178.0" />
-                  <Button fx:id="boton_editar" disable="true" layoutX="23.0" layoutY="373.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="177.0" text="Editar Tipo de Evaluación" />
-                  <Label fx:id="labelErrorRazonS" layoutX="179.0" layoutY="131.0" text="*" textFill="RED" visible="false">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelErrorRuc" layoutX="179.0" layoutY="212.0" text="*" textFill="RED" visible="false">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelErrorCorreo" layoutX="179.0" layoutY="308.0" text="*" textFill="RED" visible="false">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelErrorTel" layoutX="179.0" layoutY="397.0" text="*" textFill="RED" visible="false">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelErrorDir" layoutX="193.0" layoutY="486.0" text="*" textFill="RED" visible="false">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
+                  <TextArea fx:id="textBoxDir" editable="false" layoutX="14.0" layoutY="226.0" prefHeight="92.0" prefWidth="219.0" />
+                  <Button fx:id="boton_editar" layoutX="43.0" layoutY="373.0" mnemonicParsing="false" onAction="#boton_editar_tipoEvaluacion" prefHeight="26.0" prefWidth="219.0" text="Editar Tipo de Evaluación" />
+                  <Button layoutX="56.0" layoutY="736.0" mnemonicParsing="false" onAction="#boton_evaluaciones" prefHeight="26.0" prefWidth="219.0" text="Evaluaciones" />
                </children>
             </AnchorPane>
          </items>
