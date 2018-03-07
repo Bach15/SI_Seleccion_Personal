@@ -82,5 +82,15 @@ public class Proceso_Seleccion_editarController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    private void boton_procesoSeleccion(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/proceso_Seleccion_main.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
     
 }
