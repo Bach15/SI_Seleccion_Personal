@@ -31,7 +31,7 @@
                               <Button layoutX="606.0" layoutY="208.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="41.0" />
                               <Pane prefHeight="87.0" prefWidth="700.0" style="-fx-background-color: #5499C7;">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="9.0" onMouseClicked="#click_menu" prefHeight="70.0" prefWidth="165.0" text="MENU">
+                                    <Label layoutX="14.0" layoutY="9.0" onMouseClicked="#click_menu" prefHeight="70.0" prefWidth="165.0" style="-fx-cursor: hand;" text="MENU">
                                        <font>
                                           <Font name="System Bold" size="48.0" />
                                        </font>

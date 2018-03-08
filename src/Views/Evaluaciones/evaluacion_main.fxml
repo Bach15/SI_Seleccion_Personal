@@ -16,23 +16,23 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="1028.0" prefHeight="800.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Evaluacion_mainController">
+<AnchorPane maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="998.0" prefHeight="800.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Evaluacion_mainController">
    <children>
-      <SplitPane dividerPositions="0.2505567928730512" focusTraversable="true" maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="1027.0" prefHeight="800.0" prefWidth="1028.0">
+      <SplitPane dividerPositions="0.2505567928730512" focusTraversable="true" maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="996.0" prefHeight="800.0" prefWidth="996.0">
          <items>
-            <ScrollPane maxHeight="800.0" maxWidth="700.0" minHeight="800.0" minWidth="700.0" prefHeight="800.0" prefWidth="700.0">
+            <ScrollPane maxHeight="800.0" maxWidth="700.0" minHeight="800.0" minWidth="686.0" prefHeight="800.0" prefWidth="686.0">
                <content>
-                  <AnchorPane id="AnchorPane" prefHeight="799.0" prefWidth="700.0" styleClass="mainFxmlClass">
+                  <AnchorPane id="AnchorPane" prefHeight="799.0" prefWidth="686.0" styleClass="mainFxmlClass">
                      <stylesheets>
                         <URL value="@../Menu/menu.css" />
                      </stylesheets>
                      <children>
-                        <Pane prefHeight="800.0" prefWidth="700.0" style="-fx-background-color: #CACFD2;">
+                        <Pane prefHeight="793.0" prefWidth="686.0" style="-fx-background-color: #CACFD2;">
                            <children>
                               <Button layoutX="606.0" layoutY="208.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="41.0" />
                               <Pane prefHeight="87.0" prefWidth="700.0" style="-fx-background-color: #5499C7;">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="9.0" onMouseClicked="#click_menu" prefHeight="70.0" prefWidth="165.0" text="MENU">
+                                    <Label layoutX="14.0" layoutY="9.0" onMouseClicked="#click_menu" prefHeight="70.0" prefWidth="165.0" style="-fx-cursor: hand;" text="MENU">
                                        <font>
                                           <Font name="System Bold" size="48.0" />
                                        </font>
@@ -68,7 +68,7 @@
                   </AnchorPane>
                </content>
             </ScrollPane>
-            <AnchorPane maxHeight="800.0" maxWidth="400.0" minHeight="800.0" minWidth="275.0" prefHeight="800.0" prefWidth="275.0">
+            <AnchorPane maxHeight="800.0" maxWidth="400.0" minHeight="800.0" minWidth="275.0" prefHeight="800.0" prefWidth="318.0">
                <children>
                   <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="169.0" style="&#10;" text="Detalles" textAlignment="CENTER" wrapText="false">
                      <font>

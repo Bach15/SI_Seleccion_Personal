@@ -14,16 +14,16 @@
       <URL value="@../Menu/menu.css" />
    </stylesheets>
    <children>
-      <Pane prefHeight="462.0" prefWidth="624.0" style="-fx-background-color: #CACFD2;">
+      <Pane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #CACFD2;">
          <children>
-            <Pane prefHeight="87.0" prefWidth="625.0" style="-fx-background-color: #5499C7;">
+            <Pane prefHeight="87.0" prefWidth="800.0" style="-fx-background-color: #5499C7;">
                <children>
-                  <Label layoutX="14.0" layoutY="9.0" onMouseClicked="#click_menu" prefHeight="70.0" prefWidth="165.0" text="MENU">
+                  <Label layoutX="14.0" layoutY="9.0" onMouseClicked="#click_menu" prefHeight="70.0" prefWidth="165.0" style="-fx-cursor: hand;" text="MENU">
                      <font>
                         <Font name="System Bold" size="48.0" />
                      </font>
                   </Label>
-                  <Button fx:id="BtnLogOut" layoutX="545.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#click_salida" prefHeight="64.0" prefWidth="71.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
+                  <Button fx:id="BtnLogOut" layoutX="715.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#click_salida" prefHeight="64.0" prefWidth="71.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
                      <font>
                         <Font name="System Bold Italic" size="12.0" />
                      </font>
@@ -35,24 +35,24 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="157.0" layoutY="187.0" text="Nombre">
+            <Label layoutX="177.0" layoutY="223.0" text="Nombre">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="157.0" layoutY="251.0" text="Descripción">
+            <Label layoutX="177.0" layoutY="306.0" text="Descripción">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="299.0" layoutY="184.0" prefHeight="25.0" prefWidth="200.0" />
-            <TextArea layoutX="299.0" layoutY="251.0" prefHeight="77.0" prefWidth="200.0" />
-            <Button layoutX="203.0" layoutY="384.0" mnemonicParsing="false" onAction="#boton_guardar" prefHeight="30.0" prefWidth="83.0" text="Guardar">
+            <TextField layoutX="356.0" layoutY="224.0" prefHeight="25.0" prefWidth="200.0" />
+            <TextArea layoutX="356.0" layoutY="306.0" prefHeight="101.0" prefWidth="243.0" />
+            <Button layoutX="223.0" layoutY="499.0" mnemonicParsing="false" onAction="#boton_guardar" prefHeight="30.0" prefWidth="124.0" text="Guardar">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="373.0" layoutY="384.0" mnemonicParsing="false" onAction="#boton_cancelar" prefHeight="30.0" prefWidth="83.0" text="Cancelar">
+            <Button layoutX="486.0" layoutY="499.0" mnemonicParsing="false" onAction="#boton_cancelar" prefHeight="30.0" prefWidth="124.0" text="Cancelar">
                <font>
                   <Font size="14.0" />
                </font>

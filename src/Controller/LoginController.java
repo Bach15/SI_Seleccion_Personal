@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -25,6 +26,9 @@ import javafx.stage.Stage;
  */
 public class LoginController implements Initializable {
 
+    @FXML
+    private TextField campo_Usuario;
+    
     @FXML
     private Button boton_Entrar;
 
@@ -38,12 +42,21 @@ public class LoginController implements Initializable {
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Menu/MenuAdmin.fxml"));
-        Scene scene = new Scene(root);
-        
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();    
+        if(campo_Usuario.getText().equals("Administrador")){
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Menu/MenuAdmin.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();  
+        }
+        if(campo_Usuario.getText().equals("Postulante")){
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Menu/MenuPostulante.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show(); 
+        }
+          
     }
     
 }

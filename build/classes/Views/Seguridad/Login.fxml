@@ -21,7 +21,7 @@
                   </Label>
                   <Label layoutX="52.0" layoutY="114.0" text="Usuario" textFill="WHITE" />
                   <Label layoutX="52.0" layoutY="171.0" text="Contraseña" textFill="WHITE" />
-                  <TextField layoutX="149.0" layoutY="110.0" styleClass="textField" stylesheets="@login.css" />
+                  <TextField fx:id="campo_Usuario" layoutX="149.0" layoutY="110.0" styleClass="textField" stylesheets="@login.css" />
                   <PasswordField layoutX="149.0" layoutY="167.0" styleClass="textField" stylesheets="@login.css" />
                   <Button fx:id="boton_Entrar" layoutX="128.0" layoutY="242.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="36.0" prefWidth="108.0" styleClass="buttonLogIn" stylesheets="@login.css" text="ENTRAR" textFill="WHITE" />
                </children>
