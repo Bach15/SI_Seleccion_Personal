@@ -16,7 +16,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="998.0" prefHeight="800.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Evaluacion_mainController">
+<AnchorPane maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="976.0" prefHeight="800.0" prefWidth="978.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Puestos_mainController">
    <children>
       <SplitPane dividerPositions="0.2505567928730512" focusTraversable="true" maxHeight="800.0" maxWidth="1100.0" minHeight="800.0" minWidth="996.0" prefHeight="800.0" prefWidth="996.0">
          <items>
@@ -53,22 +53,22 @@
                               <TableView layoutX="43.0" layoutY="300.0" prefHeight="334.0" prefWidth="614.0">
                                  <columns>
                                     <TableColumn prefWidth="110.40007019042969" text="ID" />
-                                    <TableColumn prefWidth="501.9999694824219" text="Evaluciones" />
+                                    <TableColumn prefWidth="501.9999694824219" text="Puesto" />
                                  </columns>
                               </TableView>
-                              <Label layoutX="43.0" layoutY="108.0" text="Evaluacion">
+                              <Label layoutX="43.0" layoutY="108.0" text="Puestos Laborales">
                                  <font>
                                     <Font name="System Bold" size="36.0" />
                                  </font>
                               </Label>
-                              <Button layoutX="43.0" layoutY="249.0" mnemonicParsing="false" onAction="#boton_nuevaEvaluacion" prefHeight="25.0" prefWidth="162.0" text="Nueva Evaluacion" />
+                              <Button layoutX="43.0" layoutY="249.0" mnemonicParsing="false" onAction="#boton_nuevaEvaluacion" prefHeight="25.0" prefWidth="162.0" text="Nuevo Puesto laboral" />
                            </children>
                         </Pane>
                      </children>
                   </AnchorPane>
                </content>
             </ScrollPane>
-            <AnchorPane maxHeight="800.0" maxWidth="400.0" minHeight="800.0" minWidth="275.0" prefHeight="800.0" prefWidth="318.0">
+            <AnchorPane maxHeight="800.0" maxWidth="400.0" minHeight="800.0" minWidth="263.0" prefHeight="800.0" prefWidth="263.0">
                <children>
                   <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="169.0" style="&#10;" text="Detalles" textAlignment="CENTER" wrapText="false">
                      <font>
@@ -78,11 +78,11 @@
                         <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
                      </textFill>
                   </Label>
-                  <Label layoutX="11.0" layoutY="83.0" prefHeight="18.0" prefWidth="142.0" text="Evaluación" />
+                  <Label layoutX="11.0" layoutY="83.0" prefHeight="18.0" prefWidth="142.0" text="Puestos" />
                   <TextField fx:id="textBoxRazonS" editable="false" layoutX="11.0" layoutY="118.0" prefHeight="26.0" prefWidth="230.0" />
-                  <Label layoutX="11.0" layoutY="193.0" prefHeight="18.0" prefWidth="162.0" text="Descripción" />
-                  <TextArea fx:id="textBoxDir" editable="false" layoutX="14.0" layoutY="226.0" prefHeight="92.0" prefWidth="230.0" />
-                  <Button fx:id="boton_editar" layoutX="64.0" layoutY="749.0" mnemonicParsing="false" onAction="#boton_editar" prefHeight="26.0" prefWidth="177.0" text="Editar Evaluación" />
+                  <Label layoutX="11.0" layoutY="169.0" prefHeight="18.0" prefWidth="162.0" text="Descripción" />
+                  <TextArea fx:id="textBoxDir" editable="false" layoutX="11.0" layoutY="218.0" prefHeight="92.0" prefWidth="250.0" />
+                  <Button fx:id="boton_editar" layoutX="64.0" layoutY="352.0" mnemonicParsing="false" onAction="#boton_editar" prefHeight="26.0" prefWidth="177.0" text="Editar Puesto" />
                </children>
             </AnchorPane>
          </items>

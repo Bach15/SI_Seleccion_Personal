@@ -95,4 +95,14 @@ public class MenuAdminController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }   
+
+    @FXML
+    private void boton_Puesto(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/area_main.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 }

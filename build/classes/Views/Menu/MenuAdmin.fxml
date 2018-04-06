@@ -31,27 +31,32 @@
                   </Button>
                </children>
             </Pane>
-            <Button layoutX="156.0" layoutY="166.0" mnemonicParsing="false" onAction="#boton_Seleccion" prefHeight="121.0" prefWidth="199.0" style="-fx-cursor: hand;" styleClass="buttonMenu" stylesheets="@menu.css" text="Proceso de &#10;selección" textAlignment="CENTER">
+            <Button layoutX="115.0" layoutY="142.0" mnemonicParsing="false" onAction="#boton_Seleccion" prefHeight="120.0" prefWidth="190.0" style="-fx-cursor: hand;" styleClass="buttonMenu" stylesheets="@menu.css" text="Proceso de &#10;selección" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Button>
-            <Button layoutX="483.0" layoutY="166.0" mnemonicParsing="false" onAction="#boton_Perfiles" prefHeight="121.0" prefWidth="199.0" style="-fx-cursor: hand;" styleClass="buttonMenu" stylesheets="@menu.css" text="Perfiles">
+            <Button layoutX="546.0" layoutY="142.0" mnemonicParsing="false" onAction="#boton_Perfiles" prefHeight="120.0" prefWidth="190.0" style="-fx-cursor: hand;" styleClass="buttonMenu" stylesheets="@menu.css" text="Perfiles">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Button>
-            <Button layoutX="156.0" layoutY="353.0" mnemonicParsing="false" onAction="#boton_Cuenta" prefHeight="121.0" prefWidth="199.0" style="-fx-cursor: hand;" styleClass="buttonMenu" stylesheets="@menu.css" text="Administrador de &#10;Cuentas" textAlignment="CENTER">
+            <Button layoutX="327.0" layoutY="244.0" mnemonicParsing="false" onAction="#boton_Cuenta" prefHeight="120.0" prefWidth="190.0" style="-fx-cursor: hand;" styleClass="buttonMenu" stylesheets="@menu.css" text="Administrador de &#10;Cuentas" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font></Button>
-            <Button layoutX="483.0" layoutY="353.0" mnemonicParsing="false" onAction="#boton_Evaluaciones" prefHeight="121.0" prefWidth="199.0" style="-fx-cursor: hand;" styleClass="buttonMenu" stylesheets="@menu.css" text="Evaluaciones">
+            <Button layoutX="546.0" layoutY="364.0" mnemonicParsing="false" onAction="#boton_Evaluaciones" prefHeight="120.0" prefWidth="190.0" style="-fx-cursor: hand;" styleClass="buttonMenu" stylesheets="@menu.css" text="Evaluaciones">
                <font>
-                  <Font size="20.0" />
+                  <Font name="System Bold" size="20.0" />
                </font></Button>
             <ImageView fitHeight="53.0" fitWidth="63.0" layoutX="708.0" layoutY="509.0" onMouseClicked="#click_Usuario" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent; -fx-cursor: hand;">
                <image>
                   <Image url="@../../Images/profile.png" />
                </image>
             </ImageView>
+            <Button layoutX="115.0" layoutY="364.0" mnemonicParsing="false" onAction="#boton_Puesto" prefHeight="120.0" prefWidth="190.0" style="-fx-cursor: hand;" styleClass="buttonMenu" stylesheets="@menu.css" text="Puestos" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </children>

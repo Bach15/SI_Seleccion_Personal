@@ -16,7 +16,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -29,7 +28,7 @@ import javafx.stage.Stage;
  *
  * @author Carlos
  */
-public class Evaluacion_mainController implements Initializable {
+public class Puestos_mainController implements Initializable {
 
     @FXML
     private Button BtnLogOut;
@@ -74,7 +73,7 @@ public class Evaluacion_mainController implements Initializable {
 
     @FXML
     private void boton_nuevaEvaluacion(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/evaluaciones_nuevo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/puestos_nuevo.fxml"));
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -84,7 +83,7 @@ public class Evaluacion_mainController implements Initializable {
 
     @FXML
     private void boton_editar(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/evaluaciones_editar.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/puestos_editar.fxml"));
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
