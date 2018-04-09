@@ -49,7 +49,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="211.0" layoutY="170.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia1" layoutX="211.0" layoutY="170.0" prefHeight="25.0" prefWidth="140.0" />
             <Label layoutX="395.0" layoutY="163.0" text="Analisis y &#10;sintesis">
                <font>
                   <Font size="14.0" />
@@ -65,9 +65,9 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="541.0" layoutY="170.0" prefHeight="25.0" prefWidth="140.0" />
-            <ComboBox layoutX="966.0" layoutY="169.0" prefHeight="25.0" prefWidth="140.0" />
-            <ComboBox layoutX="208.0" layoutY="242.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia2" layoutX="541.0" layoutY="170.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia3" layoutX="966.0" layoutY="169.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia4" layoutX="208.0" layoutY="242.0" prefHeight="25.0" prefWidth="140.0" />
             <Label layoutX="739.0" layoutY="297.0" text="Desarrollo de relaciones &#10;con el cliente">
                <font>
                   <Font size="14.0" />
@@ -83,9 +83,9 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="541.0" layoutY="242.0" prefHeight="25.0" prefWidth="140.0" />
-            <ComboBox layoutX="966.0" layoutY="243.0" prefHeight="25.0" prefWidth="140.0" />
-            <ComboBox layoutX="966.0" layoutY="306.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia5" layoutX="541.0" layoutY="242.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia6" layoutX="966.0" layoutY="243.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia9" layoutX="966.0" layoutY="306.0" prefHeight="25.0" prefWidth="140.0" />
             <Label layoutX="62.0" layoutY="307.0" text="Coordinación">
                <font>
                   <Font size="14.0" />
@@ -101,15 +101,15 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="211.0" layoutY="306.0" prefHeight="25.0" prefWidth="140.0" />
-            <ComboBox layoutX="541.0" layoutY="306.0" prefWidth="140.0" />
-            <ComboBox layoutX="211.0" layoutY="366.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia7" layoutX="211.0" layoutY="306.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia8" layoutX="541.0" layoutY="306.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia10" layoutX="211.0" layoutY="366.0" prefHeight="25.0" prefWidth="140.0" />
             <Label layoutX="738.0" layoutY="368.0" text="Gerencia de proyectos">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="966.0" layoutY="366.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia12" layoutX="966.0" layoutY="366.0" prefHeight="25.0" prefWidth="140.0" />
             <Label layoutX="67.0" layoutY="424.0" text="Iniciativa">
                <font>
                   <Font size="14.0" />
@@ -135,17 +135,17 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="541.0" layoutY="366.0" prefWidth="140.0" />
-            <ComboBox layoutX="205.0" layoutY="470.0" prefHeight="25.0" prefWidth="140.0" />
-            <ComboBox layoutX="211.0" layoutY="422.0" prefHeight="25.0" prefWidth="140.0" />
-            <ComboBox layoutX="541.0" layoutY="422.0" prefHeight="25.0" prefWidth="140.0" />
-            <ComboBox layoutX="966.0" layoutY="422.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia11" layoutX="541.0" layoutY="366.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia16" layoutX="205.0" layoutY="470.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia13" layoutX="211.0" layoutY="422.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia14" layoutX="541.0" layoutY="422.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia15" layoutX="966.0" layoutY="422.0" prefHeight="25.0" prefWidth="140.0" />
             <Label layoutX="395.0" layoutY="466.0" text="Manejo de relaciones &#10;de negocios" />
-            <ComboBox layoutX="541.0" layoutY="473.0" prefWidth="140.0" />
-            <ComboBox layoutX="966.0" layoutY="473.0" prefHeight="25.0" prefWidth="140.0" />
-            <ComboBox layoutX="205.0" layoutY="529.0" prefWidth="140.0" />
-            <ComboBox layoutX="541.0" layoutY="529.0" prefWidth="140.0" />
-            <ComboBox layoutX="966.0" layoutY="529.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia17" layoutX="541.0" layoutY="473.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia18" layoutX="966.0" layoutY="473.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia19" layoutX="205.0" layoutY="529.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia20" layoutX="541.0" layoutY="529.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia21" layoutX="966.0" layoutY="529.0" prefHeight="25.0" prefWidth="140.0" />
             <Label layoutX="738.0" layoutY="476.0" text="Mejora continua">
                <font>
                   <Font size="14.0" />
@@ -166,15 +166,15 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="205.0" layoutY="589.0" prefWidth="140.0" />
-            <ComboBox layoutX="205.0" layoutY="646.0" prefWidth="140.0" />
-            <ComboBox layoutX="208.0" layoutY="710.0" prefWidth="140.0" />
-            <ComboBox layoutX="541.0" layoutY="590.0" prefWidth="140.0" />
-            <ComboBox layoutX="541.0" layoutY="646.0" prefWidth="140.0" />
-            <ComboBox layoutX="541.0" layoutY="710.0" prefWidth="140.0" />
-            <ComboBox layoutX="966.0" layoutY="590.0" prefHeight="25.0" prefWidth="140.0" />
-            <ComboBox layoutX="966.0" layoutY="646.0" prefHeight="25.0" prefWidth="140.0" />
-            <ComboBox layoutX="966.0" layoutY="710.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia22" layoutX="205.0" layoutY="589.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia25" layoutX="205.0" layoutY="646.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia28" layoutX="208.0" layoutY="710.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia23" layoutX="541.0" layoutY="590.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia26" layoutX="541.0" layoutY="646.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia29" layoutX="541.0" layoutY="710.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia24" layoutX="966.0" layoutY="590.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia27" layoutX="966.0" layoutY="646.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="comboCompetencia30" layoutX="966.0" layoutY="710.0" prefHeight="25.0" prefWidth="140.0" />
             <Label layoutX="63.0" layoutY="582.0" text="Orientación al &#10;detalle">
                <font>
                   <Font size="14.0" />

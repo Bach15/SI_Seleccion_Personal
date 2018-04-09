@@ -54,7 +54,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="336.0" layoutY="206.0" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="comboSoftware17" layoutX="336.0" layoutY="206.0" prefHeight="25.0" prefWidth="150.0" />
             <Label layoutX="553.0" layoutY="210.0" text="C">
                <font>
                   <Font size="14.0" />
@@ -70,9 +70,9 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="663.0" layoutY="207.0" prefHeight="25.0" prefWidth="150.0" />
-            <ComboBox layoutX="336.0" layoutY="275.0" prefHeight="25.0" prefWidth="150.0" />
-            <ComboBox layoutX="367.0" layoutY="419.0" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="comboSoftware18" layoutX="663.0" layoutY="207.0" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="comboSoftware19" layoutX="336.0" layoutY="275.0" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="comboSoftware21" layoutX="367.0" layoutY="419.0" prefHeight="25.0" prefWidth="150.0" />
             <Label layoutX="554.0" layoutY="277.0" text="Java">
                <font>
                   <Font size="14.0" />
@@ -88,9 +88,9 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="800.0" layoutY="419.0" prefHeight="25.0" prefWidth="150.0" />
-            <ComboBox layoutX="367.0" layoutY="503.0" prefHeight="25.0" prefWidth="150.0" />
-            <ComboBox layoutX="663.0" layoutY="274.0" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="comboSoftware22" layoutX="800.0" layoutY="419.0" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="comboSoftware23" layoutX="367.0" layoutY="503.0" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="comboSoftware20" layoutX="663.0" layoutY="274.0" prefHeight="25.0" prefWidth="150.0" />
             <Label layoutX="72.0" layoutY="336.0" text="Herramientas de Programación">
                <font>
                   <Font size="18.0" />
@@ -106,14 +106,14 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="800.0" layoutY="503.0" prefHeight="25.0" prefWidth="150.0" />
-            <ComboBox layoutX="367.0" layoutY="576.0" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="comboSoftware24" layoutX="800.0" layoutY="503.0" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="comboSoftware25" layoutX="367.0" layoutY="576.0" prefHeight="25.0" prefWidth="150.0" />
             <Label layoutX="586.0" layoutY="557.0" text="Sistemas operativos &#10;para gestion de equipos &#10;de comunicacion y seguridad">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <ComboBox layoutX="800.0" layoutY="573.0" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="comboSoftware26" layoutX="800.0" layoutY="573.0" prefHeight="25.0" prefWidth="150.0" />
          </children>
       </Pane>
    </children>
