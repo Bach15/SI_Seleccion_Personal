@@ -9,21 +9,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Evaluaciones_editarController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1100.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Evaluaciones_editarController">
    <stylesheets>
       <URL value="@../Menu/menu.css" />
    </stylesheets>
    <children>
-      <Pane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #CACFD2;">
+      <Pane prefHeight="800.0" prefWidth="1100.0" style="-fx-background-color: #CACFD2;">
          <children>
-            <Pane prefHeight="87.0" prefWidth="800.0" style="-fx-background-color: #5499C7;">
+            <Pane prefHeight="87.0" prefWidth="1100.0" style="-fx-background-color: #5499C7;">
                <children>
                   <Label layoutX="14.0" layoutY="9.0" onMouseClicked="#click_menu" prefHeight="70.0" prefWidth="165.0" style="-fx-cursor: hand;" text="MENU">
                      <font>
                         <Font name="System Bold" size="48.0" />
                      </font>
                   </Label>
-                  <Button fx:id="BtnLogOut" layoutX="715.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#click_salida" prefHeight="64.0" prefWidth="71.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
+                  <Button fx:id="BtnLogOut" layoutX="1015.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#click_salida" prefHeight="64.0" prefWidth="71.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
                      <font>
                         <Font name="System Bold Italic" size="12.0" />
                      </font>
@@ -35,29 +35,29 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="170.0" layoutY="217.0" text="Nombre">
+            <Label layoutX="203.0" layoutY="277.0" text="Nombre">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="163.0" layoutY="287.0" text="Descripción">
+            <Label layoutX="203.0" layoutY="400.0" text="Descripción">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="327.0" layoutY="217.0" prefHeight="30.0" prefWidth="214.0" />
-            <TextArea layoutX="327.0" layoutY="290.0" prefHeight="108.0" prefWidth="250.0" />
-            <Button layoutX="203.0" layoutY="512.0" mnemonicParsing="false" onAction="#boton_guardar" prefHeight="30.0" prefWidth="124.0" text="Guardar">
+            <TextField layoutX="403.0" layoutY="275.0" prefHeight="40.0" prefWidth="250.0" />
+            <TextArea layoutX="403.0" layoutY="400.0" prefHeight="124.0" prefWidth="321.0" />
+            <Button layoutX="223.0" layoutY="711.0" mnemonicParsing="false" onAction="#boton_guardar" prefHeight="40.0" prefWidth="180.0" text="Guardar">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="479.0" layoutY="512.0" mnemonicParsing="false" onAction="#boton_cancelar" prefHeight="30.0" prefWidth="124.0" text="Cancelar">
+            <Button layoutX="661.0" layoutY="711.0" mnemonicParsing="false" onAction="#boton_cancelar" prefHeight="40.0" prefWidth="180.0" text="Cancelar">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="299.0" layoutY="430.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Subir Archivo" />
+            <Button layoutX="400.0" layoutY="603.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" text="Subir Archivo" />
          </children>
       </Pane>
    </children>

@@ -9,12 +9,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Puestos_editarController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1100.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Puestos_editarController">
    <stylesheets>
       <URL value="@../Menu/menu.css" />
    </stylesheets>
    <children>
-      <Pane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #CACFD2;">
+      <Pane prefHeight="800.0" prefWidth="1100.0" style="-fx-background-color: #CACFD2;">
          <children>
             <Pane prefHeight="87.0" prefWidth="800.0" style="-fx-background-color: #5499C7;">
                <children>
@@ -35,29 +35,29 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="171.0" layoutY="234.0" text="Nombre">
+            <Label layoutX="236.0" layoutY="235.0" text="Nombre">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="171.0" layoutY="314.0" text="Descripción">
+            <Label layoutX="236.0" layoutY="340.0" text="Descripción">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="323.0" layoutY="233.0" prefHeight="30.0" prefWidth="242.0" />
-            <TextArea layoutX="323.0" layoutY="314.0" prefHeight="99.0" prefWidth="269.0" />
-            <Button layoutX="217.0" layoutY="518.0" mnemonicParsing="false" onAction="#boton_guardar" prefHeight="30.0" prefWidth="124.0" text="Guardar">
+            <TextField layoutX="438.0" layoutY="228.0" prefHeight="40.0" prefWidth="254.0" />
+            <TextArea layoutX="440.0" layoutY="340.0" prefHeight="143.0" prefWidth="315.0" />
+            <Button layoutX="283.0" layoutY="688.0" mnemonicParsing="false" onAction="#boton_guardar" prefHeight="40.0" prefWidth="180.0" text="Guardar">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="474.0" layoutY="518.0" mnemonicParsing="false" onAction="#boton_cancelar" prefHeight="30.0" prefWidth="124.0" text="Cancelar">
+            <Button layoutX="682.0" layoutY="688.0" mnemonicParsing="false" onAction="#boton_cancelar" prefHeight="40.0" prefWidth="180.0" text="Cancelar">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="283.0" layoutY="438.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="234.0" text="Escoger perfiles" />
+            <Button layoutX="448.0" layoutY="586.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="234.0" text="Escoger perfiles" />
          </children>
       </Pane>
    </children>

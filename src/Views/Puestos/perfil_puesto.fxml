@@ -2,9 +2,8 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -30,24 +29,22 @@
                   </Button>
                </children>
             </Pane>
-            <Label layoutX="30.0" layoutY="110.0" text="Crear Puesto de trabajo">
+            <Label layoutX="30.0" layoutY="110.0" text="Perfiles">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="237.0" layoutY="242.0" text="Nombre">
+            <Label layoutX="72.0" layoutY="189.0" text="Estudios">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="237.0" layoutY="343.0" text="Descripción">
+            <Label layoutX="72.0" layoutY="337.0" text="Dominio del idioma: Nivel de ingles">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="424.0" layoutY="236.0" prefHeight="40.0" prefWidth="286.0" />
-            <TextArea layoutX="433.0" layoutY="343.0" prefHeight="131.0" prefWidth="320.0" />
-            <Button layoutX="264.0" layoutY="688.0" mnemonicParsing="false" onAction="#boton_guardar" prefHeight="40.0" prefWidth="180.0" text="Guardar">
+            <Button layoutX="264.0" layoutY="688.0" mnemonicParsing="false" onAction="#boton_guardar" prefHeight="40.0" prefWidth="180.0" text="Siguiente">
                <font>
                   <Font size="14.0" />
                </font>
@@ -57,7 +54,30 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="433.0" layoutY="575.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="234.0" text="Escoger perfiles" />
+            <Label layoutX="291.0" layoutY="241.0" text="Educacion">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="475.0" layoutY="238.0" prefHeight="25.0" prefWidth="191.0" />
+            <Label layoutX="291.0" layoutY="416.0" text="Hablado">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="291.0" layoutY="474.0" text="Escrito">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="288.0" layoutY="548.0" text="Lectura">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="475.0" layoutY="413.0" prefHeight="25.0" prefWidth="180.0" />
+            <ComboBox layoutX="475.0" layoutY="472.0" prefHeight="25.0" prefWidth="180.0" />
+            <ComboBox layoutX="475.0" layoutY="545.0" prefHeight="25.0" prefWidth="180.0" />
          </children>
       </Pane>
    </children>

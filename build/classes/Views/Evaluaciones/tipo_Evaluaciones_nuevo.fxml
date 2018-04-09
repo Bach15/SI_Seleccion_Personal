@@ -45,7 +45,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="455.0" layoutY="238.0" prefHeight="30.0" prefWidth="287.0" />
+            <TextField layoutX="455.0" layoutY="238.0" prefHeight="40.0" prefWidth="287.0" />
             <TextArea layoutX="455.0" layoutY="350.0" prefHeight="128.0" prefWidth="353.0" />
             <Button layoutX="335.0" layoutY="703.0" mnemonicParsing="false" onAction="#boton_guardar" prefHeight="40.0" prefWidth="180.0" text="Guardar">
                <font>
