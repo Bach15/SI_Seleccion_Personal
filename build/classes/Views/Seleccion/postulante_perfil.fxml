@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1100.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Puestos_nuevoController">
+   <stylesheets>
+      <URL value="@../Menu/menu.css" />
+   </stylesheets>
+   <children>
+      <Pane prefHeight="800.0" prefWidth="1100.0" style="-fx-background-color: #CACFD2;">
+         <children>
+            <Pane prefHeight="87.0" prefWidth="1100.0" style="-fx-background-color: #5499C7;">
+               <children>
+                  <Label layoutX="14.0" layoutY="9.0" onMouseClicked="#click_menu" prefHeight="70.0" prefWidth="165.0" style="-fx-cursor: hand;" text="MENU">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="BtnLogOut" layoutX="1015.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#click_salida" prefHeight="64.0" prefWidth="71.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Label layoutX="30.0" layoutY="110.0" text="Perfiles">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="72.0" layoutY="189.0" text="Estudios">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="72.0" layoutY="337.0" text="Dominio del idioma: Nivel de ingles">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="264.0" layoutY="688.0" mnemonicParsing="false" onAction="#boton_guardar" prefHeight="40.0" prefWidth="180.0" text="Siguiente">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="662.0" layoutY="688.0" mnemonicParsing="false" onAction="#boton_cancelar" prefHeight="40.0" prefWidth="180.0" text="Cancelar">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="291.0" layoutY="241.0" text="Educacion">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboEducacion" layoutX="475.0" layoutY="238.0" prefHeight="25.0" prefWidth="191.0" />
+            <Label layoutX="291.0" layoutY="416.0" text="Hablado">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="291.0" layoutY="474.0" text="Escrito">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="288.0" layoutY="548.0" text="Lectura">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboIngHablado" layoutX="475.0" layoutY="413.0" prefHeight="25.0" prefWidth="180.0" />
+            <ComboBox fx:id="comboIngEscrito" layoutX="475.0" layoutY="472.0" prefHeight="25.0" prefWidth="180.0" />
+            <ComboBox fx:id="comboIngLectura" layoutX="475.0" layoutY="545.0" prefHeight="25.0" prefWidth="180.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
