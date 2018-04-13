@@ -37,7 +37,8 @@
                            </children>
                         </Pane>
                         <Button layoutX="-3.0" layoutY="99.0" mnemonicParsing="false" onAction="#boton_ProcesoSeleccion" prefHeight="36.0" prefWidth="255.0" text="Proceso de selección" />
-                        <Button layoutX="-3.0" layoutY="135.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="255.0" text="Historico de los procesos" />
+                        <Button layoutX="-3.0" layoutY="171.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="255.0" text="Historico de los procesos" />
+                        <Button layoutX="-3.0" layoutY="135.0" mnemonicParsing="false" onAction="#boton_Postulante" prefHeight="36.0" prefWidth="255.0" text="Postulantes" />
                      </children>
                   </Pane>
                </children>
@@ -76,7 +77,7 @@
                            </image>
                         </ImageView>
                         <TextField layoutX="259.0" layoutY="185.0" prefHeight="25.0" prefWidth="169.0" />
-                        <Button layoutX="17.0" layoutY="229.0" mnemonicParsing="false" onAction="#boton_nuevoPostualnte" prefHeight="25.0" prefWidth="158.0" text="Nuevo Postulante" />
+                        <Button layoutX="17.0" layoutY="229.0" mnemonicParsing="false" onAction="#boton_nuevoPostualnte" prefHeight="25.0" prefWidth="158.0" text="Agregar Postulante" />
                      </children>
                   </Pane>
                </content>

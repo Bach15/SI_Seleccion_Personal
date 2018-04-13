@@ -8,7 +8,6 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -19,14 +18,14 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Proceso_Seleccion_mainController">
+<VBox prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Proceso_Seleccion_postulanteController">
    <children>
       <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <items>
             <AnchorPane>
                <children>
                   <Accordion layoutY="80.0" prefHeight="496.0" prefWidth="222.0" />
-                  <Pane prefHeight="689.0" prefWidth="246.0">
+                  <Pane prefHeight="676.0" prefWidth="246.0">
                      <children>
                         <Pane prefHeight="78.0" prefWidth="246.0" style="-fx-background-color: #5499C7;">
                            <children>
@@ -37,45 +36,48 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Button layoutX="-3.0" layoutY="99.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="254.0" text="Proceso de selección" />
-                        <Button layoutX="-3.0" layoutY="171.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="254.0" text="Historico de los procesos" />
-                        <Button layoutX="-3.0" layoutY="135.0" mnemonicParsing="false" onAction="#boton_Postulante" prefHeight="36.0" prefWidth="254.0" text="Postulantes" />
+                        <Button layoutX="-3.0" layoutY="99.0" mnemonicParsing="false" onAction="#boton_ProcesoSeleccion" prefHeight="36.0" prefWidth="255.0" text="Proceso de selección" />
+                        <Button layoutX="-3.0" layoutY="171.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="255.0" text="Historico de los procesos" />
+                        <Button layoutX="-3.0" layoutY="135.0" mnemonicParsing="false" onAction="#boton_Postulante" prefHeight="36.0" prefWidth="255.0" text="Postulantes" />
                      </children>
                   </Pane>
                </children>
             </AnchorPane>
             <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
                <content>
-                  <Pane prefHeight="682.0" prefWidth="488.0">
+                  <Pane prefHeight="672.0" prefWidth="490.0">
                      <children>
                         <Pane prefHeight="79.0" prefWidth="494.0" style="-fx-background-color: #5499C7;">
                            <children>
-                              <Button fx:id="BtnLogOut" layoutX="407.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#click_salida" prefHeight="64.0" prefWidth="73.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
+                              <Button fx:id="BtnLogOut" layoutX="407.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#click_salida" prefHeight="64.0" prefWidth="73.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
                                  <font>
                                     <Font name="System Bold Italic" size="12.0" />
                                  </font>
                               </Button>
                            </children>
                         </Pane>
-                        <Label layoutX="14.0" layoutY="92.0" text="Proceso de selección">
+                        <Label layoutX="14.0" layoutY="92.0" text="Puesto Disponible">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <TableView layoutX="30.0" layoutY="271.0" prefHeight="345.0" prefWidth="435.0">
+                        <TableView layoutX="17.0" layoutY="271.0" prefHeight="367.0" prefWidth="458.0">
                            <columns>
-                              <TableColumn prefWidth="80.79998970031738" text="ID" />
-                              <TableColumn prefWidth="351.99999237060547" text="Puesto Disponible" />
+                              <TableColumn prefWidth="56.000057220458984" text="ID" />
+                              <TableColumn prefWidth="99.99999237060547" text="Apellido P" />
+                              <TableColumn prefWidth="108.79998779296875" text="Apellido M" />
+                              <TableColumn prefWidth="112.00006103515625" text="Nombre" />
+                              <TableColumn prefWidth="79.199951171875" text="Puntaje" />
                            </columns>
                         </TableView>
-                        <Button layoutX="429.0" layoutY="185.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" />
-                        <ImageView fitHeight="27.0" fitWidth="22.0" layoutX="432.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+                        <Button layoutX="431.0" layoutY="184.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" />
+                        <ImageView fitHeight="27.0" fitWidth="22.0" layoutX="433.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../Images/lupa.png" />
                            </image>
                         </ImageView>
-                        <TextField layoutX="289.0" layoutY="186.0" prefHeight="25.0" prefWidth="133.0" />
-                        <Button layoutX="30.0" layoutY="228.0" mnemonicParsing="false" onAction="#boton_nuevoPuesto" prefHeight="25.0" prefWidth="197.0" text="Nuevo Proceso de selección" />
+                        <TextField layoutX="259.0" layoutY="185.0" prefHeight="25.0" prefWidth="169.0" />
+                        <Button layoutX="17.0" layoutY="229.0" mnemonicParsing="false" onAction="#boton_nuevoPostulante" prefHeight="25.0" prefWidth="158.0" text="Agregar Postulante" />
                      </children>
                   </Pane>
                </content>
@@ -90,22 +92,18 @@
                         <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
                      </textFill>
                   </Label>
-                  <Pane layoutY="6.0" prefHeight="678.0" prefWidth="246.0">
+                  <Pane layoutY="6.0" prefHeight="676.0" prefWidth="246.0">
                      <children>
-                        <Label layoutX="14.0" layoutY="87.0" text="Nombre">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="170.0" text="Descripción">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <TextField layoutX="12.0" layoutY="122.0" prefHeight="25.0" prefWidth="197.0" />
-                        <TextArea layoutX="14.0" layoutY="206.0" prefHeight="70.0" prefWidth="197.0" />
-                        <Button layoutX="25.0" layoutY="301.0" mnemonicParsing="false" onAction="#boton_editarPuesto" prefHeight="25.0" prefWidth="197.0" text="Editar Puesto Disponible" />
-                        <Button layoutX="65.0" layoutY="626.0" mnemonicParsing="false" onAction="#boton_postulante" prefHeight="25.0" prefWidth="140.0" text="Postulantes" />
+                        <Label layoutX="14.0" layoutY="59.0" text="Nombre" />
+                        <Label layoutX="14.0" layoutY="132.0" text="Apellido Paterno" />
+                        <TextField layoutX="14.0" layoutY="90.0" />
+                        <TextField layoutX="14.0" layoutY="160.0" />
+                        <Label layoutX="14.0" layoutY="204.0" text="Apellido Materno" />
+                        <TextField layoutX="14.0" layoutY="234.0" />
+                        <Label layoutX="14.0" layoutY="280.0" text="Fecha de Nacimiento" />
+                        <Label layoutX="14.0" layoutY="358.0" text="Correo" />
+                        <TextField layoutX="14.0" layoutY="317.0" />
+                        <TextField layoutX="14.0" layoutY="392.0" />
                      </children>
                   </Pane>
                </children>

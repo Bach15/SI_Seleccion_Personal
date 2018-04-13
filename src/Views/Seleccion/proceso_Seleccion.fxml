@@ -32,7 +32,8 @@
                            </children>
                         </Pane>
                         <Button layoutX="-3.0" layoutY="99.0" mnemonicParsing="false" onAction="#click_Proceso" prefHeight="36.0" prefWidth="254.0" text="Proceso de selección" />
-                        <Button layoutX="-3.0" layoutY="135.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="254.0" text="Historico de los procesos" />
+                        <Button layoutX="-4.0" layoutY="171.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="254.0" text="Historico de los procesos" />
+                        <Button layoutX="-3.0" layoutY="135.0" mnemonicParsing="false" onAction="#boton_Postulante" prefHeight="36.0" prefWidth="254.0" text="Postulantes" />
                      </children>
                   </Pane>
                </children>

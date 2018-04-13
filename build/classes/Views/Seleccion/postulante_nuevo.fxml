@@ -36,12 +36,13 @@
                            </children>
                         </Pane>
                         <Button layoutX="-3.0" layoutY="99.0" mnemonicParsing="false" onAction="#boton_ProcesoSeleccion" prefHeight="36.0" prefWidth="307.0" text="Proceso de selección" />
-                        <Button layoutX="-3.0" layoutY="135.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="307.0" text="Historico de los procesos" />
+                        <Button layoutX="-3.0" layoutY="170.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="307.0" text="Historico de los procesos" />
+                        <Button layoutX="-3.0" layoutY="135.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="307.0" text="Postulantes" />
                      </children>
                   </Pane>
                </children>
             </AnchorPane>
-            <ScrollPane prefHeight="813.0" prefWidth="992.0">
+            <ScrollPane prefHeight="894.0" prefWidth="992.0">
                <content>
                   <Pane prefHeight="872.0" prefWidth="989.0">
                      <children>

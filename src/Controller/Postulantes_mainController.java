@@ -29,15 +29,15 @@ import javafx.stage.Stage;
 public class Postulantes_mainController implements Initializable {
 
     @FXML
+    private Color x4;
+    @FXML
+    private Font x3;
+    @FXML
     private Button BtnLogOut;
     @FXML
     private Color x2;
     @FXML
     private Font x1;
-    @FXML
-    private Color x4;
-    @FXML
-    private Font x3;
 
     /**
      * Initializes the controller class.
@@ -76,7 +76,15 @@ public class Postulantes_mainController implements Initializable {
 
     @FXML
     private void boton_nuevoPostualnte(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulante_nuevo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/proceso_Seleccion_postulante.fxml"));
+        Scene scene = new Scene(root);     
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    private void boton_editarPostulante(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulante_editar.fxml"));
         Scene scene = new Scene(root);     
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -84,9 +92,10 @@ public class Postulantes_mainController implements Initializable {
     }
 
     @FXML
-    private void boton_editarPostulante(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulante_editar.fxml"));
-        Scene scene = new Scene(root);     
+    private void boton_Postulante(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulantes_main.fxml"));
+        Scene scene = new Scene(root);
+        
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
