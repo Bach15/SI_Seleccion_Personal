@@ -24,14 +24,14 @@
                         <Font name="System Bold" size="48.0" />
                      </font>
                   </Label>
-                  <Button fx:id="BtnLogOut" layoutX="715.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="71.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
+                  <Button fx:id="BtnLogOut" layoutX="715.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#boton_salida" prefHeight="64.0" prefWidth="71.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
                      <font>
                         <Font name="System Bold Italic" size="12.0" />
                      </font>
                   </Button>
                </children>
             </Pane>
-            <Button layoutX="295.0" layoutY="237.0" mnemonicParsing="false" prefHeight="126.0" prefWidth="210.0" style="-fx-cursor: hand;" styleClass="buttonMenu" stylesheets="@menu.css" text="Evaluacion">
+            <Button layoutX="295.0" layoutY="237.0" mnemonicParsing="false" onAction="#boton_evaluacion" prefHeight="126.0" prefWidth="210.0" style="-fx-cursor: hand;" styleClass="buttonMenu" stylesheets="@menu.css" text="Empezar &#10;Evaluacion" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Button>

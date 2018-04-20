@@ -38,15 +38,9 @@ public class Cuenta_mainController implements Initializable {
     @FXML
     private Button boton_editar;
     @FXML
-    private Label labelErrorRazonS;
+    private Color x4;
     @FXML
-    private Label labelErrorRuc;
-    @FXML
-    private Label labelErrorCorreo;
-    @FXML
-    private Label labelErrorTel;
-    @FXML
-    private Label labelErrorDir;
+    private Font x3;
 
     /**
      * Initializes the controller class.
@@ -58,7 +52,7 @@ public class Cuenta_mainController implements Initializable {
 
     @FXML
     private void click_menu(MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Menu/MenuAdmin.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Menu/Menu_Administrador.fxml"));
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -76,7 +70,6 @@ public class Cuenta_mainController implements Initializable {
         stage.show(); 
     }
 
-    @FXML
     private void boton_Nueva_Cuenta(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Configuración/cuenta_new.fxml"));
         Scene scene = new Scene(root);
@@ -86,7 +79,6 @@ public class Cuenta_mainController implements Initializable {
         stage.show();
     }
 
-    @FXML
     private void boton_editar(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Configuración/cuenta_edit.fxml"));
         Scene scene = new Scene(root);
@@ -95,5 +87,95 @@ public class Cuenta_mainController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    private void boton_Postulante(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulantes_main.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show(); 
+    }
     
+    @FXML
+    private void boton_proceso(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/proceso_Seleccion_main.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show(); 
+    }
+
+    @FXML
+    private void boton_historico(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/proceso_Seleccion_historico.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show(); 
+    }
+
+    @FXML
+    private void boton_administrar(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Configuración/Administrar_Cuenta.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void boton_evaluacion(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/tipo_Evaluaciones_main.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();  
+    }
+
+    @FXML
+    private void Boton_perfiles(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Perfiles/perfil_main.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void boton_cargos(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/area_main.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void boton_nueva_cuenta(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Configuración/cuenta_new.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void boton_Editar(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Configuración/cuenta_edit.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+   
 }

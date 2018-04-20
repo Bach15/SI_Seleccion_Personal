@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Test_conocimientosController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="810.0" prefWidth="1100.0" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@../Menu/menu.css" />
+         </stylesheets>
+         <children>
+            <Pane prefHeight="800.0" prefWidth="1100.0" style="-fx-background-color: #CACFD2;">
+               <children>
+                  <Pane prefHeight="87.0" prefWidth="1100.0" style="-fx-background-color: #5499C7;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="9.0" onMouseClicked="#click_menu" prefHeight="70.0" prefWidth="165.0" style="-fx-cursor: hand;" text="MENU">
+                           <font>
+                              <Font name="System Bold" size="48.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="BtnLogOut" layoutX="1015.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#click_salida" prefHeight="64.0" prefWidth="71.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <TableView layoutX="167.0" layoutY="280.0" prefHeight="416.0" prefWidth="766.0">
+                     <columns>
+                        <TableColumn prefWidth="544.0000610351562" text="Pregunta" />
+                        <TableColumn prefWidth="220.800048828125" text="Respuesta" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="43.0" layoutY="97.0" text="Prueba de Conocimiento">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="43.0" layoutY="142.0" text="Evaluación">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="460.0" layoutY="731.0" mnemonicParsing="false" onAction="#boton_siguiente" prefHeight="40.0" prefWidth="180.0" text="Siguiente" />
+                  <Button layoutX="774.0" layoutY="201.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Descargar prueba" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

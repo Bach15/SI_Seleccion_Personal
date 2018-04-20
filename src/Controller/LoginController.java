@@ -43,7 +43,7 @@ public class LoginController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
         if(campo_Usuario.getText().equals("Administrador")){
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Menu/MenuAdmin.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Menu/Menu_Administrador.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
