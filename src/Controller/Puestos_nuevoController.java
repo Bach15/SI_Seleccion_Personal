@@ -5,6 +5,10 @@
  */
 package Controller;
 
+import Model.Area;
+import Model.Puesto;
+import Model.database.AreaDB;
+import Model.database.PuestoDB;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,6 +21,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -35,6 +41,17 @@ public class Puestos_nuevoController implements Initializable {
     private Color x4;
     @FXML
     private Font x3;
+    
+    @FXML
+    private TextField campoNombre;
+
+    @FXML
+    private TextArea campoDescripcion;
+    
+    private Puesto _puesto;
+    
+    private int idArea;
+    private String nombreArea;
 
     /**
      * Initializes the controller class.
@@ -42,7 +59,16 @@ public class Puestos_nuevoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        _puesto = new Puesto();
     }    
+    
+    public void setIdArea(int id){
+        idArea = id;
+    }
+    
+    public void setNombreArea(String nombre){
+        nombreArea = nombre;
+    }
 
     @FXML
     private void click_menu(MouseEvent event) throws IOException {
@@ -63,10 +89,29 @@ public class Puestos_nuevoController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    
+    
 
     @FXML
     private void boton_guardar(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/puestos_main.fxml"));
+        
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Views/Puestos/puestos_main.fxml"));
+        Parent root = fxmlLoader.load();     
+        Puestos_mainController puestosMain = fxmlLoader.getController();
+        
+        PuestoDB puestoDB = new PuestoDB();
+        AreaDB areadb = new AreaDB();
+        
+        _puesto.setNombre(campoNombre.getText());
+        _puesto.setDescripcion(campoDescripcion.getText());
+        _puesto.setId_area(idArea);
+        
+        puestoDB.crearPuesto(_puesto);
+       
+        Area area = areadb.obtenerAreaxId(idArea);
+        
+        puestosMain.afterInitialize(area);
+//        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/puestos_main.fxml"));
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -166,8 +211,9 @@ public class Puestos_nuevoController implements Initializable {
     @FXML
     private void boton_Escoger_perfiles(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/perfil_puesto.fxml"));
-        Scene scene = new Scene(root);
         
+        
+        Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();

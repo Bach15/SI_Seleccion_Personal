@@ -5,7 +5,12 @@
  */
 package staff_selection;
 
+import Model.database.connectDB;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -28,12 +33,32 @@ public class Staff_selection extends Application {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seguridad/Login.fxml"));
         Scene scene = new Scene(root);
         
+        crearAlmacen();
+        
         primaryStage.setScene(scene);
         primaryStage.setTitle("Sistema de Seleccion de personal");
         primaryStage.setResizable(false);
         primaryStage.show();
     }
+    private connectDB _db = new connectDB();
 
+    public void crearAlmacen() {
+        String query = "select 1,2 ";
+
+        Connection conn = _db.getConnection();
+        try (PreparedStatement pstmt = conn.prepareStatement(query)) {
+           
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                System.out.println(rs.getInt(1));
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        _db.closeConnection();
+    }
+    
     /**
      * @param args the command line arguments
      */

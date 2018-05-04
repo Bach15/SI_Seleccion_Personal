@@ -70,10 +70,10 @@
                                     <Font name="System Bold" size="36.0" />
                                  </font>
                               </Label>
-                              <TableView layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
+                              <TableView fx:id="tablaArea" layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
                                  <columns>
-                                    <TableColumn prefWidth="84.00003242492676" text="ID" />
-                                    <TableColumn prefWidth="358.3999557495117" text="Área Laboral" />
+                                    <TableColumn fx:id="colId" prefWidth="84.00003242492676" text="ID" />
+                                    <TableColumn fx:id="colArea" prefWidth="358.3999557495117" text="Área Laboral" />
                                  </columns>
                               </TableView>
                               <Button layoutX="26.0" layoutY="146.0" mnemonicParsing="false" onAction="#boton_Nueva_Area" prefHeight="28.0" prefWidth="230.0" styleClass="dark-blue" stylesheets="@area.css" text="Nueva Área Laboral" />
@@ -101,14 +101,14 @@
                   </Label>
                   <Pane layoutY="6.0" prefHeight="676.0" prefWidth="246.0">
                      <children>
-                        <Button fx:id="boton_editar" layoutX="22.0" layoutY="577.0" mnemonicParsing="false" onAction="#boton_editar_area" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@area.css" text="Editar Área Laboral" textAlignment="CENTER" />
-                        <Button fx:id="boton_editar1" layoutX="22.0" layoutY="626.0" mnemonicParsing="false" onAction="#boton_puestos" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@area.css" text="Puestos Laborales" textAlignment="CENTER" />
+                        <Button fx:id="boton_editar" disable="true" layoutX="22.0" layoutY="577.0" mnemonicParsing="false" onAction="#boton_editar_area" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@area.css" text="Editar Área Laboral" textAlignment="CENTER" />
+                        <Button fx:id="boton_puestos" disable="true" layoutX="22.0" layoutY="626.0" mnemonicParsing="false" onAction="#boton_puestos" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@area.css" text="Puestos Laborales" textAlignment="CENTER" />
                      </children>
                   </Pane>
                   <Label layoutX="21.0" layoutY="93.0" prefHeight="18.0" prefWidth="142.0" text="Área Laboral" />
-                  <TextField fx:id="textBoxRazonS" editable="false" layoutX="21.0" layoutY="128.0" prefHeight="26.0" prefWidth="162.0" />
+                  <TextField fx:id="textBoxArea" editable="false" layoutX="21.0" layoutY="128.0" prefHeight="26.0" prefWidth="162.0" />
                   <Label layoutX="21.0" layoutY="203.0" prefHeight="18.0" prefWidth="162.0" text="Descripción" />
-                  <TextArea fx:id="textBoxDir" editable="false" layoutX="24.0" layoutY="236.0" prefHeight="92.0" prefWidth="178.0" />
+                  <TextArea fx:id="textBoxDesc" editable="false" layoutX="24.0" layoutY="236.0" prefHeight="92.0" prefWidth="178.0" />
                </children>
             </AnchorPane>
          </items>

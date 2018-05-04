@@ -65,18 +65,18 @@
                         <Pane layoutY="79.0" prefHeight="593.0" prefWidth="494.0">
                            <children>
                               <Button layoutX="437.0" layoutY="101.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" />
-                              <Label layoutX="21.0" layoutY="17.0" text="Nombre del Área">
+                              <Label fx:id="tituloArea" layoutX="21.0" layoutY="17.0" text="Nombre del Área">
                                  <font>
                                     <Font name="System Bold" size="25.0" />
                                  </font>
                               </Label>
-                              <TableView layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
+                              <TableView fx:id="tablaPuestos" layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
                                  <columns>
-                                    <TableColumn prefWidth="96.00000190734863" text="ID" />
-                                    <TableColumn prefWidth="345.59996795654297" text="Puesto Laboral" />
+                                    <TableColumn fx:id="colId" prefWidth="96.00000190734863" text="ID" />
+                                    <TableColumn fx:id="colPuesto" prefWidth="345.59996795654297" text="Puesto Laboral" />
                                  </columns>
                               </TableView>
-                              <Button layoutX="26.0" layoutY="146.0" mnemonicParsing="false" onAction="#boton_nuevaEvaluacion" prefHeight="28.0" prefWidth="230.0" styleClass="dark-blue" stylesheets="@../Evaluaciones/evaluacion.css" text="Nuevo Puesto Laboral" />
+                              <Button layoutX="26.0" layoutY="146.0" mnemonicParsing="false" onAction="#boton_nuevoPuesto" prefHeight="28.0" prefWidth="230.0" styleClass="dark-blue" stylesheets="@../Evaluaciones/evaluacion.css" text="Nuevo Puesto Laboral" />
                               <TextField layoutX="282.0" layoutY="102.0" opacity="0.41" prefHeight="25.0" prefWidth="149.0" text="Buscar" />
                               <ImageView fitHeight="27.0" fitWidth="22.0" layoutX="439.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -106,13 +106,13 @@
                   </Label>
                   <Pane layoutY="6.0" prefHeight="676.0" prefWidth="246.0">
                      <children>
-                        <Button fx:id="boton_editar" layoutX="19.0" layoutY="611.0" mnemonicParsing="false" onAction="#boton_editar" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@../Evaluaciones/evaluacion.css" text="Editar Puesto Laboral" textAlignment="CENTER" />
+                        <Button fx:id="boton_editar" disable="true" layoutX="19.0" layoutY="611.0" mnemonicParsing="false" onAction="#boton_editar" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@../Evaluaciones/evaluacion.css" text="Editar Puesto Laboral" textAlignment="CENTER" />
                      </children>
                   </Pane>
                   <Label layoutX="21.0" layoutY="93.0" prefHeight="18.0" prefWidth="142.0" text="Puesto Laboral" />
-                  <TextField fx:id="textBoxRazonS" editable="false" layoutX="21.0" layoutY="128.0" prefHeight="26.0" prefWidth="162.0" />
+                  <TextField fx:id="textBoxNombre" editable="false" layoutX="21.0" layoutY="128.0" prefHeight="26.0" prefWidth="162.0" />
                   <Label layoutX="21.0" layoutY="203.0" prefHeight="18.0" prefWidth="162.0" text="Descripción" />
-                  <TextArea fx:id="textBoxDir" editable="false" layoutX="24.0" layoutY="236.0" prefHeight="92.0" prefWidth="178.0" />
+                  <TextArea fx:id="textBoxDesc" editable="false" layoutX="24.0" layoutY="236.0" prefHeight="92.0" prefWidth="178.0" />
                </children>
             </AnchorPane>
          </items>

@@ -93,8 +93,8 @@
                                     <Font size="24.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="324.0" layoutY="193.0" prefHeight="40.0" prefWidth="287.0" />
-                              <TextArea layoutX="324.0" layoutY="280.0" prefHeight="128.0" prefWidth="291.0" />
+                              <TextField fx:id="campoNombre" layoutX="324.0" layoutY="193.0" prefHeight="40.0" prefWidth="287.0" />
+                              <TextArea fx:id="campoDescripcion" layoutX="324.0" layoutY="280.0" prefHeight="128.0" prefWidth="291.0" />
                               <Button layoutX="324.0" layoutY="454.0" mnemonicParsing="false" onAction="#boton_Escoger_perfiles" prefHeight="25.0" prefWidth="186.0" styleClass="bevel-grey" stylesheets="@puestos.css" text="Escoger perfiles" />
                            </children>
                         </Pane>

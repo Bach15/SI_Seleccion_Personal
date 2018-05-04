@@ -70,10 +70,10 @@
                                     <Font name="System Bold" size="36.0" />
                                  </font>
                               </Label>
-                              <TableView layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
+                              <TableView fx:id="tablaPerfil" layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
                                  <columns>
-                                    <TableColumn prefWidth="133.5999698638916" text="ID" />
-                                    <TableColumn prefWidth="308.0" text="Perfil" />
+                                    <TableColumn fx:id="colId" prefWidth="133.5999698638916" text="ID" />
+                                    <TableColumn fx:id="colPerfil" prefWidth="308.0" text="Perfil" />
                                  </columns>
                               </TableView>
                               <Button layoutX="26.0" layoutY="146.0" mnemonicParsing="false" onAction="#boton_nuevo_perfil" prefHeight="27.0" prefWidth="162.0" styleClass="dark-blue" stylesheets="@perfil.css" text="Nuevo Perfil" />
@@ -105,9 +105,9 @@
                      </children>
                   </Pane>
                   <Label layoutX="21.0" layoutY="93.0" prefHeight="18.0" prefWidth="142.0" text="Perfil" />
-                  <TextField fx:id="textBoxRazonS" editable="false" layoutX="21.0" layoutY="128.0" prefHeight="26.0" prefWidth="162.0" />
+                  <TextField fx:id="textBoxNombre" editable="false" layoutX="21.0" layoutY="128.0" prefHeight="26.0" prefWidth="162.0" />
                   <Label layoutX="21.0" layoutY="203.0" prefHeight="18.0" prefWidth="162.0" text="Descripción" />
-                  <TextArea fx:id="textBoxDir" editable="false" layoutX="24.0" layoutY="236.0" prefHeight="92.0" prefWidth="178.0" />
+                  <TextArea fx:id="textBoxDesc" editable="false" layoutX="24.0" layoutY="236.0" prefHeight="92.0" prefWidth="178.0" />
                </children>
             </AnchorPane>
          </items>
