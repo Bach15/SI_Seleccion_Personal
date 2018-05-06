@@ -6,8 +6,10 @@
 package Controller;
 
 import Model.Perfil;
+import Model.database.PerfilDB;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,6 +23,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -68,6 +71,7 @@ public class Perfil_editarController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
     }  
     
     public void SetIdPerfil(int id){
@@ -85,6 +89,28 @@ public class Perfil_editarController implements Initializable {
     public void afterInitialize(){
         campoNombre.setText(nombrePerfil);
         campoDesc.setText(descPerfil);
+        
+        PerfilDB perfildb = new PerfilDB();
+        Perfil perfil = perfildb.obtenerPerfilxNombre(nombrePerfil);
+        if((nombrePerfil.equals("Estudios")) || (nombrePerfil.equals("Dominio del idioma"))){
+            tablaOpciones.setDisable(false);
+    
+            List<Perfil> listOpciones = perfildb.obtenerOpcionesxPerfil(perfil);
+            for(int i=0; i<listOpciones.size(); i++){
+                tablaOpciones.getItems().add(listOpciones.get(i));
+            }
+            colOpciones.setCellValueFactory(new PropertyValueFactory<>("opciones"));
+        }
+        
+        else if((nombrePerfil.equals("Manejo de Software")) || (nombrePerfil.equals("Competencias"))){
+            tablaCampos.setDisable(false);
+            
+            List<Perfil> listCampos = perfildb.obtenerCamposxPerfil(perfil);
+            for(int i=0; i<listCampos.size(); i++){
+                tablaOpciones.getItems().add(listCampos.get(i));
+            }
+            colOpciones.setCellValueFactory(new PropertyValueFactory<>("campos"));
+        }
     }
 
     @FXML
@@ -179,14 +205,7 @@ public class Perfil_editarController implements Initializable {
 
     @FXML
     private void boton_guardar(ActionEvent event) throws IOException {
-        if((nombrePerfil == "Manejo de Software") || (nombrePerfil != "Competencias")){
-            tablaCampos.setDisable(false);
-        }
-
-        
-    
-        
-        
+     
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Perfiles/perfil_main.fxml"));
         Scene scene = new Scene(root);
         

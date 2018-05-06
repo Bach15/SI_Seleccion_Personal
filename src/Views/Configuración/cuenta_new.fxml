@@ -83,33 +83,33 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <RadioButton layoutX="208.0" layoutY="484.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="76.0" text="Masculino" />
-                              <RadioButton layoutX="323.0" layoutY="484.0" mnemonicParsing="false" text="Femenino" />
-                              <TextField layoutX="208.0" layoutY="430.0" prefHeight="25.0" prefWidth="189.0" />
+                              <RadioButton fx:id="buttonM" layoutX="208.0" layoutY="484.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="76.0" text="Masculino" />
+                              <RadioButton fx:id="buttonF" layoutX="323.0" layoutY="484.0" mnemonicParsing="false" text="Femenino" />
+                              <TextField fx:id="campoCorreo" layoutX="208.0" layoutY="430.0" prefHeight="25.0" prefWidth="189.0" />
                               <Label layoutX="47.0" layoutY="424.0" text="Correo">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="208.0" layoutY="377.0" prefHeight="25.0" prefWidth="189.0" />
+                              <TextField fx:id="campoDni" layoutX="208.0" layoutY="377.0" prefHeight="25.0" prefWidth="189.0" />
                               <Label layoutX="47.0" layoutY="376.0" text="DNI">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="208.0" layoutY="323.0" prefHeight="25.0" prefWidth="189.0" />
+                              <TextField fx:id="campoApellidoMa" layoutX="208.0" layoutY="323.0" prefHeight="25.0" prefWidth="189.0" />
                               <Label layoutX="47.0" layoutY="322.0" text="Apellido Materno">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="208.0" layoutY="266.0" prefHeight="25.0" prefWidth="189.0" />
+                              <TextField fx:id="campoApellidoPa" layoutX="208.0" layoutY="266.0" prefHeight="25.0" prefWidth="189.0" />
                               <Label layoutX="47.0" layoutY="265.0" text="Apellido Paterno">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="208.0" layoutY="211.0" prefHeight="25.0" prefWidth="189.0" />
+                              <TextField fx:id="campoNombre" layoutX="208.0" layoutY="211.0" prefHeight="25.0" prefWidth="189.0" />
                               <Label layoutX="52.0" layoutY="207.0" text="Nombre">
                                  <font>
                                     <Font size="18.0" />
@@ -121,13 +121,13 @@
                                     <RadioButton layoutX="22.0" layoutY="64.0" mnemonicParsing="false" text="Postulante" />
                                  </children>
                               </Pane>
-                              <TextField layoutX="540.0" layoutY="266.0" prefHeight="25.0" prefWidth="174.0" />
+                              <TextField fx:id="campoUsuario" layoutX="540.0" layoutY="266.0" prefHeight="25.0" prefWidth="174.0" />
                               <Label layoutX="427.0" layoutY="265.0" text="Usuario">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <DatePicker layoutX="540.0" layoutY="208.0" prefHeight="25.0" prefWidth="189.0" />
+                              <DatePicker fx:id="campoFecha" layoutX="540.0" layoutY="208.0" prefHeight="25.0" prefWidth="189.0" />
                               <Label layoutX="427.0" layoutY="196.0" prefHeight="50.0" prefWidth="98.0" text="Fecha de &#10;Nacimiento">
                                  <font>
                                     <Font size="18.0" />

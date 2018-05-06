@@ -109,7 +109,7 @@
                                           <TableColumn fx:id="colCampos" prefWidth="300.20001220703125" text="Campos" />
                                        </columns>
                                     </TableView>
-                                    <TableView fx:id="tablaOpciones" layoutX="24.0" layoutY="176.0" prefHeight="102.0" prefWidth="301.0">
+                                    <TableView fx:id="tablaOpciones" disable="true" layoutX="24.0" layoutY="176.0" prefHeight="102.0" prefWidth="301.0">
                                        <columns>
                                           <TableColumn fx:id="colOpciones" prefWidth="299.20001220703125" text="Opciones" />
                                        </columns>
