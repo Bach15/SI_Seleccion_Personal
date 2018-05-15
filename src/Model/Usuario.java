@@ -24,6 +24,7 @@ public class Usuario {
     private int _sexo;
     private Date _fecha_nac;
     private int _tipo_usuario;
+    private String _nombre_usuario;
     private String _contrasena;
     
     public Usuario(){
@@ -124,6 +125,14 @@ public class Usuario {
     
     public void setTipo_Usuario(int _tipo_usuario){
         this._tipo_usuario  = _tipo_usuario;
+    }
+    
+    public String getNombre_usuario(){
+        return _nombre_usuario;
+    }
+    
+    public void setNombre_usuario(String _nombre_usuario){
+        this._nombre_usuario = _nombre_usuario;
     }
     
     public String getContrasena(){

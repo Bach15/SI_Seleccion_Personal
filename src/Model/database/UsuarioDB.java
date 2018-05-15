@@ -20,7 +20,11 @@ import java.util.List;
 public class UsuarioDB {
     private connectDB _db;
     
-    public UsuarioDB(Usuario usuario){
+    public UsuarioDB(){
+        _db = new connectDB();
+    }
+    
+    public void crearUsuario(Usuario usuario){
         String query = "INSERT INTO persona(nombres, apellido_paterno, "
                 + "apellido_materno, dni, sexo, fecha_nacimiento, correo,"
                 + "direccion, telefono) VALUES (?,?,?,?,?,?,?,?,?)"
@@ -29,7 +33,7 @@ public class UsuarioDB {
         try(PreparedStatement pstmt = conn.prepareStatement(query)){
             pstmt.setString(1, usuario.getNombre());
             pstmt.setString(2, usuario.getApellidoPa());
-            pstmt.setString(2, usuario.getApellidoMa());
+            pstmt.setString(3, usuario.getApellidoMa());
             pstmt.setInt(4, usuario.getDni());
             pstmt.setInt(5, usuario.getSexo());
             pstmt.setDate(6, usuario.getFechaNac());
@@ -44,17 +48,18 @@ public class UsuarioDB {
             System.out.println(e.getMessage());
         }
         
-        String query2 = "INSERT INTO usuario(id_persona, tipo_usuario, contrasena) "
-                + "VALUES (?,?,?)"
+        String query2 = "INSERT INTO usuario(id_persona, tipo_usuario, nombre_usuario,contrasena) "
+                + "VALUES (?,?,?,?)"
                 + "RETURNING id_usuario;";
-        try(PreparedStatement pstmt = conn.prepareStatement(query)){
-            pstmt.setInt(1, usuario.getId_persona());
-            pstmt.setInt(2, usuario.getTipo_Usuario());
-            pstmt.setString(3, "Novatronic2018");
+        try(PreparedStatement pstmt2 = conn.prepareStatement(query2)){
+            pstmt2.setInt(1, usuario.getId_persona());
+            pstmt2.setInt(2, usuario.getTipo_Usuario());
+            pstmt2.setString(3, usuario.getNombre_usuario());
+            pstmt2.setString(4, "Novatronic2018");
             
-            ResultSet rs = pstmt.executeQuery();
-            if(rs.next())
-                usuario.setContrasena(rs.getString(1));
+            ResultSet rs2 = pstmt2.executeQuery();
+            if(rs2.next())
+                usuario.setId_usuario(rs2.getInt(1));
         } catch (SQLException e){
             System.out.println(e.getMessage());
         }
@@ -87,9 +92,10 @@ public class UsuarioDB {
                     
                     ResultSet rs2 = pstmt2.executeQuery();
                     if(rs2.next()){
-                        usuario.setId_usuario(rs.getInt("id_usuario"));
-                        usuario.setTipo_Usuario(rs.getInt("tipo_usuario"));
-                        usuario.setContrasena(rs.getString("contrasena"));
+                        usuario.setId_usuario(rs2.getInt("id_usuario"));
+                        usuario.setTipo_Usuario(rs2.getInt("tipo_usuario"));
+                        usuario.setNombre_usuario(rs2.getString("nombre_usuario"));
+                        usuario.setContrasena(rs2.getString("contrasena"));
                     }
                     
                 } catch (SQLException e) {
@@ -105,6 +111,56 @@ public class UsuarioDB {
         }
         _db.closeConnection();
         return listUsuario;
+    }
+    
+    public Usuario obtenerUsuarioxId(int id_usuario){
+        Usuario usuario = new Usuario();
+        String query = "SELECT * FROM usuario WHERE id_usuario = ?;";
+        
+        Connection conn = _db.getConnection();
+        try (PreparedStatement pstmt = conn.prepareStatement(query)){
+            pstmt.setInt(1, id_usuario);
+            
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                usuario.setId_usuario(rs.getInt("id_usuario"));
+                usuario.setTipo_Usuario(rs.getInt("tipo_usuario"));
+                usuario.setNombre_usuario(rs.getString("nombre_usuario"));
+                usuario.setContrasena(rs.getString("contrasena"));
+                
+                String query2 = "SELECT * FROM persona WHERE id_persona = ?;";
+                try (PreparedStatement pstmt2 = conn.prepareStatement(query2)){
+                
+                    pstmt2.setInt(1, usuario.getId_persona());
+                    
+                    ResultSet rs2 = pstmt2.executeQuery();
+                    if(rs2.next()){
+                        usuario.setId_persona(rs.getInt("id_persona"));
+                        usuario.setNombre(rs.getString("nombres"));
+                        usuario.setApellidoPa(rs.getString("apellido_paterno"));
+                        usuario.setApellidoMa(rs.getString("apellido_materno"));
+                        usuario.setDni(rs.getInt("dni"));
+                        usuario.setSexo(rs.getInt("sexo"));
+                        usuario.setFechaNac(rs.getDate("fecha_nacimiento"));
+                        usuario.setCorreo(rs.getString("correo"));
+                        usuario.setDireccion(rs.getString("direccion"));
+                        usuario.setTelefono(rs.getString("telefono"));
+                        
+                        usuario.setId_usuario(rs.getInt("id_usuario"));
+                        usuario.setTipo_Usuario(rs.getInt("tipo_usuario"));
+                        usuario.setNombre_usuario(rs.getString("nombre_usuario"));
+                        usuario.setContrasena(rs.getString("contrasena"));
+                    }
+                    
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+            }    
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        _db.closeConnection();
+        return usuario;
     }
     
 }

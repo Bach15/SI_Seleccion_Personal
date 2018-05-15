@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CargaDataController">
+   <children>
+      <SplitPane dividerPositions="0.2505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <items>
+            <AnchorPane>
+               <children>
+                  <Accordion layoutY="80.0" prefHeight="496.0" prefWidth="222.0" />
+                  <Pane prefHeight="676.0" prefWidth="246.0">
+                     <children>
+                        <Pane prefHeight="78.0" prefWidth="246.0" style="-fx-background-color: #5499C7;">
+                           <children>
+                              <Label layoutX="14.0" layoutY="4.0" onMouseClicked="#click_menu" prefHeight="70.0" prefWidth="222.0" style="-fx-cursor: hand;" text="Menu">
+                                 <font>
+                                    <Font name="System Bold" size="48.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Button layoutX="-3.0" layoutY="256.0" mnemonicParsing="false" onAction="#boton_Postulante" prefHeight="36.0" prefWidth="254.0" text="Postulantes" />
+                        <Button layoutX="-5.0" layoutY="292.0" mnemonicParsing="false" onAction="#boton_proceso" prefHeight="36.0" prefWidth="254.0" text="Proceso de selección" />
+                        <Button layoutX="-5.0" layoutY="328.0" mnemonicParsing="false" onAction="#boton_historico" prefHeight="36.0" prefWidth="254.0" text="Historico de los procesos" />
+                        <Button layoutX="-2.0" layoutY="256.0" mnemonicParsing="false" onAction="#boton_Postulante" prefHeight="36.0" prefWidth="254.0" text="Postulantes" />
+                        <Button layoutX="-2.0" layoutY="113.0" mnemonicParsing="false" onAction="#boton_administrar" prefHeight="36.0" prefWidth="254.0" text="Administrar Cuentas" />
+                        <Button layoutX="-2.0" layoutY="148.0" mnemonicParsing="false" onAction="#boton_evaluacion" prefHeight="36.0" prefWidth="254.0" text="Evaluaciones" />
+                        <Button layoutX="-2.0" layoutY="184.0" mnemonicParsing="false" onAction="#Boton_perfiles" prefHeight="36.0" prefWidth="254.0" text="Perfiles" />
+                        <Button layoutX="-2.0" layoutY="220.0" mnemonicParsing="false" onAction="#boton_cargos" prefHeight="36.0" prefWidth="254.0" text="Cargos Laborales" />
+                        <Button layoutY="364.0" mnemonicParsing="false" onAction="#boton_carga" prefHeight="36.0" prefWidth="254.0" text="Carga de datos" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <ScrollPane>
+               <content>
+                  <AnchorPane id="AnchorPane" prefHeight="672.0" prefWidth="743.0" styleClass="mainFxmlClass">
+                     <stylesheets>
+                        <URL value="@../Menu/menu.css" />
+                     </stylesheets>
+                     <children>
+                        <Pane prefHeight="670.0" prefWidth="739.0" style="-fx-background-color: #CACFD2;">
+                           <children>
+                              <Pane prefHeight="87.0" prefWidth="746.0" style="-fx-background-color: #5499C7;">
+                                 <children>
+                                    <Button fx:id="BtnLogOut" layoutX="661.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#click_salida" prefHeight="64.0" prefWidth="71.0" style="-fx-background-image: url('http://free-icon-rainbow.com/i/icon_03849/icon_038490_256.png'); -fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-size: contain; -fx-cursor: hand;">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                              <AnchorPane id="AnchorPane" layoutY="87.0" prefHeight="588.0" prefWidth="746.0">
+                                 <children>
+                                    <Label layoutX="131.0" layoutY="202.0" text="Areas:" />
+                                    <Label layoutX="125.0" layoutY="258.0" text="Puestos:" />
+                                    <TextField fx:id="textBoxAreas" editable="false" layoutX="238.0" layoutY="198.0" prefWidth="140.0" />
+                                    <TextField fx:id="textBoxPuestos" editable="false" layoutX="238.0" layoutY="255.0" prefHeight="25.0" prefWidth="140.0" />
+                                    <Button layoutX="416.0" layoutY="197.0" mnemonicParsing="false" onMouseClicked="#onMouseClickExaminarAreas" prefHeight="25.0" prefWidth="90.0" text="Examinar" />
+                                    <Button layoutX="541.0" layoutY="197.0" mnemonicParsing="false" onMouseClicked="#onMouseClickCargarAreas" prefHeight="25.0" prefWidth="70.0" text="Cargar" />
+                                    <Button layoutX="416.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#onMouseClickExaminarPuestos" prefHeight="25.0" prefWidth="90.0" text="Examinar" />
+                                    <Button layoutX="541.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#onMouseClickCargarPuestos" prefHeight="25.0" prefWidth="70.0" text="Cargar" />
+                                    <Label layoutX="101.0" layoutY="132.0" text="Cargos Laborales" />
+                                    <Label layoutX="109.0" layoutY="350.0" text="Perfiles" />
+                                    <Label layoutX="132.0" layoutY="401.0" text="Softwares:" />
+                                    <Separator layoutX="94.0" layoutY="144.0" orientation="VERTICAL" prefHeight="180.0" prefWidth="6.0" />
+                                    <Separator layoutX="97.0" layoutY="323.0" prefHeight="3.0" prefWidth="545.0" />
+                                    <Separator layoutX="638.0" layoutY="144.0" orientation="VERTICAL" prefHeight="180.0" prefWidth="6.0" />
+                                    <Separator layoutX="221.0" layoutY="141.0" prefHeight="6.0" prefWidth="421.0" />
+                                    <Separator layoutX="175.0" layoutY="357.0" prefHeight="6.0" prefWidth="474.0" />
+                                    <Separator layoutX="96.0" layoutY="363.0" orientation="VERTICAL" prefHeight="144.0" prefWidth="7.0" />
+                                    <Separator layoutX="643.0" layoutY="362.0" orientation="VERTICAL" prefHeight="146.0" prefWidth="6.0" />
+                                    <Separator layoutX="101.0" layoutY="501.0" prefHeight="5.0" prefWidth="540.0" />
+                                    <TextField fx:id="textBoxSoftware" editable="false" layoutX="247.0" layoutY="397.0" prefHeight="25.0" prefWidth="140.0" />
+                                    <Button layoutX="422.0" layoutY="397.0" mnemonicParsing="false" onMouseClicked="#onMouseClickExaminarSoftware" prefHeight="25.0" prefWidth="90.0" text="Examinar" />
+                                    <Button layoutX="541.0" layoutY="397.0" mnemonicParsing="false" onMouseClicked="#onMouseClickCargarSoftware" prefHeight="25.0" prefWidth="70.0" text="Cargar" />
+                                    <Label layoutX="46.0" layoutY="38.0" text="Carga de datos">
+                                       <font>
+                                          <Font name="System Bold" size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="130.0" layoutY="452.0" text="Competencias:" />
+                                    <TextField fx:id="textBoxCompetencia" layoutX="247.0" layoutY="448.0" prefHeight="25.0" prefWidth="140.0" />
+                                    <Button layoutX="422.0" layoutY="448.0" mnemonicParsing="false" onContextMenuRequested="#onMouseClickExaminarCompetencia" prefHeight="25.0" prefWidth="90.0" text="Examinar" />
+                                    <Button layoutX="541.0" layoutY="448.0" mnemonicParsing="false" onMouseClicked="#onMouseClickCargarCompetencia" prefHeight="25.0" prefWidth="70.0" text="Cargar" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </items>
+      </SplitPane>
+      <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="11.0" fx:id="x3" />
+               </font>
+               <textFill>
+                  <Color blue="0.625" green="0.625" red="0.625" fx:id="x4" />
+               </textFill>
+            </Label>
+            <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+            <Label font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

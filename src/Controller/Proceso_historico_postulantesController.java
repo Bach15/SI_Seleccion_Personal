@@ -136,5 +136,15 @@ public class Proceso_historico_postulantesController implements Initializable {
         stage.setScene(scene);
         stage.show(); 
     }
+
+    @FXML
+    private void boton_carga(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/CargaMasiva/cargaData.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
     
 }

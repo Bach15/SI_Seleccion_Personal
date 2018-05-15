@@ -44,6 +44,7 @@
                         <Button layoutX="-1.0" layoutY="156.0" mnemonicParsing="false" onAction="#boton_evaluacion" prefHeight="36.0" prefWidth="254.0" text="Evaluaciones" />
                         <Button layoutX="-1.0" layoutY="192.0" mnemonicParsing="false" onAction="#Boton_perfiles" prefHeight="36.0" prefWidth="254.0" text="Perfiles" />
                         <Button layoutX="-1.0" layoutY="228.0" mnemonicParsing="false" onAction="#boton_cargos" prefHeight="36.0" prefWidth="254.0" text="Cargos Laborales" />
+                        <Button layoutX="-1.0" layoutY="372.0" mnemonicParsing="false" onAction="#boton_carga" prefHeight="36.0" prefWidth="254.0" text="Carga de datos" />
                      </children>
                   </Pane>
                </children>
@@ -69,11 +70,11 @@
                                     <Font name="System Bold" size="36.0" />
                                  </font>
                               </Label>
-                              <TableView layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
+                              <TableView fx:id="tablaUsuario" layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
                                  <columns>
-                                    <TableColumn prefWidth="62.39996528625488" text="ID" />
-                                    <TableColumn prefWidth="202.39995574951172" text="Apellido Paterno" />
-                                    <TableColumn prefWidth="176.0" text="Nombre" />
+                                    <TableColumn fx:id="colId" prefWidth="62.39996528625488" text="ID" />
+                                    <TableColumn fx:id="colApellidoPa" prefWidth="202.39995574951172" text="Apellido Paterno" />
+                                    <TableColumn fx:id="colNombre" prefWidth="176.0" text="Nombre" />
                                  </columns>
                               </TableView>
                               <Button layoutX="26.0" layoutY="146.0" mnemonicParsing="false" onAction="#boton_nueva_cuenta" prefHeight="28.0" prefWidth="185.0" styleClass="dark-blue" stylesheets="@cuenta.css" text="Nueva Cuenta" />
@@ -101,18 +102,18 @@
                   </Label>
                   <Pane layoutY="6.0" prefHeight="676.0" prefWidth="246.0">
                      <children>
-                        <Button fx:id="boton_editar" layoutX="19.0" layoutY="611.0" mnemonicParsing="false" onAction="#boton_Editar" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@cuenta.css" text="Editar Cuenta" textAlignment="CENTER" />
-                        <TextField layoutX="25.0" layoutY="304.0" />
+                        <Button fx:id="boton_editar" disable="true" layoutX="19.0" layoutY="611.0" mnemonicParsing="false" onAction="#boton_Editar" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@cuenta.css" text="Editar Cuenta" textAlignment="CENTER" />
+                        <TextField fx:id="textBoxDni" layoutX="25.0" layoutY="304.0" />
                         <Label layoutX="23.0" layoutY="351.0" text="Fecha de Nacimiento" />
-                        <TextField layoutX="25.0" layoutY="378.0" />
+                        <TextField fx:id="textBoxFechaNac" layoutX="25.0" layoutY="378.0" />
                      </children>
                   </Pane>
                   <Label layoutX="24.0" layoutY="69.0" text="Nombre" />
                   <Label layoutX="24.0" layoutY="142.0" text="Apellido Paterno" />
-                  <TextField layoutX="24.0" layoutY="100.0" />
-                  <TextField layoutX="24.0" layoutY="170.0" />
+                  <TextField fx:id="textBoxNombre" layoutX="24.0" layoutY="100.0" />
+                  <TextField fx:id="textBoxApellidoPa" layoutX="24.0" layoutY="170.0" />
                   <Label layoutX="24.0" layoutY="214.0" text="Apellido Materno" />
-                  <TextField layoutX="24.0" layoutY="244.0" />
+                  <TextField fx:id="textBoxApellidoMa" layoutX="24.0" layoutY="244.0" />
                   <Label layoutX="24.0" layoutY="290.0" text="DNI" />
                </children>
             </AnchorPane>

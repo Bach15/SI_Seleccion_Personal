@@ -38,6 +38,7 @@
                         <Button layoutY="151.0" mnemonicParsing="false" onAction="#boton_evaluacion" prefHeight="36.0" prefWidth="254.0" text="Evaluaciones" />
                         <Button layoutY="187.0" mnemonicParsing="false" onAction="#Boton_perfiles" prefHeight="36.0" prefWidth="254.0" text="Perfiles" />
                         <Button layoutY="223.0" mnemonicParsing="false" onAction="#boton_cargos" prefHeight="36.0" prefWidth="254.0" text="Cargos Laborales" />
+                        <Button layoutY="367.0" mnemonicParsing="false" onAction="#boton_carga" prefHeight="36.0" prefWidth="254.0" text="Carga de datos" />
                      </children>
                   </Pane>
                </children>
