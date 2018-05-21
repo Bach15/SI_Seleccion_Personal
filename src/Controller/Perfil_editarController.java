@@ -107,9 +107,9 @@ public class Perfil_editarController implements Initializable {
             
             List<Perfil> listCampos = perfildb.obtenerCamposxPerfil(perfil);
             for(int i=0; i<listCampos.size(); i++){
-                tablaOpciones.getItems().add(listCampos.get(i));
+                tablaCampos.getItems().add(listCampos.get(i));
             }
-            colOpciones.setCellValueFactory(new PropertyValueFactory<>("campos"));
+            colCampos.setCellValueFactory(new PropertyValueFactory<>("campos"));
         }
     }
 

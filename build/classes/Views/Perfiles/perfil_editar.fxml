@@ -114,7 +114,7 @@
                                           <TableColumn fx:id="colOpciones" prefWidth="299.20001220703125" text="Opciones" />
                                        </columns>
                                     </TableView>
-                                    <TextField disable="true" layoutX="349.0" layoutY="133.0" />
+                                    <TextField disable="true" layoutX="349.0" layoutY="133.0" prefHeight="25.0" prefWidth="140.0" />
                                     <Button disable="true" layoutX="506.0" layoutY="133.0" mnemonicParsing="false" text="Agregar" />
                                     <TextField disable="true" layoutX="341.0" layoutY="252.0" prefHeight="25.0" prefWidth="149.0" />
                                     <Button disable="true" layoutX="506.0" layoutY="252.0" mnemonicParsing="false" text="Agregar" />

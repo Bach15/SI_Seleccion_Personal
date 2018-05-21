@@ -159,6 +159,86 @@ public class PerfilDB {
         return listOpciones;
     }
     
+    public List<String> llenarComboxTipo(String tipo){
+        List<String> listOpciones = new ArrayList<>();
+        if(tipo.equals("Estudios")){
+            String query = "SELECT * FROM estudios";
+            
+            Connection conn = _db.getConnection();
+            try(PreparedStatement pstmt = conn.prepareStatement(query);
+                    ResultSet rs = pstmt.executeQuery()) {
+                while(rs.next()){
+                    Perfil perfilOp = new Perfil();
+                    perfilOp.setId_opcion(rs.getInt("id_estudios"));
+                    perfilOp.setOpciones(rs.getString("opcion"));
+                    listOpciones.add(perfilOp.getOpciones());
+                }
+                
+            }  catch (SQLException e) {
+                System.out.println(e.getMessage());
+            } 
+        }
+        else if(tipo.equals("Dominio del idioma")){
+            String query = "SELECT * FROM idioma";
+            
+            Connection conn = _db.getConnection();
+            try(PreparedStatement pstmt = conn.prepareStatement(query);
+                    ResultSet rs = pstmt.executeQuery()) {
+                while(rs.next()){
+                    Perfil perfilOp = new Perfil();
+                    perfilOp.setId_opcion(rs.getInt("id_idioma"));
+                    perfilOp.setOpciones(rs.getString("opcion"));
+                    listOpciones.add(perfilOp.getOpciones());
+                }
+                
+            }  catch (SQLException e) {
+                System.out.println(e.getMessage());
+            } 
+        }    
+        _db.closeConnection();
+        return listOpciones;
+    }
+    
+    public List<Perfil> llenarGrillaxTipo(String tipo){
+        List<Perfil> listCampos = new ArrayList<>();
+        if(tipo.equals("Manejo de Software")){
+            String query = "SELECT * FROM softwares";
+            
+            Connection conn = _db.getConnection();
+            try(PreparedStatement pstmt = conn.prepareStatement(query);
+                    ResultSet rs = pstmt.executeQuery()) {
+                while(rs.next()){
+                    Perfil perfilOp = new Perfil();
+                    perfilOp.setId_opcion(rs.getInt("id_software"));
+                    perfilOp.setCampos(rs.getString("tipo"));
+                    listCampos.add(perfilOp);
+                }
+                
+            }  catch (SQLException e) {
+                System.out.println(e.getMessage());
+            } 
+        }
+        else if(tipo.equals("Competencias")){
+            String query = "SELECT * FROM competencias";
+            
+            Connection conn = _db.getConnection();
+            try(PreparedStatement pstmt = conn.prepareStatement(query);
+                    ResultSet rs = pstmt.executeQuery()) {
+                while(rs.next()){
+                    Perfil perfilOp = new Perfil();
+                    perfilOp.setId_opcion(rs.getInt("id_competencia"));
+                    perfilOp.setCampos(rs.getString("tipo"));
+                    listCampos.add(perfilOp);
+                }
+                
+            }  catch (SQLException e) {
+                System.out.println(e.getMessage());
+            } 
+        }    
+        _db.closeConnection();
+        return listCampos;
+    }
+    
     public List<Perfil> obtenerCamposxPerfil(Perfil perfil){
         List<Perfil> listCampos = new ArrayList<>();
         if(perfil.getNombre().equals("Manejo de Software")){
@@ -170,7 +250,7 @@ public class PerfilDB {
                 while(rs.next()){
                     Perfil perfilCampos = new Perfil();
                     perfilCampos.setId_opcion(rs.getInt("id_software"));
-                    perfilCampos.setOpciones(rs.getString("tipo"));
+                    perfilCampos.setCampos(rs.getString("tipo"));
                     listCampos.add(perfilCampos);
                 }
                 
@@ -187,7 +267,7 @@ public class PerfilDB {
                 while(rs.next()){
                     Perfil perfilCampos = new Perfil();
                     perfilCampos.setId_opcion(rs.getInt("id_competencia"));
-                    perfilCampos.setOpciones(rs.getString("tipo"));
+                    perfilCampos.setCampos(rs.getString("tipo"));
                     listCampos.add(perfilCampos);
                 }
                 

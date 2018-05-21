@@ -213,6 +213,7 @@ public class Puestos_nuevoController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/perfil_puesto.fxml"));
         
         
+        
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

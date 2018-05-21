@@ -5,8 +5,13 @@
  */
 package Controller;
 
+import Model.Perfil;
+import Model.Puesto;
+import Model.database.PerfilDB;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,17 +37,19 @@ public class Perfil_puestoController implements Initializable {
     @FXML
     private Button BtnLogOut;
     @FXML
-    private ComboBox<?> comboEducacion;
+    private ComboBox<String> comboEducacion;
     @FXML
-    private ComboBox<?> comboIngHablado;
+    private ComboBox<String> comboIngHablado;
     @FXML
-    private ComboBox<?> comboIngEscrito;
+    private ComboBox<String> comboIngEscrito;
     @FXML
-    private ComboBox<?> comboIngLectura;
+    private ComboBox<String> comboIngLectura;
     @FXML
     private Color x4;
     @FXML
     private Font x3;
+    
+    private int idPuesto;
 
     /**
      * Initializes the controller class.
@@ -50,7 +57,18 @@ public class Perfil_puestoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+        PerfilDB perfildb = new PerfilDB();
+        List listPerfilEduca = perfildb.llenarComboxTipo("Estudios");
+        comboEducacion.getItems().addAll(listPerfilEduca);
+        List listPerfilIdioma = perfildb.llenarComboxTipo("Dominio del idioma");
+        comboIngHablado.getItems().addAll(listPerfilIdioma);
+        comboIngEscrito.getItems().addAll(listPerfilIdioma);
+        comboIngLectura.getItems().addAll(listPerfilIdioma);
+    }  
+    
+    public void SetIdPuesto(int id){
+        idPuesto = id;
+    }
 
     @FXML
     private void click_menu(MouseEvent event) throws IOException {
@@ -75,7 +93,7 @@ public class Perfil_puestoController implements Initializable {
     @FXML
     private void boton_siguiente(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/perfil_puesto_softwares.fxml"));
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root);       
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

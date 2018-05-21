@@ -4,7 +4,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
@@ -81,14 +80,12 @@
                                     <Font size="14.0" />
                                  </font>
                               </Button>
-                              <TableView layoutX="126.0" layoutY="208.0" prefHeight="267.0" prefWidth="520.0">
+                              <TableView fx:id="tablaSoftware" layoutX="56.0" layoutY="183.0" prefHeight="402.0" prefWidth="616.0">
                                  <columns>
-                                    <TableColumn prefWidth="315.2000045776367" text="Software" />
-                                    <TableColumn prefWidth="204.00003051757812" text="Opciones" />
+                                    <TableColumn fx:id="colSoftware" prefWidth="450.39998626708984" text="Software" />
+                                    <TableColumn fx:id="colOpciones" prefWidth="163.99996948242188" text="Opciones" />
                                  </columns>
                               </TableView>
-                              <ComboBox layoutX="206.0" layoutY="508.0" prefHeight="25.0" prefWidth="200.0" promptText="Escoger Software" />
-                              <Button layoutX="446.0" layoutY="508.0" mnemonicParsing="false" styleClass="bevel-grey" stylesheets="@puestos.css" text="Agregar" />
                            </children>
                         </Pane>
                      </children>

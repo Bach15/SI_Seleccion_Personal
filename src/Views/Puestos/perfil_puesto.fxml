@@ -88,35 +88,35 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="151.0" layoutY="223.0" text="Educacion">
+                              <Label layoutX="146.0" layoutY="236.0" text="Educacion">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="comboEducacion" layoutX="292.0" layoutY="221.0" prefHeight="25.0" prefWidth="190.0" />
-                              <Label layoutX="76.0" layoutY="295.0" text="Dominio del idioma: Nivel de ingles">
+                              <ComboBox fx:id="comboEducacion" layoutX="292.0" layoutY="234.0" prefHeight="25.0" prefWidth="190.0" promptText="Escoger Nivel" />
+                              <Label layoutX="72.0" layoutY="308.0" text="Dominio del idioma: Nivel de ingles">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="151.0" layoutY="349.0" text="Hablado">
+                              <Label layoutX="151.0" layoutY="372.0" text="Hablado">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="151.0" layoutY="395.0" text="Escrito">
+                              <Label layoutX="151.0" layoutY="435.0" text="Escritura">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="148.0" layoutY="436.0" text="Lectura">
+                              <Label layoutX="148.0" layoutY="500.0" text="Lectura">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="comboIngHablado" layoutX="292.0" layoutY="347.0" prefHeight="25.0" prefWidth="190.0" />
-                              <ComboBox fx:id="comboIngEscrito" layoutX="295.0" layoutY="392.0" prefHeight="25.0" prefWidth="190.0" />
-                              <ComboBox fx:id="comboIngLectura" layoutX="292.0" layoutY="434.0" prefHeight="25.0" prefWidth="190.0" />
+                              <ComboBox fx:id="comboIngHablado" layoutX="292.0" layoutY="369.0" prefHeight="25.0" prefWidth="190.0" promptText="Escoger Nivel" />
+                              <ComboBox fx:id="comboIngEscrito" layoutX="292.0" layoutY="433.0" prefHeight="25.0" prefWidth="190.0" promptText="Escoger Nivel" />
+                              <ComboBox fx:id="comboIngLectura" layoutX="292.0" layoutY="498.0" prefHeight="25.0" prefWidth="190.0" promptText="Escoger Nivel" />
                            </children>
                         </Pane>
                         <Button layoutX="274.0" layoutY="698.0" mnemonicParsing="false" onAction="#boton_siguiente" prefHeight="40.0" prefWidth="180.0" text="Siguiente">

@@ -5,8 +5,11 @@
  */
 package Controller;
 
+import Model.Perfil;
+import Model.database.PerfilDB;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +19,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -29,6 +35,15 @@ import javafx.stage.Stage;
 public class Perfil_puesto_softwaresController implements Initializable {
 
     @FXML
+    private TableView<Perfil> tablaSoftware;
+
+    @FXML
+    private TableColumn<Perfil, String> colSoftware;
+
+    @FXML
+    private TableColumn<?, ?> colOpciones;
+        
+    @FXML
     private Button BtnLogOut;
     @FXML
     private Color x4;
@@ -41,6 +56,12 @@ public class Perfil_puesto_softwaresController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        PerfilDB perfildb = new PerfilDB();
+        List<Perfil> listSoftware = perfildb.llenarGrillaxTipo("Manejo de Software");
+        for(int i=0; i<listSoftware.size();i++){
+            tablaSoftware.getItems().add(listSoftware.get(i));
+        }
+        colSoftware.setCellValueFactory(new PropertyValueFactory<>("campos"));
     }    
 
     @FXML

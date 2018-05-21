@@ -147,18 +147,18 @@ public class Area_mainController implements Initializable {
     
     @FXML
     private void boton_puestos(ActionEvent event) throws IOException {
-       
+        
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Views/Puestos/puestos_main.fxml"));
         Parent root = fxmlLoader.load();     
         Puestos_mainController puestosMain = fxmlLoader.getController();
         
-        
-        Area area = tablaArea.getSelectionModel().getSelectedItem();
+       Area area = tablaArea.getSelectionModel().getSelectedItem();
        
        puestosMain.SetIdArea(area.getId_area());
        puestosMain.setNombreArea(area.getNombre());
        puestosMain.setDescripcionArea(area.getDescripcion());
        puestosMain.afterInitialize(area);
+        
         
 //        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/puestos_main.fxml"));     
 

@@ -65,6 +65,30 @@ public class PuestoDB {
         return listPuesto;
     }
     
+    public List<Puesto> obtenerPuestoxArea(int codArea){
+        List<Puesto> listPuesto = new ArrayList<>();
+        String query = "SELECT * FROM puesto WHERE id_area = ?;";
+        
+        Connection conn = _db.getConnection();
+        try (PreparedStatement pstmt = conn.prepareStatement(query)){
+            pstmt.setInt(1, codArea);
+            
+            ResultSet rs = pstmt.executeQuery();
+            while(rs.next()){
+                Puesto puesto = new Puesto();
+                puesto.setId_puesto(rs.getInt("id_puesto"));
+                puesto.setId_area(rs.getInt("id_area"));
+                puesto.setNombre(rs.getString("nombre"));
+                puesto.setDescripcion(rs.getString("descripcion"));
+                listPuesto.add(puesto);
+            }
+        }  catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        _db.closeConnection();
+        return listPuesto;
+    }
+    
     public Puesto obtenerPuestoxId(int codigo){
         Puesto puesto = null;
         String query = "SELECT * FROM puesto WHERE id_puesto = ?;";

@@ -352,7 +352,7 @@ public class CargaDataController implements Initializable {
     }
 
     @FXML
-    private void onMouseClickExaminarCompetencia(ContextMenuEvent event) {
+    private void onMouseClickExaminarCompetencia(MouseEvent event) {
         FileChooser fileChooser = new FileChooser();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         File file = fileChooser.showOpenDialog(stage);

@@ -5,8 +5,11 @@
  */
 package Controller;
 
+import Model.Perfil;
+import Model.database.PerfilDB;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +19,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -30,6 +36,16 @@ public class Perfil_puesto_competenciasController implements Initializable {
 
     @FXML
     private Button BtnLogOut;
+    
+    @FXML
+    private TableView<Perfil> tablaCompetencia;
+
+    @FXML
+    private TableColumn<Perfil, String> colCompetencia;
+
+    @FXML
+    private TableColumn<?, ?> colOpciones;
+    
     @FXML
     private Color x4;
     @FXML
@@ -41,6 +57,12 @@ public class Perfil_puesto_competenciasController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        PerfilDB perfildb = new PerfilDB();
+        List<Perfil> listCompetencia = perfildb.llenarGrillaxTipo("Competencias");
+        for(int i=0; i<listCompetencia.size();i++){
+            tablaCompetencia.getItems().add(listCompetencia.get(i));
+        }
+        colCompetencia.setCellValueFactory(new PropertyValueFactory<>("campos"));
     }    
 
     @FXML
