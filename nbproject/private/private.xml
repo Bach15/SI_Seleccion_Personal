@@ -3,14 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Model/database/PerfilDB.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Perfil_puesto_softwaresController.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Perfil_editarController.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Perfil_puestoController.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Perfil_puesto_competenciasController.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Model/Perfil.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Views/Puestos/perfil_puesto_competencias.fxml</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Puestos_mainController.java</file>
+            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Postulante_nuevoController.java</file>
         </group>
     </open-files>
 </project-private>
