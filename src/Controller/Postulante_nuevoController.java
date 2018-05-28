@@ -108,7 +108,7 @@ public class Postulante_nuevoController implements Initializable {
 
     @FXML
     private void boton_guardar(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulantes_main.fxml"));
+        
         
         UsuarioDB usuariodb = new UsuarioDB();
         
@@ -129,6 +129,7 @@ public class Postulante_nuevoController implements Initializable {
         
         usuariodb.crearUsuario(_usuario);
         
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulantes_main.fxml"));
         Scene scene = new Scene(root);     
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

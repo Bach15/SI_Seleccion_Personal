@@ -26,6 +26,7 @@ public class Usuario {
     private int _tipo_usuario;
     private String _nombre_usuario;
     private String _contrasena;
+    private int _seleccionProceso;
     
     public Usuario(){
         
@@ -141,5 +142,13 @@ public class Usuario {
     
     public void setContrasena(String _contrasena){
         this._contrasena  = _contrasena;
+    }
+    
+    public int getSeleccionProceso(){
+        return _seleccionProceso;
+    }
+    
+    public void setSeleccionProceso(int _seleccionProceso){
+        this._seleccionProceso = _seleccionProceso;
     }
 }

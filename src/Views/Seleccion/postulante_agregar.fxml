@@ -86,12 +86,13 @@
                               <Button layoutX="217.0" layoutY="813.0" mnemonicParsing="false" onAction="#boton_guardar" prefHeight="40.0" prefWidth="180.0" text="Guardar" />
                               <Button layoutX="641.0" layoutY="813.0" mnemonicParsing="false" onAction="#boton_cancelar" prefHeight="40.0" prefWidth="180.0" text="Cancelar" />
                               <Button layoutX="822.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" text="Subir CV" />
-                              <TableView layoutX="78.0" layoutY="247.0" prefHeight="323.0" prefWidth="590.0">
+                              <TableView fx:id="tablaPostulante" layoutX="47.0" layoutY="247.0" prefHeight="323.0" prefWidth="651.0">
                                  <columns>
-                                    <TableColumn prefWidth="69.59996795654297" text="ID" />
-                                    <TableColumn prefWidth="144.79998779296875" text="Apellido P" />
-                                    <TableColumn prefWidth="201.5999755859375" text="Apellido M" />
-                                    <TableColumn prefWidth="176.00003051757812" text="Nombre" />
+                                    <TableColumn fx:id="colId" prefWidth="52.79998779296875" text="ID" />
+                                    <TableColumn fx:id="colApPaterno" prefWidth="127.20000457763672" text="Apellido P" />
+                                    <TableColumn fx:id="colApMaterno" prefWidth="152.800048828125" text="Apellido M" />
+                                    <TableColumn fx:id="colNombre" prefWidth="172.00015258789062" text="Nombre" />
+                                    <TableColumn fx:id="colOpcion" prefWidth="142.99993896484375" text="Opcion" />
                                  </columns>
                               </TableView>
                               <Button layoutX="634.0" layoutY="178.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" />

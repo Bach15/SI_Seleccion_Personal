@@ -81,7 +81,16 @@ public class Puestos_mainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        PuestoDB puestodb = new PuestoDB();
+        List<Puesto> listPuesto = puestodb.obtenerPuestoxArea(idArea);
+        for(int i=0; i<listPuesto.size();i++){
+            tablaPuestos.getItems().add(listPuesto.get(i));
+        }
         
+        colId.setCellValueFactory(new PropertyValueFactory<>("id_puesto"));
+        colPuesto.setCellValueFactory(new PropertyValueFactory<>("nombre")); 
+        
+        setCellValueFromTableToTextField();
     } 
     
     private void setCellValueFromTableToTextField(){

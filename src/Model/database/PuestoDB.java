@@ -100,7 +100,30 @@ public class PuestoDB {
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()){
                 puesto = new Puesto();
-                puesto.setId_area(rs.getInt("id_puesto"));
+                puesto.setId_puesto(rs.getInt("id_puesto"));
+                puesto.setId_area(rs.getInt("id_area"));
+                puesto.setNombre(rs.getString("nombre"));
+                puesto.setDescripcion(rs.getString("descripcion"));
+            }
+        }  catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        _db.closeConnection();
+        return puesto;
+    }
+    
+    public Puesto obtenerPuestoxNombre(String nombre){
+        Puesto puesto = null;
+        String query = "SELECT * FROM puesto WHERE nombre LIKE ?;";
+        
+        Connection conn = _db.getConnection();
+        try (PreparedStatement pstmt = conn.prepareStatement(query)){
+            pstmt.setString(1, nombre);
+            
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()){
+                puesto = new Puesto();
+                puesto.setId_puesto(rs.getInt("id_puesto"));
                 puesto.setId_area(rs.getInt("id_area"));
                 puesto.setNombre(rs.getString("nombre"));
                 puesto.setDescripcion(rs.getString("descripcion"));

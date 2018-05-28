@@ -11,7 +11,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,11 +24,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.ComboBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.util.converter.DefaultStringConverter;
 
 /**
  * FXML Controller class
@@ -44,25 +49,43 @@ public class Perfil_puesto_competenciasController implements Initializable {
     private TableColumn<Perfil, String> colCompetencia;
 
     @FXML
-    private TableColumn<?, ?> colOpciones;
+    private TableColumn<Perfil, String> colOpciones;
     
     @FXML
     private Color x4;
     @FXML
     private Font x3;
 
+    private ObservableList<String> opciones;
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        opciones = FXCollections.observableArrayList();
+        
         PerfilDB perfildb = new PerfilDB();
         List<Perfil> listCompetencia = perfildb.llenarGrillaxTipo("Competencias");
         for(int i=0; i<listCompetencia.size();i++){
             tablaCompetencia.getItems().add(listCompetencia.get(i));
         }
         colCompetencia.setCellValueFactory(new PropertyValueFactory<>("campos"));
+        
+        opciones.add("Bajo");
+        opciones.add("Medio Bajo");
+        opciones.add("Medio Alto");
+        opciones.add("Alto");
+        
+        colOpciones.setCellFactory(ComboBoxTableCell.forTableColumn(new DefaultStringConverter(), opciones));
+        colOpciones.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Perfil, String>>(){
+            @Override
+            public void handle(TableColumn.CellEditEvent<Perfil, String> event) {
+                System.out.println("Value : " + event.getNewValue());
+            }
+        });
+        tablaCompetencia.setEditable(true);
     }    
 
     @FXML

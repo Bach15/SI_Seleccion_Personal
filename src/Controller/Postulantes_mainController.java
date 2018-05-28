@@ -96,7 +96,7 @@ public class Postulantes_mainController implements Initializable {
         colApellidoPa.setCellValueFactory(new PropertyValueFactory<>("apellidoPa"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         
-        //setCellValueFromTableToTextField();
+        setCellValueFromTableToTextField();
     }   
     
     private void setCellValueFromTableToTextField(){

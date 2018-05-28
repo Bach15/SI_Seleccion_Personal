@@ -71,10 +71,10 @@
                                     <Font name="System Bold" size="32.0" />
                                  </font>
                               </Label>
-                              <TableView layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
+                              <TableView fx:id="tablaPuesto" layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
                                  <columns>
-                                    <TableColumn prefWidth="84.00003242492676" text="ID" />
-                                    <TableColumn prefWidth="358.3999557495117" text="Puesto Disponible" />
+                                    <TableColumn fx:id="colId" prefWidth="84.00003242492676" text="ID" />
+                                    <TableColumn fx:id="colPuesto" prefWidth="358.3999557495117" text="Puesto Disponible" />
                                  </columns>
                               </TableView>
                               <Button layoutX="26.0" layoutY="146.0" mnemonicParsing="false" onAction="#boton_nuevo_proceso" prefHeight="28.0" prefWidth="230.0" styleClass="dark-blue" stylesheets="@seleccion.css" text="Nuevo Proceso de selección" />
@@ -102,14 +102,14 @@
                   </Label>
                   <Pane layoutY="6.0" prefHeight="676.0" prefWidth="246.0">
                      <children>
-                        <Button fx:id="boton_editar" layoutX="22.0" layoutY="577.0" mnemonicParsing="false" onAction="#boton_Editar" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@seleccion.css" text="Editar Proceso de selección" textAlignment="CENTER" />
-                        <Button fx:id="boton_editar1" layoutX="19.0" layoutY="626.0" mnemonicParsing="false" onAction="#boton_proceso_postulante" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@seleccion.css" text="Postulantes" textAlignment="CENTER" />
+                        <Button fx:id="boton_editar" disable="true" layoutX="22.0" layoutY="577.0" mnemonicParsing="false" onAction="#boton_Editar" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@seleccion.css" text="Editar Proceso de selección" textAlignment="CENTER" />
+                        <Button fx:id="boton_candidatos" disable="true" layoutX="19.0" layoutY="626.0" mnemonicParsing="false" onAction="#boton_proceso_postulante" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@seleccion.css" text="Postulantes" textAlignment="CENTER" />
                         <Label layoutX="22.0" layoutY="169.0" prefHeight="18.0" prefWidth="162.0" text="Descripción" />
-                        <TextArea fx:id="textBoxDir" editable="false" layoutX="22.0" layoutY="197.0" prefHeight="70.0" prefWidth="178.0" />
+                        <TextArea fx:id="textBoxDesc" editable="false" layoutX="22.0" layoutY="197.0" prefHeight="70.0" prefWidth="178.0" />
                      </children>
                   </Pane>
                   <Label layoutX="21.0" layoutY="93.0" prefHeight="18.0" prefWidth="142.0" text="Puesto disponible" />
-                  <TextField fx:id="textBoxRazonS" editable="false" layoutX="21.0" layoutY="128.0" prefHeight="26.0" prefWidth="162.0" />
+                  <TextField fx:id="textBoxPuesto" editable="false" layoutX="21.0" layoutY="128.0" prefHeight="26.0" prefWidth="162.0" />
                </children>
             </AnchorPane>
          </items>

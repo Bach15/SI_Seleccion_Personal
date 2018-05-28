@@ -65,16 +65,16 @@
                         <Pane layoutY="79.0" prefHeight="593.0" prefWidth="494.0">
                            <children>
                               <Button layoutX="437.0" layoutY="101.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" />
-                              <Label layoutX="21.0" layoutY="17.0" text="Puesto disponible">
+                              <Label fx:id="tituloPuesto" layoutX="21.0" layoutY="17.0" text="Puesto disponible">
                                  <font>
                                     <Font name="System Bold" size="36.0" />
                                  </font>
                               </Label>
-                              <TableView layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
+                              <TableView fx:id="tablaPostulantes" layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
                                  <columns>
-                                    <TableColumn prefWidth="62.39996528625488" text="ID" />
-                                    <TableColumn prefWidth="195.19991302490234" text="Apellido Paterno" />
-                                    <TableColumn prefWidth="184.800048828125" text="Nombre" />
+                                    <TableColumn fx:id="colId" prefWidth="62.39996528625488" text="ID" />
+                                    <TableColumn fx:id="colApellido" prefWidth="195.19991302490234" text="Apellido Paterno" />
+                                    <TableColumn fx:id="colNombre" prefWidth="184.800048828125" text="Nombre" />
                                  </columns>
                               </TableView>
                               <Button layoutX="26.0" layoutY="146.0" mnemonicParsing="false" onAction="#boton_agregar_postulante" prefHeight="28.0" prefWidth="185.0" styleClass="dark-blue" stylesheets="@seleccion.css" text="Agregar Postulante" />
@@ -107,17 +107,17 @@
                   </Label>
                   <Pane layoutY="6.0" prefHeight="676.0" prefWidth="246.0">
                      <children>
-                        <TextField layoutX="25.0" layoutY="304.0" />
+                        <TextField fx:id="textBoxDni" layoutX="25.0" layoutY="304.0" />
                         <Label layoutX="23.0" layoutY="351.0" text="Fecha de Nacimiento" />
-                        <TextField layoutX="25.0" layoutY="378.0" />
+                        <TextField fx:id="textBoxFecha" layoutX="25.0" layoutY="378.0" />
                      </children>
                   </Pane>
                   <Label layoutX="24.0" layoutY="69.0" text="Nombre" />
                   <Label layoutX="24.0" layoutY="142.0" text="Apellido Paterno" />
-                  <TextField layoutX="24.0" layoutY="100.0" />
-                  <TextField layoutX="24.0" layoutY="170.0" />
+                  <TextField fx:id="textBoxNombre" layoutX="24.0" layoutY="100.0" />
+                  <TextField fx:id="textBoxApPaterno" layoutX="24.0" layoutY="170.0" />
                   <Label layoutX="24.0" layoutY="214.0" text="Apellido Materno" />
-                  <TextField layoutX="24.0" layoutY="244.0" />
+                  <TextField fx:id="textBoxApMaterno" layoutX="24.0" layoutY="244.0" />
                   <Label layoutX="24.0" layoutY="290.0" text="DNI" />
                </children>
             </AnchorPane>

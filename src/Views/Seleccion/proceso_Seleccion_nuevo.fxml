@@ -96,14 +96,14 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextArea layoutX="316.0" layoutY="435.0" prefHeight="78.0" prefWidth="230.0" />
+                        <TextArea fx:id="campoDescripcion" layoutX="316.0" layoutY="435.0" prefHeight="78.0" prefWidth="230.0" />
                         <Label layoutX="139.0" layoutY="259.0" text="Puesto">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <ComboBox layoutX="316.0" layoutY="208.0" prefHeight="25.0" prefWidth="222.0" />
-                        <ComboBox layoutX="316.0" layoutY="260.0" prefHeight="25.0" prefWidth="222.0" />
+                        <ComboBox fx:id="comboBoxArea" layoutX="316.0" layoutY="208.0" onAction="#click_comboArea" prefHeight="25.0" prefWidth="222.0" />
+                        <ComboBox fx:id="comboBoxPuesto" disable="true" layoutX="316.0" layoutY="260.0" prefHeight="25.0" prefWidth="222.0" />
                         <Label layoutX="136.0" layoutY="321.0" text="Fecha inicio">
                            <font>
                               <Font size="18.0" />
@@ -114,8 +114,8 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <DatePicker layoutX="319.0" layoutY="322.0" prefHeight="22.0" prefWidth="222.0" />
-                        <DatePicker layoutX="319.0" layoutY="377.0" prefHeight="25.0" prefWidth="222.0" />
+                        <DatePicker fx:id="campoFechaIn" layoutX="319.0" layoutY="322.0" prefHeight="22.0" prefWidth="222.0" />
+                        <DatePicker fx:id="campoFechaFin" layoutX="319.0" layoutY="377.0" prefHeight="25.0" prefWidth="222.0" />
                      </children>
                   </AnchorPane>
                </content>
