@@ -82,6 +82,7 @@ public class Proceso_Seleccion_nuevoController implements Initializable {
             areasObservable.add(listArea.get(i).getNombre());
         }
         comboBoxArea.getItems().addAll(areasObservable);
+        
     }
 
     @FXML
@@ -98,6 +99,7 @@ public class Proceso_Seleccion_nuevoController implements Initializable {
         }
         comboBoxPuesto.getItems().clear();
         comboBoxPuesto.getItems().addAll(puestosObservable);
+        comboBoxPuesto.setDisable(false);
     }
 
     @FXML
@@ -147,8 +149,8 @@ public class Proceso_Seleccion_nuevoController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show(); 
-    }
-
+    }   
+    
     @FXML
     private void boton_cancelar(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/proceso_Seleccion_main.fxml"));

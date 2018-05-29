@@ -156,6 +156,15 @@ public class Proceso_Seleccion_postulanteController implements Initializable {
 //    }
     
     @FXML
+    private void boton_escoger_perfiles(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulante_perfil.fxml"));
+        Scene scene = new Scene(root);     
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    @FXML
     private void click_salida(MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seguridad/Login.fxml"));
         Scene scene = new Scene(root);

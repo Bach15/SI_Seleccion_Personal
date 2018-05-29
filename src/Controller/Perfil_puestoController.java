@@ -92,6 +92,14 @@ public class Perfil_puestoController implements Initializable {
 
     @FXML
     private void boton_siguiente(ActionEvent event) throws IOException {
+        PerfilDB perfildb = new PerfilDB();
+        
+        perfildb.agregarEstudio(idPuesto, comboEducacion.getSelectionModel().getSelectedItem());
+        String habla = comboIngHablado.getSelectionModel().getSelectedItem();
+        String escritura = comboIngEscrito.getSelectionModel().getSelectedItem();
+        String lectura = comboIngLectura.getSelectionModel().getSelectedItem();
+        perfildb.agregarIdioma(idPuesto, habla, escritura, lectura);
+        
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/perfil_puesto_softwares.fxml"));
         Scene scene = new Scene(root);       
         

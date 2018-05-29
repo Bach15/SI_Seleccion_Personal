@@ -278,4 +278,50 @@ public class PerfilDB {
         _db.closeConnection();
         return listCampos;
     }
+    
+    public void agregarEstudio(int id_puesto, String tipo){
+        String query = "INSERT INTO puesto_x_estudio(id_puesto, id_estudios, estudios_min) VALUES(?,?,?);";
+        Connection conn = _db.getConnection();
+        try(PreparedStatement pstmt = conn.prepareStatement(query)){
+            pstmt.setInt(1, id_puesto);
+            pstmt.setInt(2, 1);
+            if(tipo.equals("Ninguna")) pstmt.setInt(3, 1);
+            else if(tipo.equals("Secundaria completa")) pstmt.setInt(3, 2);
+            else if(tipo.equals("Estudiantes ultimos ciclos")) pstmt.setInt(3, 3);
+            else if(tipo.equals("Egresado")) pstmt.setInt(3, 4);
+            else if(tipo.equals("Bachiller")) pstmt.setInt(3, 5);
+            else if(tipo.equals("Titulo")) pstmt.setInt(3, 6);
+            
+            ResultSet rs = pstmt.executeQuery();
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        _db.closeConnection();    
+    }
+    
+    public void agregarIdioma(int id_puesto, String habla, String escritura, String lectura){
+        String query = "INSERT INTO puesto_x_idioma(id_puesto, id_idioma, habla_min, escritura_min, lectura_min)"
+                + " VALUES(?,?,?,?,?);";
+        Connection conn = _db.getConnection();
+        try(PreparedStatement pstmt = conn.prepareStatement(query)){
+            pstmt.setInt(1, id_puesto);
+            pstmt.setInt(2, 2);
+            pstmt.setInt(3, identificarIdioma(habla));
+            pstmt.setInt(4, identificarIdioma(escritura));
+            pstmt.setInt(5, identificarIdioma(lectura));
+            
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        _db.closeConnection();  
+    }
+    
+    public int identificarIdioma(String nivel){
+        if(nivel.equals("Ninguno")) return 1;
+        else if(nivel.equals("Basico")) return 2;
+        else if(nivel.equals("Intermedio")) return 3;
+        else if(nivel.equals("Avanzado")) return 4;
+        return 0;
+    }
+    
 }

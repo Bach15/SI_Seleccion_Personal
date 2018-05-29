@@ -102,8 +102,8 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="comboBoxArea" layoutX="316.0" layoutY="208.0" onAction="#click_comboArea" prefHeight="25.0" prefWidth="222.0" />
-                        <ComboBox fx:id="comboBoxPuesto" disable="true" layoutX="316.0" layoutY="260.0" prefHeight="25.0" prefWidth="222.0" />
+                        <ComboBox fx:id="comboBoxArea" layoutX="316.0" layoutY="208.0" onAction="#click_comboArea" prefHeight="25.0" prefWidth="222.0" promptText="Escoger Area" />
+                        <ComboBox fx:id="comboBoxPuesto" disable="true" layoutX="316.0" layoutY="260.0" prefHeight="25.0" prefWidth="222.0" promptText="Escoger Puesto" />
                         <Label layoutX="136.0" layoutY="321.0" text="Fecha inicio">
                            <font>
                               <Font size="18.0" />

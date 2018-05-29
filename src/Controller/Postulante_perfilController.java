@@ -84,7 +84,7 @@ public class Postulante_perfilController implements Initializable {
 
     @FXML
     private void boton_cancelar(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulante_nuevo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/proceso_Seleccion_postulante.fxml"));
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
