@@ -35,6 +35,9 @@ public class Postulante_perfil_competenciaController implements Initializable {
     private Color x4;
     @FXML
     private Font x3;
+    
+    private int id_postulante;
+    private int id_puesto;
 
     /**
      * Initializes the controller class.
@@ -42,7 +45,15 @@ public class Postulante_perfil_competenciaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }  
+    
+    public void setIdPostulante(int codigo){
+        id_postulante = codigo;
+    }
+    
+    public void setIdPuesto(int codPuesto){
+        id_puesto = codPuesto;
+    }
 
     @FXML
     private void click_menu(MouseEvent event) throws IOException {

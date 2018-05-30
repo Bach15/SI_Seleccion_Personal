@@ -81,8 +81,13 @@ public class Proceso_Seleccion_postulanteController implements Initializable {
     @FXML
     private TextField textBoxApMaterno;
     
+     @FXML
+    private Button botonPerfilEscoger;
+    
 
     private int id_proceso;
+    private int id_puesto;
+    private int id_postulante;
 
     /**
      * Initializes the controller class.
@@ -119,12 +124,14 @@ public class Proceso_Seleccion_postulanteController implements Initializable {
                 textBoxApMaterno.setText(String.valueOf(pl.getApellidoMa()));
                 textBoxDni.setText(String.valueOf(pl.getDni()));
                 textBoxFecha.setText(String.valueOf(pl.getFechaNac()));
+                
             }
         });        
     }
 
     public void afterInitialize(ProcesoSeleccion proceso){
         tituloPuesto.setText(proceso.getPuesto());
+        id_puesto = proceso.getId_puesto();
         id_proceso = proceso.getId_proceso();
         ProcesoSeleccionDB procesodb = new ProcesoSeleccionDB();
         List<Usuario> listUsuario = procesodb.obtenerPostulantes(id_proceso);
@@ -157,7 +164,16 @@ public class Proceso_Seleccion_postulanteController implements Initializable {
     
     @FXML
     private void boton_escoger_perfiles(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulante_perfil.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulante_perfil.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Views/Seleccion/postulante_perfil.fxml"));
+        Parent root = fxmlLoader.load(); 
+        Postulante_perfilController postulantePerfil = fxmlLoader.getController();
+        
+        
+        Usuario postulante = tablaPostulantes.getSelectionModel().getSelectedItem();
+        postulantePerfil.setIdPostulante(postulante.getId_usuario());
+        postulantePerfil.setIdPuesto(id_puesto);
+        
         Scene scene = new Scene(root);     
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

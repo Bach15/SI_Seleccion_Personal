@@ -34,6 +34,9 @@ public class Postulante_perfil_softwareController implements Initializable {
     private Color x4;
     @FXML
     private Font x3;
+    
+    private int id_postulante;
+    private int id_puesto;
 
     /**
      * Initializes the controller class.
@@ -41,7 +44,15 @@ public class Postulante_perfil_softwareController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    } 
+    
+    public void setIdPostulante(int codigo){
+        id_postulante = codigo;
+    }
+    
+    public void setIdPuesto(int codPuesto){
+        id_puesto = codPuesto;
+    }
 
     @FXML
     private void click_menu(MouseEvent event) throws IOException {
@@ -65,7 +76,16 @@ public class Postulante_perfil_softwareController implements Initializable {
 
     @FXML
     private void boton_siguiente(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulante_perfil_competencia.fxml"));
+        
+        
+        //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulante_perfil_competencia.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Views/Seleccion/postulante_perfil_competencia.fxml"));
+        Parent root = fxmlLoader.load();     
+        Postulante_perfil_competenciaController competenciaMain = fxmlLoader.getController();
+        
+        competenciaMain.setIdPostulante(id_postulante);
+        competenciaMain.setIdPuesto(id_puesto);
+        
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

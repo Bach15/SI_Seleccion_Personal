@@ -105,12 +105,12 @@
                         <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
                      </textFill>
                   </Label>
-                  <Pane layoutY="6.0" prefHeight="676.0" prefWidth="246.0">
+                  <Pane layoutX="-11.0" layoutY="14.0" prefHeight="676.0" prefWidth="246.0">
                      <children>
                         <TextField fx:id="textBoxDni" layoutX="25.0" layoutY="304.0" />
                         <Label layoutX="23.0" layoutY="351.0" text="Fecha de Nacimiento" />
                         <TextField fx:id="textBoxFecha" layoutX="25.0" layoutY="378.0" />
-                        <Button layoutX="47.0" layoutY="611.0" mnemonicParsing="false" onAction="#boton_escoger_perfiles" prefHeight="25.0" prefWidth="152.0" styleClass="bevel-grey" stylesheets="@seleccion.css" text="Escoger perfiles" />
+                        <Button fx:id="botonPerfilEscoger" disable="true" layoutX="47.0" layoutY="611.0" mnemonicParsing="false" onAction="#boton_escoger_perfiles" prefHeight="25.0" prefWidth="152.0" styleClass="bevel-grey" stylesheets="@seleccion.css" text="Escoger perfiles" />
                      </children>
                   </Pane>
                   <Label layoutX="24.0" layoutY="69.0" text="Nombre" />

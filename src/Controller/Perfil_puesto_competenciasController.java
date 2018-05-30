@@ -58,6 +58,8 @@ public class Perfil_puesto_competenciasController implements Initializable {
 
     private ObservableList<String> opciones;
     
+    private int idPuesto;
+    
     /**
      * Initializes the controller class.
      */
@@ -86,7 +88,11 @@ public class Perfil_puesto_competenciasController implements Initializable {
             }
         });
         tablaCompetencia.setEditable(true);
-    }    
+    }
+
+    public void SetIdPuesto(int id){
+        idPuesto = id;
+    }
 
     @FXML
     private void click_menu(MouseEvent event) throws IOException {

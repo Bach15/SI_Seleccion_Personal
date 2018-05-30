@@ -55,6 +55,7 @@ public class Perfil_puesto_softwaresController implements Initializable {
     @FXML
     private Font x3;
 
+    private int idPuesto;
     
     private ObservableList<String> opciones;
     /**
@@ -87,7 +88,11 @@ public class Perfil_puesto_softwaresController implements Initializable {
         });
         tablaSoftware.setEditable(true);
         
-    }    
+    }  
+    
+    public void SetIdPuesto(int id){
+        idPuesto = id;
+    }
 
     @FXML
     private void click_menu(MouseEvent event) throws IOException {
@@ -111,7 +116,15 @@ public class Perfil_puesto_softwaresController implements Initializable {
 
     @FXML
     private void boton_siguiente(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/perfil_puesto_competencias.fxml"));
+        
+        
+        //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/perfil_puesto_competencias.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Views/Puestos/perfil_puesto_competencias.fxml"));
+        Parent root = fxmlLoader.load();     
+        Perfil_puesto_competenciasController competenciaMain = fxmlLoader.getController();
+        
+        competenciaMain.SetIdPuesto(idPuesto);        
+        
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
