@@ -119,16 +119,16 @@ public class Postulante_agregarController implements Initializable {
     private void agregarLista(Usuario usuarioSeleccionado){
         int repetido = 0;
         for(int i=0; i<listUsuarioSeleccionado.size(); i++){
-                if(listUsuarioSeleccionado.get(i).getDni().equals(usuarioSeleccionado.getDni()))
-                    repetido = 1;
+            if(listUsuarioSeleccionado.get(i).getDni().equals(usuarioSeleccionado.getDni()))
+                repetido = 1;
         }
         if(usuarioSeleccionado.getSeleccionProceso() == 1){
             if(repetido == 0)
                 listUsuarioSeleccionado.add(usuarioSeleccionado);
         }
         else{
-           if(repetido == 1)
-               listUsuarioSeleccionado.remove(usuarioSeleccionado);
+            if(repetido == 1)
+                listUsuarioSeleccionado.remove(usuarioSeleccionado);
         }
     }
     

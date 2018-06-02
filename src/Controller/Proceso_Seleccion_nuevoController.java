@@ -95,7 +95,7 @@ public class Proceso_Seleccion_nuevoController implements Initializable {
         Area area = areadb.obtenerAreaxNombre(comboBoxArea.getSelectionModel().getSelectedItem());
         List<Puesto> listPuesto = puestodb.obtenerPuestoxArea(area.getId_area());
         for(int i=0; i<listPuesto.size(); i++){
-            puestosObservable.add(listPuesto.get(i).getDescripcion());
+            puestosObservable.add(listPuesto.get(i).getNombre());
         }
         comboBoxPuesto.getItems().clear();
         comboBoxPuesto.getItems().addAll(puestosObservable);
@@ -123,9 +123,7 @@ public class Proceso_Seleccion_nuevoController implements Initializable {
     }
 
     @FXML
-    private void boton_guardar(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/proceso_Seleccion_main.fxml"));
-        
+    private void boton_guardar(ActionEvent event) throws IOException {    
         ProcesoSeleccionDB procesodb = new ProcesoSeleccionDB();
         AreaDB areadb = new AreaDB();
         PuestoDB puestodb = new PuestoDB();
@@ -139,11 +137,11 @@ public class Proceso_Seleccion_nuevoController implements Initializable {
         puesto = puestodb.obtenerPuestoxNombre(_proceso.getPuesto());
         _proceso.setId_puesto(puesto.getId_puesto());
         _proceso.setFechaIn(Date.valueOf(campoFechaIn.getValue()));
-        _proceso.setFechaIn(Date.valueOf(campoFechaFin.getValue()));
+        _proceso.setFechaFin(Date.valueOf(campoFechaFin.getValue()));
         _proceso.setDescripcion(campoDescripcion.getText());
         
         procesodb.crearProcesoSeleccion(_proceso);
-        
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/proceso_Seleccion_main.fxml"));
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

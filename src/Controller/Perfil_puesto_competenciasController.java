@@ -9,6 +9,7 @@ import Model.Perfil;
 import Model.database.PerfilDB;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -59,7 +60,8 @@ public class Perfil_puesto_competenciasController implements Initializable {
     private ObservableList<String> opciones;
     
     private int idPuesto;
-    
+    private Perfil competenciaSeleccionado;
+    private List<Perfil> listCompetenciaSeleccionado;
     /**
      * Initializes the controller class.
      */
@@ -67,14 +69,17 @@ public class Perfil_puesto_competenciasController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         opciones = FXCollections.observableArrayList();
-        
+        competenciaSeleccionado = new Perfil();
+        listCompetenciaSeleccionado = new ArrayList<>();
         PerfilDB perfildb = new PerfilDB();
         List<Perfil> listCompetencia = perfildb.llenarGrillaxTipo("Competencias");
         for(int i=0; i<listCompetencia.size();i++){
+            listCompetencia.get(i).setCompetenciaSeleccionado(0);
             tablaCompetencia.getItems().add(listCompetencia.get(i));
         }
         colCompetencia.setCellValueFactory(new PropertyValueFactory<>("campos"));
         
+        opciones.add("Ninguno");
         opciones.add("Bajo");
         opciones.add("Medio Bajo");
         opciones.add("Medio Alto");
@@ -85,13 +90,45 @@ public class Perfil_puesto_competenciasController implements Initializable {
             @Override
             public void handle(TableColumn.CellEditEvent<Perfil, String> event) {
                 System.out.println("Value : " + event.getNewValue());
+                if(event.getNewValue().equals("Ninguno"))
+                    competenciaSeleccionado.setCompetenciaSeleccionado(0);
+                else if(event.getNewValue().equals("Bajo"))
+                    competenciaSeleccionado.setCompetenciaSeleccionado(1);
+                else if(event.getNewValue().equals("Medio Bajo"))
+                    competenciaSeleccionado.setCompetenciaSeleccionado(2);
+                else if(event.getNewValue().equals("Medio Alto"))
+                    competenciaSeleccionado.setCompetenciaSeleccionado(3);
+                else if(event.getNewValue().equals("Alto"))   
+                    competenciaSeleccionado.setCompetenciaSeleccionado(4);
+                agregarLista(competenciaSeleccionado);
             }
         });
         tablaCompetencia.setEditable(true);
+        
+        setCellValueFromTableToTextField();
     }
 
     public void SetIdPuesto(int id){
         idPuesto = id;
+    }
+    
+    private void agregarLista(Perfil perfilSeleccionado){
+        for(int i=0; i<listCompetenciaSeleccionado.size(); i++){
+            if(listCompetenciaSeleccionado.get(i).getCampos().equals(perfilSeleccionado.getCampos()))
+                listCompetenciaSeleccionado.remove(listCompetenciaSeleccionado.get(i));
+        }
+        listCompetenciaSeleccionado.add(perfilSeleccionado);
+    }
+    
+    private void setCellValueFromTableToTextField(){
+        tablaCompetencia.setOnMouseClicked(new EventHandler<MouseEvent>(){
+            @Override
+            public void handle(MouseEvent event){
+                Perfil pl = tablaCompetencia.getItems().get(tablaCompetencia.getSelectionModel().getSelectedIndex());
+                PerfilDB perfildb = new PerfilDB();
+                competenciaSeleccionado = pl;
+            }        
+        });
     }
 
     @FXML
@@ -118,6 +155,9 @@ public class Perfil_puesto_competenciasController implements Initializable {
     private void boton_guardar(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/puestos_nuevo.fxml"));
         Scene scene = new Scene(root);
+        
+        PerfilDB perfildb = new PerfilDB();
+        perfildb.agregarCompetenciaXPuesto(idPuesto, listCompetenciaSeleccionado);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

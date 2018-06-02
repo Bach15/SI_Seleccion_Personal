@@ -119,6 +119,76 @@ public class PerfilDB {
         return perfil;
     } 
     
+    public Perfil obtenerPerfilXId(int id_perfil,String tipo){
+        Perfil perfil = null;
+        if(tipo.equals("Estudios")){
+            String query = "SELECT * FROM estudios WHERE id_estudios = ?;";
+            Connection conn = _db.getConnection();
+            try (PreparedStatement pstmt = conn.prepareStatement(query)){
+                pstmt.setInt(1, id_perfil);
+            
+                ResultSet rs = pstmt.executeQuery();
+                if(rs.next()){
+                    perfil = new Perfil();
+                    perfil.setId_opcion(rs.getInt("id_estudios"));
+                    perfil.setOpciones(rs.getString("opcion"));
+                }
+            } catch (SQLException e){
+                System.out.println(e.getMessage());
+            }
+        }
+        if(tipo.equals("Dominio del idioma")){
+            String query = "SELECT * FROM idioma WHERE id_idioma = ?;";
+            Connection conn = _db.getConnection();
+            try (PreparedStatement pstmt = conn.prepareStatement(query)){
+                pstmt.setInt(1, id_perfil);
+            
+                ResultSet rs = pstmt.executeQuery();
+                if(rs.next()){
+                    perfil = new Perfil();
+                    perfil.setId_opcion(rs.getInt("id_idioma"));
+                    perfil.setOpciones(rs.getString("opcion"));
+                }
+            } catch (SQLException e){
+                System.out.println(e.getMessage());
+            }
+        }
+        if(tipo.equals("Manejo de Software")){
+            String query = "SELECT * FROM softwares WHERE id_software = ?;";
+            Connection conn = _db.getConnection();
+            try (PreparedStatement pstmt = conn.prepareStatement(query)){
+                pstmt.setInt(1, id_perfil);
+            
+                ResultSet rs = pstmt.executeQuery();
+                if(rs.next()){
+                    perfil = new Perfil();
+                    perfil.setId_campo(rs.getInt("id_software"));
+                    perfil.setCampos(rs.getString("tipo"));
+                }
+            } catch (SQLException e){
+                System.out.println(e.getMessage());
+            }
+        }
+        if(tipo.equals("Competencias")){
+            String query = "SELECT * FROM competencias WHERE id_competencia= ?;";
+            Connection conn = _db.getConnection();
+            try (PreparedStatement pstmt = conn.prepareStatement(query)){
+                pstmt.setInt(1, id_perfil);
+            
+                ResultSet rs = pstmt.executeQuery();
+                if(rs.next()){
+                    perfil = new Perfil();
+                    perfil.setId_campo(rs.getInt("id_competencia"));
+                    perfil.setCampos(rs.getString("tipo"));
+                }
+            } catch (SQLException e){
+                System.out.println(e.getMessage());
+            }
+        }
+        _db.closeConnection();
+        return perfil;
+    }
+    
     public List<Perfil> obtenerOpcionesxPerfil(Perfil perfil){
         List<Perfil> listOpciones = new ArrayList<>();
         if(perfil.getNombre().equals("Estudios")){
@@ -209,7 +279,7 @@ public class PerfilDB {
                     ResultSet rs = pstmt.executeQuery()) {
                 while(rs.next()){
                     Perfil perfilOp = new Perfil();
-                    perfilOp.setId_opcion(rs.getInt("id_software"));
+                    perfilOp.setId_campo(rs.getInt("id_software"));
                     perfilOp.setCampos(rs.getString("tipo"));
                     listCampos.add(perfilOp);
                 }
@@ -226,7 +296,7 @@ public class PerfilDB {
                     ResultSet rs = pstmt.executeQuery()) {
                 while(rs.next()){
                     Perfil perfilOp = new Perfil();
-                    perfilOp.setId_opcion(rs.getInt("id_competencia"));
+                    perfilOp.setId_campo(rs.getInt("id_competencia"));
                     perfilOp.setCampos(rs.getString("tipo"));
                     listCampos.add(perfilOp);
                 }
@@ -234,6 +304,50 @@ public class PerfilDB {
             }  catch (SQLException e) {
                 System.out.println(e.getMessage());
             } 
+        }    
+        _db.closeConnection();
+        return listCampos;
+    }
+    
+    public List<Perfil> llenarGrillaxPuesto(String tipo, int id_puesto){
+        List<Perfil> listCampos = new ArrayList<>();
+        if(tipo.equals("Manejo de Software")){
+            String query = "SELECT * FROM puesto_x_software WHERE id_puesto = ?;";
+            
+            Connection conn = _db.getConnection();
+            try (PreparedStatement pstmt = conn.prepareStatement(query)){
+                pstmt.setInt(1, id_puesto);
+            
+                ResultSet rs = pstmt.executeQuery();
+                while(rs.next()){
+                    Perfil perfilOp = new Perfil();
+                    perfilOp.setId_campo(rs.getInt("id_software"));
+                    perfilOp = obtenerPerfilXId(perfilOp.getId_campo(), tipo);
+                    listCampos.add(perfilOp);
+                }
+                
+            }  catch (SQLException e) {
+                System.out.println(e.getMessage());
+            } 
+        }
+        else if(tipo.equals("Competencias")){
+            String query = "SELECT * FROM puesto_x_competencia WHERE id_puesto = ?";
+            
+            Connection conn = _db.getConnection();
+            try (PreparedStatement pstmt = conn.prepareStatement(query)){
+                pstmt.setInt(1, id_puesto);
+            
+                ResultSet rs = pstmt.executeQuery();
+                while(rs.next()){
+                    Perfil perfilOp = new Perfil();
+                    perfilOp.setId_campo(rs.getInt("id_competencia"));
+                    perfilOp = obtenerPerfilXId(perfilOp.getId_campo(), tipo);
+                    listCampos.add(perfilOp);
+                }
+                
+            }  catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
         }    
         _db.closeConnection();
         return listCampos;
@@ -310,6 +424,7 @@ public class PerfilDB {
             pstmt.setInt(4, identificarIdioma(escritura));
             pstmt.setInt(5, identificarIdioma(lectura));
             
+            ResultSet rs = pstmt.executeQuery();
         } catch (SQLException e){
             System.out.println(e.getMessage());
         }
@@ -324,8 +439,50 @@ public class PerfilDB {
         return 0;
     }
     
+    public void agregarSoftwareXPuesto(int id_puesto, List<Perfil>listSoftware){
+        
+        for(int i=0; i<listSoftware.size(); i++){
+            if(listSoftware.get(i).getSoftwareSeleccionado()>0){
+                String query = "INSERT INTO puesto_x_software(id_puesto, id_software, software_min) "
+                        + "VALUES(?,?,?);";
+                Connection conn = _db.getConnection();
+                try(PreparedStatement pstmt = conn.prepareStatement(query)){
+                   pstmt.setInt(1, id_puesto); 
+                   pstmt.setInt(2, listSoftware.get(i).getId_campo()); //id_perfil = software
+                   pstmt.setInt(3, listSoftware.get(i).getSoftwareSeleccionado());
+                   
+                   ResultSet rs = pstmt.executeQuery();
+                } catch (SQLException e){
+                    System.out.println(e.getMessage());
+                }
+            }    
+        }    
+        _db.closeConnection();
+    }
+    
+    public void agregarCompetenciaXPuesto(int id_puesto, List<Perfil>listCompetencia){
+        
+        for(int i=0; i<listCompetencia.size(); i++){
+            if(listCompetencia.get(i).getCompetenciaSeleccionado()>0){
+                String query = "INSERT INTO puesto_x_competencia(id_puesto, id_competencia, competencia_min) "
+                        + "VALUES(?,?,?);";
+                Connection conn = _db.getConnection();
+                try(PreparedStatement pstmt = conn.prepareStatement(query)){
+                   pstmt.setInt(1, id_puesto); 
+                   pstmt.setInt(2, listCompetencia.get(i).getId_campo()); //id_perfil = software
+                   pstmt.setInt(3, listCompetencia.get(i).getCompetenciaSeleccionado());
+                   
+                   ResultSet rs = pstmt.executeQuery();
+                } catch (SQLException e){
+                    System.out.println(e.getMessage());
+                }
+            }    
+        }    
+        _db.closeConnection();
+    }
+    
     public void agregarEstudioXUsuario(int id_usuario, String tipo){
-        String query = "INSERT INTO usuario_x_estudio(id_puesto, id_estudios, estudios_min) VALUES(?,?,?);";
+        String query = "INSERT INTO usuario_x_estudio(id_usuario, id_estudios, estudios_min) VALUES(?,?,?);";
         Connection conn = _db.getConnection();
         try(PreparedStatement pstmt = conn.prepareStatement(query)){
             pstmt.setInt(1, id_usuario);
@@ -345,7 +502,7 @@ public class PerfilDB {
     }
     
     public void agregarIdiomaXUsuario(int id_usuario, String habla, String escritura, String lectura){
-        String query = "INSERT INTO usuario_x_idioma(id_puesto, id_idioma, habla_min, escritura_min, lectura_min)"
+        String query = "INSERT INTO usuario_x_idioma(id_usuario, id_idioma, habla_min, escritura_min, lectura_min)"
                 + " VALUES(?,?,?,?,?);";
         Connection conn = _db.getConnection();
         try(PreparedStatement pstmt = conn.prepareStatement(query)){
@@ -355,10 +512,49 @@ public class PerfilDB {
             pstmt.setInt(4, identificarIdioma(escritura));
             pstmt.setInt(5, identificarIdioma(lectura));
             
+            ResultSet rs = pstmt.executeQuery();
         } catch (SQLException e){
             System.out.println(e.getMessage());
         }
         _db.closeConnection();  
+    }
+    
+    public void agregarSoftwareXUsuario(int id_usuario, List<Perfil>listSoftware){
+        
+        for(int i=0; i<listSoftware.size(); i++){
+            String query = "INSERT INTO usuario_x_software(id_usuario, id_software, software_min) "
+                    + "VALUES(?,?,?);";
+            Connection conn = _db.getConnection();
+            try(PreparedStatement pstmt = conn.prepareStatement(query)){
+               pstmt.setInt(1, id_usuario); 
+               pstmt.setInt(2, listSoftware.get(i).getId_campo()); //id_perfil = software
+               pstmt.setInt(3, listSoftware.get(i).getPostulanteSelectSoftware());
+
+               ResultSet rs = pstmt.executeQuery();
+            } catch (SQLException e){
+                System.out.println(e.getMessage());
+            }
+        }    
+        _db.closeConnection();
+    }
+    
+    public void agregarCompetenciaXUsuario(int id_usuario, List<Perfil>listCompetencia){
+        
+        for(int i=0; i<listCompetencia.size(); i++){
+            String query = "INSERT INTO usuario_x_competencia(id_usuario, id_competencia, competencia_min) "
+                    + "VALUES(?,?,?);";
+            Connection conn = _db.getConnection();
+            try(PreparedStatement pstmt = conn.prepareStatement(query)){
+               pstmt.setInt(1, id_usuario); 
+               pstmt.setInt(2, listCompetencia.get(i).getId_campo()); //id_perfil = software
+               pstmt.setInt(3, listCompetencia.get(i).getPostulanteSelectCompetencia());
+
+               ResultSet rs = pstmt.executeQuery();
+            } catch (SQLException e){
+                System.out.println(e.getMessage());
+            }  
+        }    
+        _db.closeConnection();
     }
     
 }

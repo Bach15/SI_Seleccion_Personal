@@ -90,7 +90,27 @@ public class Puestos_nuevoController implements Initializable {
         stage.show();
     }
     
-    
+    @FXML
+    private void boton_Escoger_perfiles(ActionEvent event) throws IOException {
+        //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/perfil_puesto.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Views/Puestos/perfil_puesto.fxml"));
+        Parent root = fxmlLoader.load();  
+        Perfil_puestoController perfilPuesto = fxmlLoader.getController();
+                
+        PuestoDB puestoDB = new PuestoDB();
+        _puesto.setNombre(campoNombre.getText());
+        _puesto.setDescripcion(campoDescripcion.getText());
+        _puesto.setId_area(idArea);
+        
+        puestoDB.crearPuesto(_puesto);
+        
+        perfilPuesto.SetIdPuesto(_puesto.getId_puesto());
+        
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     private void boton_guardar(ActionEvent event) throws IOException {
@@ -102,11 +122,11 @@ public class Puestos_nuevoController implements Initializable {
         PuestoDB puestoDB = new PuestoDB();
         AreaDB areadb = new AreaDB();
         
-        _puesto.setNombre(campoNombre.getText());
-        _puesto.setDescripcion(campoDescripcion.getText());
-        _puesto.setId_area(idArea);
-        
-        puestoDB.crearPuesto(_puesto);
+//        _puesto.setNombre(campoNombre.getText());
+//        _puesto.setDescripcion(campoDescripcion.getText());
+//        _puesto.setId_area(idArea);
+//        
+//        puestoDB.crearPuesto(_puesto);
        
         Area area = areadb.obtenerAreaxId(idArea);
         
@@ -203,18 +223,6 @@ public class Puestos_nuevoController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/area_main.fxml"));
         Scene scene = new Scene(root);
         
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    private void boton_Escoger_perfiles(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/perfil_puesto.fxml"));
-        
-        
-        
-        Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();

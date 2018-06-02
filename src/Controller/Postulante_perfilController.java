@@ -48,6 +48,7 @@ public class Postulante_perfilController implements Initializable {
 
     private int id_postulante;
     private int id_puesto;
+    private int id_proceso;
     /**
      * Initializes the controller class.
      */
@@ -69,6 +70,10 @@ public class Postulante_perfilController implements Initializable {
     
     public void setIdPuesto(int codPuesto){
         id_puesto = codPuesto;
+    }
+    
+    public void setIdProceso(int codProceso){
+        id_proceso = codProceso;
     }
     
     @FXML
@@ -106,8 +111,7 @@ public class Postulante_perfilController implements Initializable {
         Parent root = fxmlLoader.load();     
         Postulante_perfil_softwareController softwareMain = fxmlLoader.getController();
         
-        softwareMain.setIdPostulante(id_postulante);
-        softwareMain.setIdPuesto(id_puesto);
+        softwareMain.afterInitialize(id_postulante, id_puesto, id_proceso);
         
         Scene scene = new Scene(root);
        

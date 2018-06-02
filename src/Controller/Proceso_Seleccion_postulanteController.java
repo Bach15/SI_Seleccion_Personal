@@ -124,9 +124,31 @@ public class Proceso_Seleccion_postulanteController implements Initializable {
                 textBoxApMaterno.setText(String.valueOf(pl.getApellidoMa()));
                 textBoxDni.setText(String.valueOf(pl.getDni()));
                 textBoxFecha.setText(String.valueOf(pl.getFechaNac()));
-                
+                botonPerfilEscoger.setDisable(false);
             }
-        });        
+        });
+        
+    }
+    
+    public void afterRegister(int codProceso){
+        ProcesoSeleccionDB procesodb = new ProcesoSeleccionDB();
+        ProcesoSeleccion proceso = new ProcesoSeleccion();
+        proceso = procesodb.obtenerProcesoxId(id_proceso);
+        tituloPuesto.setText(proceso.getPuesto());
+        id_puesto = proceso.getId_puesto();
+        id_proceso = proceso.getId_proceso();
+        List<Usuario> listUsuario = procesodb.obtenerPostulantes(id_proceso);
+        
+        for(int i=0; i<listUsuario.size(); i++){
+            if(listUsuario.get(i).getTipo_Usuario() == 1)
+                tablaPostulantes.getItems().add(listUsuario.get(i));
+        }
+        
+        colId.setCellValueFactory(new PropertyValueFactory<>("id_usuario"));
+        colApellido.setCellValueFactory(new PropertyValueFactory<>("apellidoPa"));
+        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        
+        setCellValueFromTableToTextField();
     }
 
     public void afterInitialize(ProcesoSeleccion proceso){
@@ -173,6 +195,7 @@ public class Proceso_Seleccion_postulanteController implements Initializable {
         Usuario postulante = tablaPostulantes.getSelectionModel().getSelectedItem();
         postulantePerfil.setIdPostulante(postulante.getId_usuario());
         postulantePerfil.setIdPuesto(id_puesto);
+        postulantePerfil.setIdProceso(id_proceso);
         
         Scene scene = new Scene(root);     
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
