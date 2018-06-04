@@ -3,20 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Postulante_perfil_softwareController.java</file>
+            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Model/database/TipoEvaluacionDB.java</file>
+            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Model/database/PuestoDB.java</file>
+            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Model/database/EvaluacionDB.java</file>
+            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Tipo_Evaluaciones_nuevoController.java</file>
+            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Area_mainController.java</file>
             <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Postulante_agregarController.java</file>
+            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Model/Area.java</file>
             <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Proceso_Seleccion_postulanteController.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Model/Perfil.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Postulante_perfil_competenciaController.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Model/database/PerfilDB.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Perfil_puesto_softwaresController.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Perfil_puestoController.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Views/Seleccion/proceso_Seleccion_postulante.fxml</file>
+            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Model/database/AreaDB.java</file>
+            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Area_nuevoController.java</file>
+            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Tipo_Evaluaciones_mainController.java</file>
+            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Model/Puesto.java</file>
+            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Model/Evaluacion.java</file>
+            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Model/TipoEvaluacion.java</file>
             <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Postulante_perfilController.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Perfil_puesto_competenciasController.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Model/database/ProcesoSeleccionDB.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Puestos_nuevoController.java</file>
-            <file>file:/C:/Users/Carlos/Documents/Cursos/Tesis%201/Sistema/Repo_Seleccion_personal/Staff_selection/src/Controller/Puestos_mainController.java</file>
         </group>
     </open-files>
 </project-private>

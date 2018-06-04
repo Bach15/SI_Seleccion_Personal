@@ -27,6 +27,7 @@ public class Usuario {
     private String _nombre_usuario;
     private String _contrasena;
     private int _seleccionProceso;
+    private double _puntaje;
     
     public Usuario(){
         
@@ -150,5 +151,13 @@ public class Usuario {
     
     public void setSeleccionProceso(int _seleccionProceso){
         this._seleccionProceso = _seleccionProceso;
+    }
+    
+    public Double getPuntaje(){
+        return _puntaje;
+    }
+    
+    public void setPuntaje(double _puntaje){
+        this._puntaje = _puntaje;
     }
 }

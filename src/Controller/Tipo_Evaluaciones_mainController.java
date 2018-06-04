@@ -5,11 +5,14 @@
  */
 package Controller;
 
-import java.awt.event.MouseEvent;
+import Model.TipoEvaluacion;
+import Model.database.TipoEvaluacionDB;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,8 +21,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -38,13 +45,22 @@ public class Tipo_Evaluaciones_mainController implements Initializable {
     @FXML
     private Font x1;
     @FXML
-    private TextField textBoxRazonS;
+    private TableView<TipoEvaluacion> tablaTipo;
+
     @FXML
-    private TextArea textBoxDir;
+    private TableColumn<TipoEvaluacion, Integer> colId;
+
+    @FXML
+    private TableColumn<TipoEvaluacion, String> colTipo;
+    @FXML
+    private TextField textBoxTipo;
+
+    @FXML
+    private TextArea textBoxDesc;
     @FXML
     private Button boton_editar;
     @FXML
-    private Button boton_editar1;
+    private Button boton_escogerEvaluaciones;
     @FXML
     private Color x4;
     @FXML
@@ -56,7 +72,31 @@ public class Tipo_Evaluaciones_mainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        TipoEvaluacionDB tipoEvaluaciondb = new TipoEvaluacionDB();
+        List<TipoEvaluacion> listTipo = tipoEvaluaciondb.obtenerTipoEvaluacion();
+        for(int i=0; i<listTipo.size(); i++){
+            tablaTipo.getItems().add(listTipo.get(i));
+        }
+        colId.setCellValueFactory(new PropertyValueFactory<>("_id_tipoEvaluacion"));
+        colTipo.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        
+        setCellValueFromTableToTextField();
     }    
+    
+    private void setCellValueFromTableToTextField(){
+        tablaTipo.setOnMouseClicked(new EventHandler<MouseEvent>(){
+            @Override
+            public void handle(MouseEvent event){
+                TipoEvaluacion pl = tablaTipo.getItems().get(tablaTipo.getSelectionModel().getSelectedIndex());
+                TipoEvaluacionDB tipoEvaluaciondb = new TipoEvaluacionDB();
+                pl = tipoEvaluaciondb.obtenerTipoEvaluacionxId(pl.getId_tipoEvaluacion());
+                textBoxTipo.setText(String.valueOf(pl.getNombre()));
+                textBoxDesc.setText(String.valueOf(pl.getDescripcion()));
+                boton_editar.setDisable(false);
+                boton_escogerEvaluaciones.setDisable(false);
+            }
+        });
+    }
     
 
     @FXML
@@ -101,7 +141,7 @@ public class Tipo_Evaluaciones_mainController implements Initializable {
     }
 
     @FXML
-    private void boton_evaluaciones(ActionEvent event) throws IOException {
+    void escoger_evaluaciones(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/evaluacion_main.fxml"));
         Scene scene = new Scene(root);
         
@@ -109,6 +149,7 @@ public class Tipo_Evaluaciones_mainController implements Initializable {
         stage.setScene(scene);
         stage.show(); 
     }
+
 
 @FXML
     private void boton_Postulante(ActionEvent event) throws IOException {

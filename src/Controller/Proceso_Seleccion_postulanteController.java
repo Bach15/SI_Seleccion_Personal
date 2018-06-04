@@ -60,6 +60,9 @@ public class Proceso_Seleccion_postulanteController implements Initializable {
     private TableColumn<Usuario, String> colNombre;
     
     @FXML
+    private TableColumn<Usuario, Double> colPuntaje;
+    
+    @FXML
     private Color x2;
     @FXML
     private Font x1;
@@ -108,6 +111,7 @@ public class Proceso_Seleccion_postulanteController implements Initializable {
         colId.setCellValueFactory(new PropertyValueFactory<>("id_usuario"));
         colApellido.setCellValueFactory(new PropertyValueFactory<>("apellidoPa"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        colPuntaje.setCellValueFactory(new PropertyValueFactory<>("puntaje"));
         
         setCellValueFromTableToTextField();
     }
@@ -133,7 +137,7 @@ public class Proceso_Seleccion_postulanteController implements Initializable {
     public void afterRegister(int codProceso){
         ProcesoSeleccionDB procesodb = new ProcesoSeleccionDB();
         ProcesoSeleccion proceso = new ProcesoSeleccion();
-        proceso = procesodb.obtenerProcesoxId(id_proceso);
+        proceso = procesodb.obtenerProcesoxId(codProceso);
         tituloPuesto.setText(proceso.getPuesto());
         id_puesto = proceso.getId_puesto();
         id_proceso = proceso.getId_proceso();

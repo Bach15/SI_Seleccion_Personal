@@ -56,8 +56,10 @@ public class UsuarioDB {
             pstmt2.setInt(2, usuario.getTipo_Usuario());
             if(usuario.getTipo_Usuario()== 0)
                 pstmt2.setString(3, usuario.getNombre_usuario());
-            else if(usuario.getTipo_Usuario()== 1)
+            else if(usuario.getTipo_Usuario()== 1){
                 pstmt2.setString(3, String.valueOf(usuario.getDni()));
+                usuario.setPuntaje(0.0);
+            }
             pstmt2.setString(4, "Novatronic2018");
             
             ResultSet rs2 = pstmt2.executeQuery();

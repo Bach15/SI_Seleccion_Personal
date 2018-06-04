@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import Model.TipoEvaluacion;
+import Model.database.TipoEvaluacionDB;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
@@ -16,7 +18,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -31,9 +36,15 @@ public class Tipo_Evaluaciones_nuevoController implements Initializable {
     @FXML
     private Button BtnLogOut;
     @FXML
+    private TextField campoNombre;
+    @FXML
+    private TextArea campoDescripcion;
+    @FXML
     private Color x4;
     @FXML
     private Font x3;
+    
+    private TipoEvaluacion _tipoEvaluacion;
 
     /**
      * Initializes the controller class.
@@ -41,10 +52,24 @@ public class Tipo_Evaluaciones_nuevoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        _tipoEvaluacion = new TipoEvaluacion();
     } 
     
     @FXML
     void boton_cancelar(ActionEvent event) throws IOException {
+        TipoEvaluacionDB tipoEvaluaciondb = new TipoEvaluacionDB();
+        
+        _tipoEvaluacion.setNombre(campoNombre.getText());
+        _tipoEvaluacion.setDescripcion(campoDescripcion.getText());
+        
+        tipoEvaluaciondb.crearTipoEvaluacion(_tipoEvaluacion);
+        
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Registro de tipo evaluacion");
+        alert.setHeaderText("Tipo evaluacion registrada con éxito");
+        alert.setContentText("El tipo de evaluacion "+_tipoEvaluacion.getNombre()+" ha sido registrado con éxito.");
+        alert.showAndWait();
+        
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/tipo_Evaluaciones_main.fxml"));
         Scene scene = new Scene(root);
         

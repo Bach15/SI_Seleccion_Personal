@@ -73,8 +73,9 @@
                               <TableView fx:id="tablaPostulantes" layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
                                  <columns>
                                     <TableColumn fx:id="colId" prefWidth="62.39996528625488" text="ID" />
-                                    <TableColumn fx:id="colApellido" prefWidth="195.19991302490234" text="Apellido Paterno" />
-                                    <TableColumn fx:id="colNombre" prefWidth="184.800048828125" text="Nombre" />
+                                    <TableColumn fx:id="colApellido" prefWidth="137.60002899169922" text="Apellido Paterno" />
+                                    <TableColumn fx:id="colNombre" prefWidth="146.39999389648438" text="Nombre" />
+                                    <TableColumn fx:id="colPuntaje" prefWidth="94.4000244140625" text="Puntaje" />
                                  </columns>
                               </TableView>
                               <Button layoutX="26.0" layoutY="146.0" mnemonicParsing="false" onAction="#boton_agregar_postulante" prefHeight="28.0" prefWidth="185.0" styleClass="dark-blue" stylesheets="@seleccion.css" text="Agregar Postulante" />

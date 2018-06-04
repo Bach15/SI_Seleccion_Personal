@@ -71,10 +71,10 @@
                                     <Font name="System Bold" size="36.0" />
                                  </font>
                               </Label>
-                              <TableView layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
+                              <TableView fx:id="tablaTipo" layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
                                  <columns>
-                                    <TableColumn prefWidth="96.00000190734863" text="ID" />
-                                    <TableColumn prefWidth="345.59996795654297" text="Tipo de evaluación" />
+                                    <TableColumn fx:id="colId" prefWidth="96.00000190734863" text="ID" />
+                                    <TableColumn fx:id="colTipo" prefWidth="345.59996795654297" text="Tipo de evaluación" />
                                  </columns>
                               </TableView>
                               <Button layoutX="26.0" layoutY="146.0" mnemonicParsing="false" onAction="#boton_Nuevo_Tipo_Evaluacion" prefHeight="28.0" prefWidth="230.0" styleClass="dark-blue" stylesheets="@evaluacion.css" text="Nuevo Tipo de evaluación" />
@@ -102,14 +102,14 @@
                   </Label>
                   <Pane layoutY="6.0" prefHeight="676.0" prefWidth="246.0">
                      <children>
-                        <Button fx:id="boton_editar" layoutX="22.0" layoutY="577.0" mnemonicParsing="false" onAction="#boton_editar_tipoEvaluacion" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@evaluacion.css" text="Editar Tipo de evaluación" textAlignment="CENTER" />
-                        <Button fx:id="boton_editar1" layoutX="19.0" layoutY="626.0" mnemonicParsing="false" onAction="#boton_evaluaciones" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@evaluacion.css" text="Evaluaciones" textAlignment="CENTER" />
+                        <Button fx:id="boton_editar" disable="true" layoutX="22.0" layoutY="577.0" mnemonicParsing="false" onAction="#boton_editar_tipoEvaluacion" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@evaluacion.css" text="Editar Tipo de evaluación" textAlignment="CENTER" />
+                        <Button fx:id="boton_escogerEvaluaciones" disable="true" layoutX="19.0" layoutY="626.0" mnemonicParsing="false" onAction="#escoger_evaluaciones" prefHeight="36.0" prefWidth="209.0" styleClass="rich-blue" stylesheets="@evaluacion.css" text="Evaluaciones" textAlignment="CENTER" />
                      </children>
                   </Pane>
                   <Label layoutX="21.0" layoutY="93.0" prefHeight="18.0" prefWidth="142.0" text="Tipo de evaluación" />
-                  <TextField fx:id="textBoxRazonS" editable="false" layoutX="21.0" layoutY="128.0" prefHeight="26.0" prefWidth="162.0" />
+                  <TextField fx:id="textBoxTipo" editable="false" layoutX="21.0" layoutY="128.0" prefHeight="26.0" prefWidth="162.0" />
                   <Label layoutX="21.0" layoutY="203.0" prefHeight="18.0" prefWidth="162.0" text="Descripción" />
-                  <TextArea fx:id="textBoxDir" editable="false" layoutX="24.0" layoutY="236.0" prefHeight="92.0" prefWidth="178.0" />
+                  <TextArea fx:id="textBoxDesc" editable="false" layoutX="24.0" layoutY="236.0" prefHeight="92.0" prefWidth="178.0" />
                </children>
             </AnchorPane>
          </items>
