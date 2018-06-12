@@ -119,14 +119,14 @@ public class Puestos_nuevoController implements Initializable {
         Parent root = fxmlLoader.load();     
         Puestos_mainController puestosMain = fxmlLoader.getController();
         
-        PuestoDB puestoDB = new PuestoDB();
+        PuestoDB puestodb = new PuestoDB();
         AreaDB areadb = new AreaDB();
         
 //        _puesto.setNombre(campoNombre.getText());
 //        _puesto.setDescripcion(campoDescripcion.getText());
 //        _puesto.setId_area(idArea);
 //        
-//        puestoDB.crearPuesto(_puesto);
+//        puestodb.crearPuesto(_puesto);
        
         Area area = areadb.obtenerAreaxId(idArea);
         

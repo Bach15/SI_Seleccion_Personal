@@ -32,10 +32,10 @@
                         </Button>
                      </children>
                   </Pane>
-                  <TableView layoutX="167.0" layoutY="280.0" prefHeight="416.0" prefWidth="766.0">
+                  <TableView fx:id="tablaPsicologica" layoutX="57.0" layoutY="280.0" prefHeight="416.0" prefWidth="1011.0">
                      <columns>
-                        <TableColumn prefWidth="544.0000610351562" text="Pregunta" />
-                        <TableColumn prefWidth="220.800048828125" text="Respuesta" />
+                        <TableColumn fx:id="colPregunta" prefWidth="453.6000213623047" text="Pregunta" />
+                        <TableColumn fx:id="colRespuesta" prefWidth="555.199951171875" text="Respuesta" />
                      </columns>
                   </TableView>
                   <Label layoutX="43.0" layoutY="97.0" text="Prueba Psicologica">
@@ -48,7 +48,7 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Button layoutX="460.0" layoutY="731.0" mnemonicParsing="false" onAction="#boton_guardar" prefHeight="40.0" prefWidth="180.0" text="Guardar" />
+                  <Button layoutX="460.0" layoutY="731.0" mnemonicParsing="false" onAction="#boton_siguiente" prefHeight="40.0" prefWidth="180.0" text="Siguiente" />
                   <Button layoutX="770.0" layoutY="217.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" text="Descargar prueba" />
                </children>
             </Pane>

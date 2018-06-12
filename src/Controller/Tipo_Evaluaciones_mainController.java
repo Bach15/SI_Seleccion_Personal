@@ -77,7 +77,7 @@ public class Tipo_Evaluaciones_mainController implements Initializable {
         for(int i=0; i<listTipo.size(); i++){
             tablaTipo.getItems().add(listTipo.get(i));
         }
-        colId.setCellValueFactory(new PropertyValueFactory<>("_id_tipoEvaluacion"));
+        colId.setCellValueFactory(new PropertyValueFactory<>("id_tipoEvaluacion"));
         colTipo.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         
         setCellValueFromTableToTextField();
@@ -142,7 +142,14 @@ public class Tipo_Evaluaciones_mainController implements Initializable {
 
     @FXML
     void escoger_evaluaciones(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/evaluacion_main.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/evaluacion_main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Views/Evaluaciones/evaluacion_main.fxml"));
+        Parent root = fxmlLoader.load();  
+        Evaluacion_mainController evaluacionMain = fxmlLoader.getController();
+        
+        TipoEvaluacion tipo = tablaTipo.getSelectionModel().getSelectedItem();  
+        evaluacionMain.afterInitialize(tipo);
+        
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

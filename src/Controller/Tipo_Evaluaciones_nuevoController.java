@@ -57,6 +57,16 @@ public class Tipo_Evaluaciones_nuevoController implements Initializable {
     
     @FXML
     void boton_cancelar(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/tipo_Evaluaciones_main.fxml"));
+        Scene scene = new Scene(root);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show(); 
+    }
+
+    @FXML
+    void boton_guardar(ActionEvent event) throws IOException {
         TipoEvaluacionDB tipoEvaluaciondb = new TipoEvaluacionDB();
         
         _tipoEvaluacion.setNombre(campoNombre.getText());
@@ -70,16 +80,6 @@ public class Tipo_Evaluaciones_nuevoController implements Initializable {
         alert.setContentText("El tipo de evaluacion "+_tipoEvaluacion.getNombre()+" ha sido registrado con éxito.");
         alert.showAndWait();
         
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/tipo_Evaluaciones_main.fxml"));
-        Scene scene = new Scene(root);
-        
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show(); 
-    }
-
-    @FXML
-    void boton_guardar(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Evaluaciones/tipo_Evaluaciones_main.fxml"));
         Scene scene = new Scene(root);
         

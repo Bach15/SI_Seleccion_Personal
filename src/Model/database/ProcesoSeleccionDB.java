@@ -211,4 +211,22 @@ public class ProcesoSeleccionDB {
         return listUsuario;
     }
     
+    public ProcesoSeleccion obtenerProcesoxPostulante(int id_usuario){
+        ProcesoSeleccion proceso = new ProcesoSeleccion();
+        String query = "SELECT * FROM procesodeseleccion_x_usuario "
+                + "WHERE id_usuario = ?;";
+        Connection conn = _db.getConnection();
+        try (PreparedStatement pstmt = conn.prepareStatement(query)){
+            pstmt.setInt(1, id_usuario);
+            
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                proceso = obtenerProcesoxId(rs.getInt("id_seleccion"));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } 
+        _db.closeConnection();
+        return proceso;
+    }
 }

@@ -29,6 +29,7 @@ public class MenuPostulanteController implements Initializable {
     @FXML
     private Button BtnLogOut;
 
+    private int id_usuario;
     /**
      * Initializes the controller class.
      */
@@ -37,13 +38,23 @@ public class MenuPostulanteController implements Initializable {
         // TODO
     }    
 
+    public void setId_Usuario(int codUsuario){
+        id_usuario = codUsuario;
+    }
+    
     @FXML
     private void boton_Usuario(MouseEvent event) {
     }
 
     @FXML
     private void boton_evaluacion(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Test/test_conocimientos.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Test/test_conocimientos.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Views/Test/test_psicologico.fxml"));
+        Parent root = fxmlLoader.load(); 
+        Test_psicologicoController testPsicologico = fxmlLoader.getController();
+        
+        testPsicologico.afterInitialize(id_usuario);
+        
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -58,8 +58,8 @@ public class Test_conocimientosController implements Initializable {
     }
 
     @FXML
-    private void boton_siguiente(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Test/test_psicologico.fxml"));
+    private void boton_terminar(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Menu/MenuPostulante.fxml"));
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

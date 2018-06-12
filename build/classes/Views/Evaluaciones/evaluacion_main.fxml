@@ -66,15 +66,15 @@
                         <Pane layoutY="79.0" prefHeight="593.0" prefWidth="494.0">
                            <children>
                               <Button layoutX="437.0" layoutY="101.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" />
-                              <Label layoutX="21.0" layoutY="17.0" prefHeight="36.0" prefWidth="395.0" text="Nombre del Tipo de Evaluación">
+                              <Label fx:id="tiuloEvaluacion" layoutX="21.0" layoutY="17.0" prefHeight="36.0" prefWidth="395.0" text="Nombre del Tipo de Evaluación">
                                  <font>
                                     <Font name="System Bold" size="25.0" />
                                  </font>
                               </Label>
-                              <TableView layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
+                              <TableView fx:id="tablaEvaluacion" layoutX="26.0" layoutY="195.0" prefHeight="327.0" prefWidth="443.0">
                                  <columns>
-                                    <TableColumn prefWidth="96.00000190734863" text="ID" />
-                                    <TableColumn prefWidth="345.59996795654297" text="Evaluación" />
+                                    <TableColumn fx:id="colId" prefWidth="96.00000190734863" text="ID" />
+                                    <TableColumn fx:id="colEvaluacion" prefWidth="345.59996795654297" text="Evaluación" />
                                  </columns>
                               </TableView>
                               <Button layoutX="26.0" layoutY="146.0" mnemonicParsing="false" onAction="#boton_nuevaEvaluacion" prefHeight="28.0" prefWidth="178.0" styleClass="dark-blue" stylesheets="@evaluacion.css" text="Nueva evaluación" />
@@ -111,9 +111,9 @@
                      </children>
                   </Pane>
                   <Label layoutX="21.0" layoutY="93.0" prefHeight="18.0" prefWidth="142.0" text="Evaluación" />
-                  <TextField fx:id="textBoxRazonS" editable="false" layoutX="21.0" layoutY="128.0" prefHeight="26.0" prefWidth="162.0" />
+                  <TextField fx:id="textBoxEvaluacion" editable="false" layoutX="21.0" layoutY="128.0" prefHeight="26.0" prefWidth="162.0" />
                   <Label layoutX="21.0" layoutY="203.0" prefHeight="18.0" prefWidth="162.0" text="Descripción" />
-                  <TextArea fx:id="textBoxDir" editable="false" layoutX="24.0" layoutY="236.0" prefHeight="92.0" prefWidth="178.0" />
+                  <TextArea fx:id="textBoxDesc" editable="false" layoutX="24.0" layoutY="236.0" prefHeight="92.0" prefWidth="178.0" />
                </children>
             </AnchorPane>
          </items>
