@@ -20,9 +20,10 @@ public class Perfil {
     private String _campos;
     private int _id_opcion;
     private String _opciones;
+    private int _nivel;
     private int _softwareSeleccionado;
     private int _competenciaSeleccionado;
-    private int _PostulanteSelectSoftare;
+    private int _PostulanteSelectSoftware;
     private int _PostulanteSelectCompetencia;
     
     public Perfil(){
@@ -91,6 +92,14 @@ public class Perfil {
         this._opciones  = _opciones;
     }
     
+    public Integer getNivel(){
+        return _nivel;
+    }
+    
+    public void setNivel(int _nivel){
+        this._nivel = _nivel;
+    }
+    
     public int getSoftwareSeleccionado(){
         return _softwareSeleccionado;
     }
@@ -108,11 +117,11 @@ public class Perfil {
     }
     
     public int getPostulanteSelectSoftware(){
-        return _PostulanteSelectSoftare;
+        return _PostulanteSelectSoftware;
     }
     
     public void setPostulanteSelectSoftware(int _seleccion){
-        this._PostulanteSelectSoftare = _seleccion;
+        this._PostulanteSelectSoftware = _seleccion;
     }
     
     public int getPostulanteSelectCompetencia(){

@@ -101,16 +101,12 @@ public class UsuarioDB {
                         usuario.setTipo_Usuario(rs2.getInt("tipo_usuario"));
                         usuario.setNombre_usuario(rs2.getString("nombre_usuario"));
                         usuario.setContrasena(rs2.getString("contrasena"));
-                    }
-                    
+                    }                   
                 } catch (SQLException e) {
                     System.out.println(e.getMessage());
-                }
-                
+                }                
                 listUsuario.add(usuario);
-            }
-            
-            
+            }           
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

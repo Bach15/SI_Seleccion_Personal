@@ -201,7 +201,7 @@ public class CargaDataController implements Initializable {
         FileReader fr= new FileReader(areaFile);
         BufferedReader br = new BufferedReader(fr);
         String line;
-        line=br.readLine();
+        //line=br.readLine();
         AreaDB areadb = new AreaDB();
         List<Area> listAreas = new ArrayList<>();
         while((line=br.readLine())!=null){
@@ -259,7 +259,7 @@ public class CargaDataController implements Initializable {
         FileReader fr= new FileReader(puestoFile);
         BufferedReader br = new BufferedReader(fr);
         String line;
-        line=br.readLine();
+        //line=br.readLine();
         AreaDB areadb = new AreaDB();
         PuestoDB puestodb = new PuestoDB();        
         List<Puesto> listPuestos = new ArrayList<>();
@@ -321,7 +321,7 @@ public class CargaDataController implements Initializable {
         FileReader fr= new FileReader(softwareFile);
         BufferedReader br = new BufferedReader(fr);
         String line;
-        line=br.readLine();
+        //line=br.readLine();
         PerfilDB perfildb = new PerfilDB();
         List<Perfil> listPerfil = new ArrayList<>();
         while((line=br.readLine())!=null){
@@ -380,7 +380,7 @@ public class CargaDataController implements Initializable {
         FileReader fr= new FileReader(competenciaFile);
         BufferedReader br = new BufferedReader(fr);
         String line;
-        line=br.readLine();
+        //line=br.readLine();
         PerfilDB perfildb = new PerfilDB();
         List<Perfil> listPerfil = new ArrayList<>();
         while((line=br.readLine())!=null){

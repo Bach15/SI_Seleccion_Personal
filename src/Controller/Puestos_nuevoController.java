@@ -130,7 +130,7 @@ public class Puestos_nuevoController implements Initializable {
        
         Area area = areadb.obtenerAreaxId(idArea);
         
-        puestosMain.afterInitialize(area);
+        //puestosMain.afterInitialize(area);
 //        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Puestos/puestos_main.fxml"));
         Scene scene = new Scene(root);
         

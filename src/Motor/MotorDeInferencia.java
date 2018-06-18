@@ -5,6 +5,8 @@
  */
 package Motor;
 
+import Model.Perfil;
+import Model.database.PerfilDB;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,46 +23,66 @@ import org.w3c.dom.NodeList;
  */
 public class MotorDeInferencia {
     
-    public void leer(){
+    public double evaluar(int codUsuario,String nombrePuesto,int PuntajePsico,int PuntajeCono){
         //Variables
-        String nombrePuesto = "Programador(practicante)";
-        int PuntajePsico = 60;
+//        String nombrePuesto = "Programador(practicante)";
+//        int PuntajePsico = 60;
         String nivelPsico = String.valueOf(PuntajePsico);
-        int PuntajeCono = 60;
+//        int PuntajeCono = 60;
         String nivelCono = String.valueOf(PuntajeCono);
-        int PuntajeEdu = 2;
-        String nivelEdu = String.valueOf(PuntajeEdu);
-        int PuntajeHabla = 0;
-        String nivelHabla = String.valueOf(PuntajeHabla);
-        int PuntajeLectura = 0;
-        String nivelLectura = String.valueOf(PuntajeLectura);
-        int PuntajeEscritura = 0;
-        String nivelEscritura = String.valueOf(PuntajeEscritura);
+//        int PuntajeEdu = 2;
+//        String nivelEdu = String.valueOf(PuntajeEdu);
+//        int PuntajeHabla = 0;
+//        String nivelHabla = String.valueOf(PuntajeHabla);
+//        int PuntajeLectura = 0;
+//        String nivelLectura = String.valueOf(PuntajeLectura);
+//        int PuntajeEscritura = 0;
+//        String nivelEscritura = String.valueOf(PuntajeEscritura);
+//
+//        Software software = new Software();
+//        List<Software> listSoftwarePostulante = new ArrayList<>();
+//        Software software1 = new Software("Android", 0);
+//        Software software2 = new Software("C", 0);
+//        Software software3 = new Software("Visual Basic", 0);
+//
+//        listSoftwarePostulante.add(software1);
+//        listSoftwarePostulante.add(software2);
+//        listSoftwarePostulante.add(software3);
+//        
+//        Competencia competencia = new Competencia();
+//        List<Competencia> listCompetenciaPostulante = new ArrayList<>();
+//        Competencia competencia1 = new Competencia("Analisis y sintesis",0);
+//        Competencia competencia2 = new Competencia("Mejora continua",1);
+//        Competencia competencia3 = new Competencia("Metodologia para la calidad",0);
+//        Competencia competencia4 = new Competencia("Trabajo en equipo",0);
+//        
+//        listCompetenciaPostulante.add(competencia1);
+//        listCompetenciaPostulante.add(competencia2);
+//        listCompetenciaPostulante.add(competencia3);
+//        listCompetenciaPostulante.add(competencia4);
 
-        Software software = new Software();
-        List<Software> listSoftwarePostulante = new ArrayList<>();
-        Software software1 = new Software("Android", 0);
-        Software software2 = new Software("C", 0);
-        Software software3 = new Software("Visual Basic", 0);
+          PerfilDB perfildb = new PerfilDB();
+          //Estudios
+          int PuntajeEdu = perfildb.ObtenerEstudioXUsuario(codUsuario);
+          String nivelEdu = String.valueOf(PuntajeEdu);
+          //Habla
+          int PuntajeHabla = 0;
+          int PuntajeLectura = 0;
+          int PuntajeEscritura = 0;
+          perfildb.ObtenerIdiomaXUsuario(codUsuario,PuntajeHabla,PuntajeLectura,PuntajeEscritura);
+          String nivelHabla = String.valueOf(PuntajeHabla);
+          String nivelLectura = String.valueOf(PuntajeLectura);
+          String nivelEscritura = String.valueOf(PuntajeEscritura);
+          //Softwares
+          List<Perfil>listSoftwarePostulante = new ArrayList<>();
+          listSoftwarePostulante = perfildb.ObtenerSoftwareXUsuario(codUsuario);
+          //Competencias
+          List<Perfil>listCompetenciaPostulante = new ArrayList<>();
+          listCompetenciaPostulante = perfildb.obtenerCompetenciaXUsuario(codUsuario);
 
-        listSoftwarePostulante.add(software1);
-        listSoftwarePostulante.add(software2);
-        listSoftwarePostulante.add(software3);
-        
-        Competencia competencia = new Competencia();
-        List<Competencia> listCompetenciaPostulante = new ArrayList<>();
-        Competencia competencia1 = new Competencia("Analisis y sintesis",0);
-        Competencia competencia2 = new Competencia("Mejora continua",1);
-        Competencia competencia3 = new Competencia("Metodologia para la calidad",0);
-        Competencia competencia4 = new Competencia("Trabajo en equipo",0);
-        
-        listCompetenciaPostulante.add(competencia1);
-        listCompetenciaPostulante.add(competencia2);
-        listCompetenciaPostulante.add(competencia3);
-        listCompetenciaPostulante.add(competencia4);
 
         try {
-            File archivo = new File("test/Reglas 4.xml");
+            File archivo = new File("src/Motor/Reglas.xml");
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = dbf.newDocumentBuilder();
             Document document = documentBuilder.parse(archivo);
@@ -86,6 +108,7 @@ public class MotorDeInferencia {
                             if (elementPsico.getAttribute("nivel").equals(nivelPsico)) {
                                 if (obtenerPuntaje(elementPsico) != -1) {
                                     System.out.println("Puntaje Psico: " + obtenerPuntaje(elementPsico));
+                                    return obtenerPuntaje(elementPsico);
                                 } else {
                                     //Test Conocimiento
                                     NodeList listTestCono = elementPsico.getElementsByTagName("test_conocimiento");
@@ -97,6 +120,7 @@ public class MotorDeInferencia {
                                         if (elementCono.getAttribute("nivel").equals(nivelCono)) {
                                             if (obtenerPuntaje(elementCono) != -1) {
                                                 System.out.println("Puntaje Cono: " + obtenerPuntaje(elementCono));
+                                                return obtenerPuntaje(elementCono);
                                             } else {
                                                 //Educacion
                                                 NodeList listEducacion = elementCono.getElementsByTagName("Educacion");
@@ -108,13 +132,14 @@ public class MotorDeInferencia {
                                                     if (elementEdu.getAttribute("nivel").equals(nivelEdu)) {
                                                         if (obtenerPuntaje(elementEdu) != -1) {
                                                             System.out.println("Puntaje Edu: " + obtenerPuntaje(elementEdu));
+                                                            return obtenerPuntaje(elementEdu);
                                                         } else {
                                                             //Idioma
                                                             NodeList listIdioma = elementEdu.getElementsByTagName("Idioma");
                                                             for (int tempIdioma = 0; tempIdioma < listIdioma.getLength(); tempIdioma++) {
                                                                 Node nodoIdioma = listIdioma.item(tempIdioma);
                                                                 Element elementIdioma = (Element) nodoIdioma;
-                                                                System.out.println("Educacion: " + elementIdioma.getAttribute("habla") + " " + elementIdioma.getAttribute("lectura") + " " + elementIdioma.getAttribute("escritura"));
+                                                                System.out.println("Idioma: " + elementIdioma.getAttribute("habla") + " " + elementIdioma.getAttribute("lectura") + " " + elementIdioma.getAttribute("escritura"));
                                                                 System.out.println("Numero de conclusiones Idioma: " + elementIdioma.getElementsByTagName("Conclusion").getLength());
                                                                 if ((elementIdioma.getAttribute("habla").equals(nivelHabla)) && (elementIdioma.getAttribute("lectura").equals(nivelLectura)) && (elementIdioma.getAttribute("escritura").equals(nivelEscritura))) {
                                                                     //Premisas
@@ -135,14 +160,14 @@ public class MotorDeInferencia {
                                                                             for (int tempSoft = 0; tempSoft < listSoft.getLength(); tempSoft++) {
                                                                                 Node nodoSoft = listSoft.item(tempSoft);
                                                                                 Element elementSoft = (Element) nodoSoft;
-                                                                                System.out.println("Software Titulo: " + elementSoft.getElementsByTagName("Titulo").item(0).getTextContent());
-                                                                                System.out.println("Software Nivel: " + elementSoft.getElementsByTagName("Nivel").item(0).getTextContent());
-                                                                                String tituloSoft = elementSoft.getElementsByTagName("Titulo").item(0).getTextContent();
-                                                                                String nivelSoft = elementSoft.getElementsByTagName("Nivel").item(0).getTextContent();
+                                                                                System.out.println("Software Titulo: " + elementSoft.getAttribute("titulo"));
+                                                                                System.out.println("Software Nivel: " + elementSoft.getAttribute("nivel"));
+                                                                                String tituloSoft = elementSoft.getAttribute("titulo");
+                                                                                String nivelSoft = elementSoft.getAttribute("nivel");
                                                                                 encontrado = -1;
                                                                                 for (int i = 0; i < listSoftwarePostulante.size(); i++) {
                                                                                     String PostulanteNivelS = String.valueOf(listSoftwarePostulante.get(i).getNivel());
-                                                                                    if ((tituloSoft.equals(listSoftwarePostulante.get(i).getTitulo()) && (nivelSoft.equals(PostulanteNivelS)))) {
+                                                                                    if ((tituloSoft.equals(listSoftwarePostulante.get(i).getCampos()) && (nivelSoft.equals(PostulanteNivelS)))) {
                                                                                         encontrado = i;
                                                                                         break;
                                                                                     }
@@ -162,14 +187,14 @@ public class MotorDeInferencia {
                                                                                     for(int tempComp = 0; tempComp < listComp.getLength(); tempComp++){
                                                                                         Node nodoComp = listComp.item(tempComp);
                                                                                         Element elementComp = (Element) nodoComp;
-                                                                                        System.out.println("Competencia Titulo: " + elementComp.getElementsByTagName("Titulo").item(0).getTextContent());
-                                                                                        System.out.println("Competencia Nivel: " + elementComp.getElementsByTagName("Nivel").item(0).getTextContent());
-                                                                                        String tituloComp = elementComp.getElementsByTagName("Titulo").item(0).getTextContent();
-                                                                                        String nivelComp = elementComp.getElementsByTagName("Nivel").item(0).getTextContent();
+                                                                                        System.out.println("Competencia Titulo: " + elementComp.getAttribute("titulo"));
+                                                                                        System.out.println("Competencia Nivel: " + elementComp.getAttribute("nivel"));
+                                                                                        String tituloComp = elementComp.getAttribute("titulo");
+                                                                                        String nivelComp = elementComp.getAttribute("nivel");
                                                                                         encontradoComp = -1;
                                                                                         for(int i = 0; i < listCompetenciaPostulante.size(); i++){
                                                                                             String PostulanteNivelC = String.valueOf(listCompetenciaPostulante.get(i).getNivel());
-                                                                                            if( (tituloComp.equals(listCompetenciaPostulante.get(i).getTitulo())) && (nivelComp.equals(PostulanteNivelC)) ){
+                                                                                            if( (tituloComp.equals(listCompetenciaPostulante.get(i).getCampos())) && (nivelComp.equals(PostulanteNivelC)) ){
                                                                                                 encontradoComp = i;
                                                                                                 break;
                                                                                             }
@@ -179,6 +204,7 @@ public class MotorDeInferencia {
                                                                                     if(encontradoComp != -1){
                                                                                         //Resultados
                                                                                         System.out.println("Puntaje Final: " + obtenerPuntaje(elementTodasComp));
+                                                                                        return obtenerPuntaje(elementTodasComp);
                                                                                     }
                                                                                 }
                                                                             }
@@ -204,6 +230,7 @@ public class MotorDeInferencia {
             //e.printStackTrace();
             System.out.println(e.getMessage());
         }
+        return -1;
     }
     
     public static double obtenerPuntaje(Element elemento) {

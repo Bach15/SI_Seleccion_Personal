@@ -200,7 +200,7 @@ public class PerfilDB {
                 while(rs.next()){
                     Perfil perfilOp = new Perfil();
                     perfilOp.setId_opcion(rs.getInt("id_estudios"));
-                    perfilOp.setOpciones(rs.getString("opcion"));
+                    perfilOp.setOpciones(rs.getString("opciones"));
                     listOpciones.add(perfilOp);
                 }
                 
@@ -217,7 +217,7 @@ public class PerfilDB {
                 while(rs.next()){
                     Perfil perfilOp = new Perfil();
                     perfilOp.setId_opcion(rs.getInt("id_idioma"));
-                    perfilOp.setOpciones(rs.getString("opcion"));
+                    perfilOp.setOpciones(rs.getString("opciones"));
                     listOpciones.add(perfilOp);
                 }
                 
@@ -240,7 +240,7 @@ public class PerfilDB {
                 while(rs.next()){
                     Perfil perfilOp = new Perfil();
                     perfilOp.setId_opcion(rs.getInt("id_estudios"));
-                    perfilOp.setOpciones(rs.getString("opcion"));
+                    perfilOp.setOpciones(rs.getString("opciones"));
                     listOpciones.add(perfilOp.getOpciones());
                 }
                 
@@ -257,7 +257,7 @@ public class PerfilDB {
                 while(rs.next()){
                     Perfil perfilOp = new Perfil();
                     perfilOp.setId_opcion(rs.getInt("id_idioma"));
-                    perfilOp.setOpciones(rs.getString("opcion"));
+                    perfilOp.setOpciones(rs.getString("opciones"));
                     listOpciones.add(perfilOp.getOpciones());
                 }
                 
@@ -323,6 +323,7 @@ public class PerfilDB {
                     Perfil perfilOp = new Perfil();
                     perfilOp.setId_campo(rs.getInt("id_software"));
                     perfilOp = obtenerPerfilXId(perfilOp.getId_campo(), tipo);
+                    perfilOp.setNivel(rs.getInt("software_min"));          
                     listCampos.add(perfilOp);
                 }
                 
@@ -340,8 +341,9 @@ public class PerfilDB {
                 ResultSet rs = pstmt.executeQuery();
                 while(rs.next()){
                     Perfil perfilOp = new Perfil();
-                    perfilOp.setId_campo(rs.getInt("id_competencia"));
+                    perfilOp.setId_campo(rs.getInt("id_competencia"));                   
                     perfilOp = obtenerPerfilXId(perfilOp.getId_campo(), tipo);
+                    perfilOp.setNivel(rs.getInt("competencia_min"));
                     listCampos.add(perfilOp);
                 }
                 
@@ -399,12 +401,12 @@ public class PerfilDB {
         try(PreparedStatement pstmt = conn.prepareStatement(query)){
             pstmt.setInt(1, id_puesto);
             pstmt.setInt(2, 1); //id_perfil = estudios
-            if(tipo.equals("Ninguna")) pstmt.setInt(3, 1);
-            else if(tipo.equals("Secundaria completa")) pstmt.setInt(3, 2);
-            else if(tipo.equals("Estudiantes ultimos ciclos")) pstmt.setInt(3, 3);
-            else if(tipo.equals("Egresado")) pstmt.setInt(3, 4);
-            else if(tipo.equals("Bachiller")) pstmt.setInt(3, 5);
-            else if(tipo.equals("Titulo")) pstmt.setInt(3, 6);
+            if(tipo.equals("Ninguna")) pstmt.setInt(3, 0);
+            else if(tipo.equals("Secundaria completa")) pstmt.setInt(3, 1);
+            else if(tipo.equals("Estudiantes ultimos ciclos")) pstmt.setInt(3, 2);
+            else if(tipo.equals("Egresado")) pstmt.setInt(3, 3);
+            else if(tipo.equals("Bachiller")) pstmt.setInt(3, 4);
+            else if(tipo.equals("Titulo")) pstmt.setInt(3, 5);
             
             ResultSet rs = pstmt.executeQuery();
         } catch (SQLException e){
@@ -432,10 +434,10 @@ public class PerfilDB {
     }
     
     public int identificarIdioma(String nivel){
-        if(nivel.equals("Ninguno")) return 1;
-        else if(nivel.equals("Basico")) return 2;
-        else if(nivel.equals("Intermedio")) return 3;
-        else if(nivel.equals("Avanzado")) return 4;
+        if(nivel.equals("Ninguno")) return 0;
+        else if(nivel.equals("Basico")) return 1;
+        else if(nivel.equals("Intermedio")) return 2;
+        else if(nivel.equals("Avanzado")) return 3;
         return 0;
     }
     
@@ -481,19 +483,20 @@ public class PerfilDB {
         _db.closeConnection();
     }
     
-    public void agregarEstudioXUsuario(int id_usuario, String tipo){
+    public void agregarEstudioXUsuario(int id_usuario, int tipo){  //String tipo
         String query = "INSERT INTO usuario_x_estudio(id_usuario, id_estudios, estudios_min) VALUES(?,?,?);";
         Connection conn = _db.getConnection();
         try(PreparedStatement pstmt = conn.prepareStatement(query)){
             pstmt.setInt(1, id_usuario);
             pstmt.setInt(2, 1); //id_perfil = estudios
-            if(tipo.equals("Ninguna")) pstmt.setInt(3, 1);
-            else if(tipo.equals("Secundaria completa")) pstmt.setInt(3, 2);
-            else if(tipo.equals("Estudiantes ultimos ciclos")) pstmt.setInt(3, 3);
-            else if(tipo.equals("Egresado")) pstmt.setInt(3, 4);
-            else if(tipo.equals("Bachiller")) pstmt.setInt(3, 5);
-            else if(tipo.equals("Titulo")) pstmt.setInt(3, 6);
-            
+//            if(tipo.equals("Ninguna")) pstmt.setInt(3, 1);
+//            else if(tipo.equals("Secundaria completa")) pstmt.setInt(3, 2);
+//            else if(tipo.equals("Estudiantes ultimos ciclos")) pstmt.setInt(3, 3);
+//            else if(tipo.equals("Egresado")) pstmt.setInt(3, 4);
+//            else if(tipo.equals("Bachiller")) pstmt.setInt(3, 5);
+//            else if(tipo.equals("Titulo")) pstmt.setInt(3, 6);
+            pstmt.setInt(3, tipo);
+
             ResultSet rs = pstmt.executeQuery();
         } catch (SQLException e){
             System.out.println(e.getMessage());
@@ -501,16 +504,19 @@ public class PerfilDB {
         _db.closeConnection();    
     }
     
-    public void agregarIdiomaXUsuario(int id_usuario, String habla, String escritura, String lectura){
+    public void agregarIdiomaXUsuario(int id_usuario, int habla, int escritura, int lectura){ //String habla, String escritura, String lectura
         String query = "INSERT INTO usuario_x_idioma(id_usuario, id_idioma, habla_min, escritura_min, lectura_min)"
                 + " VALUES(?,?,?,?,?);";
         Connection conn = _db.getConnection();
         try(PreparedStatement pstmt = conn.prepareStatement(query)){
             pstmt.setInt(1, id_usuario);
             pstmt.setInt(2, 2); //id_perfil = idioma
-            pstmt.setInt(3, identificarIdioma(habla));
-            pstmt.setInt(4, identificarIdioma(escritura));
-            pstmt.setInt(5, identificarIdioma(lectura));
+//            pstmt.setInt(3, identificarIdioma(habla));
+//            pstmt.setInt(4, identificarIdioma(escritura));
+//            pstmt.setInt(5, identificarIdioma(lectura));
+            pstmt.setInt(3, habla);
+            pstmt.setInt(4, escritura);
+            pstmt.setInt(5, lectura);
             
             ResultSet rs = pstmt.executeQuery();
         } catch (SQLException e){
@@ -555,6 +561,153 @@ public class PerfilDB {
             }  
         }    
         _db.closeConnection();
+    }
+    
+    public int ObtenerEstudioXUsuario(int id_usuario){
+        int estudios=-1;
+        String query = "SELECT * FROM usuario_x_estudio WHERE id_usuario = ?;";
+        
+        Connection conn = _db.getConnection();
+        try(PreparedStatement pstmt = conn.prepareStatement(query)){
+            pstmt.setInt(1, id_usuario);
+            
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                estudios = rs.getInt("estudios_min");
+            }          
+            
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        _db.closeConnection();  
+        return estudios;
+    }
+    
+    public void ObtenerIdiomaXUsuario(int id_usuario, int habla, int escritura, int lectura){
+        String query = "SELECT * FROM usuario_x_idioma WHERE id_usuario = ?;";
+
+        Connection conn = _db.getConnection();
+        try(PreparedStatement pstmt = conn.prepareStatement(query)){
+            pstmt.setInt(1, id_usuario);
+            
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                habla = rs.getInt("habla_min");
+                escritura = rs.getInt("escritura_min");
+                lectura = rs.getInt("lectura_min");
+            }            
+            
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        _db.closeConnection();  
+    }
+    
+    public List<Perfil> ObtenerSoftwareXUsuario(int id_usuario){
+        List<Perfil> listSoftware = new ArrayList<>();          
+        String query = "SELECT * FROM usuario_x_software WHERE id_usuario = ?;";
+
+        Connection conn = _db.getConnection();
+        try(PreparedStatement pstmt = conn.prepareStatement(query)){
+           pstmt.setInt(1, id_usuario); 
+
+           ResultSet rs = pstmt.executeQuery();
+           while(rs.next()){
+               Perfil software = new Perfil();
+               software.setNivel(rs.getInt("software_min"));
+               software.setId_campo(rs.getInt("id_software"));
+
+               String query2 = "SELECT * FROM softwares WHERE id_software = ?;";
+               try(PreparedStatement pstmt2 = conn.prepareStatement(query2)){
+                   pstmt2.setInt(1, software.getId_campo());
+
+                   ResultSet rs2 = pstmt2.executeQuery();
+                   if(rs2.next()){
+                       software.setCampos(rs2.getString("tipo"));
+                   }
+               }
+               listSoftware.add(software);
+           }
+
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }  
+        _db.closeConnection();
+        return listSoftware;
+    }
+    
+    public List<Perfil> obtenerCompetenciaXUsuario(int id_usuario){
+        List<Perfil> listCompetencias = new ArrayList<>();  
+        String query = "SELECT * FROM usuario_x_competencia WHERE id_usuario = ?;";
+        
+        Connection conn = _db.getConnection();
+        try(PreparedStatement pstmt = conn.prepareStatement(query)){
+           pstmt.setInt(1, id_usuario); 
+           
+           ResultSet rs = pstmt.executeQuery();
+           while(rs.next()){
+               Perfil competencia = new Perfil();
+               competencia.setNivel(rs.getInt("competencia_min"));
+               competencia.setId_campo(rs.getInt("id_competencia"));
+               
+               String query2 = "SELECT * FROM competencias WHERE id_competencia = ?;";
+               try(PreparedStatement pstmt2 = conn.prepareStatement(query2)){
+                   pstmt2.setInt(1, competencia.getId_campo());
+
+                   ResultSet rs2 = pstmt2.executeQuery();
+                   if(rs2.next()){
+                       competencia.setCampos(rs2.getString("tipo"));
+                   }
+               }
+               listCompetencias.add(competencia);
+           }         
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }  
+ 
+        _db.closeConnection();
+        return listCompetencias;
+    }
+    
+    
+    public int ObtenerEstudioXPuesto(int id_puesto){
+        int estudios=-1;
+        String query = "SELECT * FROM puesto_x_estudio WHERE id_puesto = ?;";
+        
+        Connection conn = _db.getConnection();
+        try(PreparedStatement pstmt = conn.prepareStatement(query)){
+            pstmt.setInt(1, id_puesto);
+            
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                estudios = rs.getInt("estudios_min");
+            }          
+            
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        _db.closeConnection();  
+        return estudios;
+    }
+    
+    public void ObtenerIdiomaXPuesto(int id_puesto, int habla, int escritura, int lectura){
+        String query = "SELECT * FROM puesto_x_idioma WHERE id_puesto = ?;";
+
+        Connection conn = _db.getConnection();
+        try(PreparedStatement pstmt = conn.prepareStatement(query)){
+            pstmt.setInt(1, id_puesto);
+            
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                habla = rs.getInt("habla_min");
+                escritura = rs.getInt("escritura_min");
+                lectura = rs.getInt("lectura_min");
+            }            
+            
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        _db.closeConnection();  
     }
     
 }

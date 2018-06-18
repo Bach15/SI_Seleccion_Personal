@@ -152,18 +152,35 @@ public class ProcesoSeleccionDB {
             
         for(int i=0; i<listPostulantes.size(); i++){
             if(postulantesRepetidos(id_proceso, listPostulantes.get(i).getId_usuario())== 0){
-                String query = "INSERT INTO procesodeseleccion_x_usuario(id_seleccion, id_usuario)"
-                        + " values(?,?);";
+                String query = "INSERT INTO procesodeseleccion_x_usuario(id_seleccion, id_usuario, puntaje)"
+                        + " values(?,?,?);";
                 Connection conn = _db.getConnection();
                 try(PreparedStatement pstmt = conn.prepareStatement(query)){
                     pstmt.setInt(1, id_proceso);
                     pstmt.setInt(2, listPostulantes.get(i).getId_usuario());
+                    pstmt.setDouble(3, 0.0);
 
                     ResultSet rs = pstmt.executeQuery();
                 }catch (SQLException e){
                     System.out.println(e.getMessage());
                 }
             }
+        }
+    }
+    
+    public void actualizarPuntajePostulante(int id_proceso, int id_postulante, double puntaje){
+        String query = "UPDATE procesodeseleccion_x_usuario SET puntaje = ? "
+                        + "WHERE id_seleccion=? and id_usuario=?;";
+        Connection conn = _db.getConnection();
+        
+        try (PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setDouble(1, puntaje);
+            pstmt.setInt(2, id_proceso);
+            pstmt.setInt(3, id_postulante);
+            
+            pstmt.executeUpdate(); 
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
         }
     }
     
@@ -201,6 +218,7 @@ public class ProcesoSeleccionDB {
             while(rs.next()){
                 Usuario usuario = new Usuario();
                 usuario = usuariodb.obtenerUsuarioxId(rs.getInt("id_usuario"));
+                usuario.setPuntaje(rs.getDouble("puntaje"));
                 listUsuario.add(usuario);
             }
             

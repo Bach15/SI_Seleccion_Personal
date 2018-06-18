@@ -65,17 +65,27 @@ public class Postulante_perfil_competenciaController implements Initializable {
     private ObservableList<String> opciones;
     private Perfil competenciaSeleccionado;
     private List<Perfil> listCompetenciaSeleccionado;
+    private List<Perfil> listCompetencias;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        
+        // TODO        
     }  
     
     private void agregarLista(Perfil perfilSeleccionado){
+        for(int i=0; i<listCompetencias.size();i++){
+            if(listCompetencias.get(i).getCampos().equals(perfilSeleccionado.getCampos())){
+                int a = perfilSeleccionado.getPostulanteSelectCompetencia();
+                int b = listCompetencias.get(i).getNivel();
+                if(perfilSeleccionado.getPostulanteSelectCompetencia() > listCompetencias.get(i).getNivel()){
+                    perfilSeleccionado.setPostulanteSelectCompetencia(listCompetencias.get(i).getNivel());
+                    break;
+                }
+            }
+        }
         for(int i=0; i<listCompetenciaSeleccionado.size(); i++){
             if(listCompetenciaSeleccionado.get(i).getCampos().equals(perfilSeleccionado.getCampos()))
                 listCompetenciaSeleccionado.remove(listCompetenciaSeleccionado.get(i));
@@ -104,7 +114,7 @@ public class Postulante_perfil_competenciaController implements Initializable {
         listCompetenciaSeleccionado = new ArrayList<>();
                 
         PerfilDB perfildb = new PerfilDB();
-        List<Perfil> listCompetencias = perfildb.llenarGrillaxPuesto("Competencias",id_puesto);
+        listCompetencias = perfildb.llenarGrillaxPuesto("Competencias",id_puesto);
         for(int i=0; i<listCompetencias.size();i++){
             listCompetencias.get(i).setPostulanteSelectCompetencia(0);
             tablaCompetencias.getItems().add(listCompetencias.get(i));

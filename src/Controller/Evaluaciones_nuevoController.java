@@ -165,12 +165,12 @@ public class Evaluaciones_nuevoController implements Initializable {
         }     
     }
     
-    private void cargarEvaluacion() throws FileNotFoundException, IOException{
+    private void cargarEvaluacion(int id_evaluacion) throws FileNotFoundException, IOException{
         if(preguntaFile == null) return;
         FileReader fr= new FileReader(preguntaFile);
         BufferedReader br = new BufferedReader(fr);
         String line;
-        line=br.readLine();
+        //line=br.readLine();
         EvaluacionDB evaluaciondb = new EvaluacionDB();      
         List<Pregunta> listPreguntas = new ArrayList<>();
         List<Respuesta> listRespuestas = new ArrayList<>();
@@ -179,7 +179,8 @@ public class Evaluaciones_nuevoController implements Initializable {
             String[] parts = line.split(";");
             try{
                 pregunta.setTexto(parts[0]);
-                for(int i=1; i<parts.length; i++){
+                pregunta.setRespuesta_correcta(parts[parts.length-1]);
+                for(int i=1; i<parts.length-1; i++){
                     Respuesta respuesta = new Respuesta();
                     respuesta.setTexto(parts[i]);
                     pregunta.agregarRespuesta(respuesta);
@@ -195,7 +196,7 @@ public class Evaluaciones_nuevoController implements Initializable {
             }
         }
         for(int i=0; i<listPreguntas.size(); i++){
-            evaluaciondb.crearPregunta(idTipo, listPreguntas.get(i));
+            evaluaciondb.crearPregunta(id_evaluacion, listPreguntas.get(i));
             listRespuestas = listPreguntas.get(i).getListaRespuesta();
             for(int j=0; j<listRespuestas.size(); j++){
                 evaluaciondb.crearRespuesta(listPreguntas.get(i).getId_pregunta(), listRespuestas.get(j));
@@ -224,7 +225,7 @@ public class Evaluaciones_nuevoController implements Initializable {
         evaluaciondb.crearEvaluacion(_evaluacion);
         puesto = puestodb.obtenerPuestoxNombre(comboPuesto.getSelectionModel().getSelectedItem());
         evaluaciondb.crearEvaluacionxPuesto(puesto.getId_puesto(),_evaluacion.getId_evaluacion());
-        cargarEvaluacion();
+        cargarEvaluacion(_evaluacion.getId_evaluacion());
         
         evaluacionMain.afterInitialize(tipoEvaluacion);
         

@@ -100,10 +100,23 @@ public class Postulante_perfilController implements Initializable {
     private void boton_siguiente(ActionEvent event) throws IOException {
         PerfilDB perfildb = new PerfilDB();
         
-        perfildb.agregarEstudioXUsuario(id_postulante, comboEducacion.getSelectionModel().getSelectedItem());
-        String habla = comboIngHablado.getSelectionModel().getSelectedItem();
-        String escritura = comboIngEscrito.getSelectionModel().getSelectedItem();
-        String lectura = comboIngLectura.getSelectionModel().getSelectedItem();
+        String educacionSeleccionada = comboEducacion.getSelectionModel().getSelectedItem();
+        int estudios_min = obtenerEstudiosMin(educacionSeleccionada);
+        int estudios_minXPuesto = perfildb.ObtenerEstudioXPuesto(id_puesto);
+        if(estudios_min > estudios_minXPuesto) estudios_min = estudios_minXPuesto;
+        perfildb.agregarEstudioXUsuario(id_postulante, estudios_min);
+        
+        String hablaMinUs = comboIngHablado.getSelectionModel().getSelectedItem();
+        String escrituraMinUs = comboIngEscrito.getSelectionModel().getSelectedItem();
+        String lecturaMinUs = comboIngLectura.getSelectionModel().getSelectedItem();
+        int hablaMinPu = 0,escrituraMinPu= 0, lecturaMinPu = 0;
+        perfildb.ObtenerIdiomaXPuesto(id_puesto, hablaMinPu, escrituraMinPu, lecturaMinPu);
+        int habla = obtenerIdiomaMin(hablaMinUs);
+        int escritura = obtenerIdiomaMin(escrituraMinUs);
+        int lectura = obtenerIdiomaMin(lecturaMinUs);
+        if(habla > hablaMinPu) habla = hablaMinPu;
+        if(escritura > escrituraMinPu) escritura = escrituraMinPu;
+        if(lectura > lecturaMinPu) lectura = lecturaMinPu;
         perfildb.agregarIdiomaXUsuario(id_postulante, habla, escritura, lectura);
         
         //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Seleccion/postulante_perfil_software.fxml"));
@@ -118,6 +131,24 @@ public class Postulante_perfilController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+    }
+    
+    public int obtenerEstudiosMin(String estudios_min){
+        if(estudios_min.equals("Ninguna")) return 0;
+        else if(estudios_min.equals("Secundaria completa")) return 1;
+        else if(estudios_min.equals("Estudiantes ultimos ciclos")) return 2;
+        else if(estudios_min.equals("Egresado")) return 3;
+        else if(estudios_min.equals("Bachiller")) return 4;
+        else if(estudios_min.equals("Titulo")) return 5;
+        return -1;
+    }
+    
+    public int obtenerIdiomaMin(String idioma_min){
+        if(idioma_min.equals("Ninguno")) return 1;
+        else if(idioma_min.equals("Basico")) return 2;
+        else if(idioma_min.equals("Intermedio")) return 3;
+        else if(idioma_min.equals("Avanzado")) return 4;
+        return 0;
     }
 
     @FXML

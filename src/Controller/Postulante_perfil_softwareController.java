@@ -61,9 +61,10 @@ public class Postulante_perfil_softwareController implements Initializable {
     private int id_puesto;
     private int id_proceso;
     
+    private ObservableList<String> opciones;
     private Perfil softwareSeleccionado;
     private List<Perfil> listSoftwareSeleccionado;
-    private ObservableList<String> opciones;
+    private List<Perfil> listSoftwares;
 
     /**
      * Initializes the controller class.
@@ -74,6 +75,15 @@ public class Postulante_perfil_softwareController implements Initializable {
     } 
     
     private void agregarLista(Perfil perfilSeleccionado){
+        for(int i=0; i<listSoftwares.size(); i++){
+            if(listSoftwares.get(i).getCampos().equals(perfilSeleccionado.getCampos())){
+                if(perfilSeleccionado.getPostulanteSelectSoftware() > listSoftwares.get(i).getNivel()){
+                    perfilSeleccionado.setPostulanteSelectSoftware(listSoftwares.get(i).getNivel());
+                    break;
+                }
+            }
+        }
+        
         for(int i=0; i<listSoftwareSeleccionado.size(); i++){
             if(listSoftwareSeleccionado.get(i).getCampos().equals(perfilSeleccionado.getCampos()))
                 listSoftwareSeleccionado.remove(listSoftwareSeleccionado.get(i));
@@ -90,10 +100,10 @@ public class Postulante_perfil_softwareController implements Initializable {
         listSoftwareSeleccionado = new ArrayList<>();
         
         PerfilDB perfildb = new PerfilDB();
-        List<Perfil> listSoftware = perfildb.llenarGrillaxPuesto("Manejo de Software",id_puesto);
-        for(int i=0; i<listSoftware.size();i++){
-            listSoftware.get(i).setPostulanteSelectSoftware(0);
-            tablaSoftware.getItems().add(listSoftware.get(i));
+        listSoftwares = perfildb.llenarGrillaxPuesto("Manejo de Software",id_puesto);
+        for(int i=0; i<listSoftwares.size();i++){
+            listSoftwares.get(i).setPostulanteSelectSoftware(0);
+            tablaSoftware.getItems().add(listSoftwares.get(i));
         }
         colSoftware.setCellValueFactory(new PropertyValueFactory<>("campos"));
         

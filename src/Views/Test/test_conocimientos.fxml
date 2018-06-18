@@ -32,10 +32,10 @@
                         </Button>
                      </children>
                   </Pane>
-                  <TableView layoutX="167.0" layoutY="280.0" prefHeight="416.0" prefWidth="766.0">
+                  <TableView fx:id="tablaConocimiento" layoutX="41.0" layoutY="280.0" prefHeight="416.0" prefWidth="1021.0">
                      <columns>
-                        <TableColumn prefWidth="544.0000610351562" text="Pregunta" />
-                        <TableColumn prefWidth="220.800048828125" text="Respuesta" />
+                        <TableColumn fx:id="colPregunta" prefWidth="445.5999870300293" text="Pregunta" />
+                        <TableColumn fx:id="colRespuesta" prefWidth="574.3999633789062" text="Respuesta" />
                      </columns>
                   </TableView>
                   <Label layoutX="43.0" layoutY="97.0" text="Prueba de Conocimiento">

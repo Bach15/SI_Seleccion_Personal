@@ -85,7 +85,7 @@ public class EvaluacionDB {
         return listEvaluacion;    
     }
     
-    public Evaluacion obtenerEvaluacionxPuesto(int codPuesto){
+    public Evaluacion obtenerEvaluacionxPuesto(int codPuesto, int numEval){
         Evaluacion evaluacion = new Evaluacion();
         String query = "SELECT * FROM puesto_x_evaluacion WHERE id_puesto = ?;";
         
@@ -95,7 +95,7 @@ public class EvaluacionDB {
             
             ResultSet rs = pstmt.executeQuery();
             if(rs.next()){
-                evaluacion = obtenerEvaluacionxId(rs.getInt("id_evaluacion"));
+                evaluacion = obtenerEvaluacionxId(rs.getInt("id_evaluacion")+numEval);
             }
         }  catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -128,13 +128,14 @@ public class EvaluacionDB {
     }
     
     public void crearPregunta(int idEvaluacion, Pregunta pregunta){
-        String query = "INSERT INTO pregunta(id_evaluacion, texto) "
-                + "VALUES(?,?) RETURNING id_pregunta;";
+        String query = "INSERT INTO pregunta(id_evaluacion, texto, respuesta_correcta) "
+                + "VALUES(?,?,?) RETURNING id_pregunta;";
         
         Connection conn = _db.getConnection();
         try(PreparedStatement pstmt = conn.prepareStatement(query)){
             pstmt.setInt(1, idEvaluacion);
             pstmt.setString(2, pregunta.getTexto());
+            pstmt.setString(3, pregunta.getRespuesta_correcta());
             pregunta.setId_evaluacion(idEvaluacion);
             
             ResultSet rs = pstmt.executeQuery();
@@ -181,6 +182,7 @@ public class EvaluacionDB {
                 pregunta.setId_evaluacion(rs.getInt("id_evaluacion"));
                 pregunta.setId_pregunta(rs.getInt("id_pregunta"));
                 pregunta.setTexto(rs.getString("texto"));
+                pregunta.setRespuesta_correcta(rs.getString("respuesta_correcta"));
                 
                 String query2 = "SELECT * FROM respuesta WHERE id_pregunta = ?;";
                 
@@ -196,7 +198,8 @@ public class EvaluacionDB {
                         pregunta.agregarRespuesta(respuesta);
                         listRespuestas.add(respuesta);
                     }
-                    pregunta.getComboBoxRespuesta(listRespuestas);
+                    pregunta.setComboRespuesta(pregunta.getComboBoxRespuesta(listRespuestas));
+                    pregunta.getComboRespuesta().setMinWidth(548);
                 } catch (SQLException e){
                     System.out.println(e.getMessage());
                 }

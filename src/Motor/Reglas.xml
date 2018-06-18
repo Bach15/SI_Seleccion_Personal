@@ -1,0 +1,965 @@
+<Reglas>
+	<regla>
+		<Puesto nombre="Puesto_1">
+			<!-- menor a 60 -->
+			<test_psicologico nivel="0">
+				<Conclusion Puntaje="0"></Conclusion>
+			</test_psicologico>
+			<!-- mayor a 60 -->
+			<test_psicologico nivel="60">
+				<test_conocimiento nivel="0">
+					<Conclusion Puntaje="0"></Conclusion>
+				</test_conocimiento>
+				<test_conocimiento nivel="60">
+					<!-- Diferente de 2 -->
+					<Educacion nivel="0">     
+						<Conclusion Puntaje="0"></Conclusion>
+					</Educacion>
+					<Educacion nivel="2">
+						<Idioma habla="0" lectura="0" escritura="0">
+							<Premisas id="1">
+								<Softwares id="2">
+									<Software titulo="Android" nivel="0"></Software>
+									<Software titulo="C" nivel="0"></Software>
+									<Software titulo="Visual Basic" nivel="0"></Software>
+									<Competencias id="10">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="35"></Conclusion>
+									</Competencias>
+									<Competencias id="20">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="38.75"></Conclusion>
+									</Competencias>
+									<Competencias id="30">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="38.75"></Conclusion>
+									</Competencias>
+									<Competencias id="40">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="42.5"></Conclusion>
+									</Competencias>
+									<Competencias id="50">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="38.75"></Conclusion>
+									</Competencias>		
+									<Competencias id="60">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="42.5"></Conclusion>
+									</Competencias>
+									<Competencias id="70">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="42.5"></Conclusion>
+									</Competencias>								
+									<Competencias id="80">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="46.25"></Conclusion>
+									</Competencias>
+									<Competencias id="90">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="38.75"></Conclusion>
+									</Competencias>
+									<Competencias id="100">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="42.5"></Conclusion>
+									</Competencias>
+									<Competencias id="110">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="42.5"></Conclusion>
+									</Competencias>
+									<Competencias id="120">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="46.25"></Conclusion>
+									</Competencias>
+									<Competencias id="130">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="42.5"></Conclusion>
+									</Competencias>	
+									<Competencias id="140">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="46.25"></Conclusion>
+									</Competencias>
+									<Competencias id="150">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="46.25"></Conclusion>
+									</Competencias>									
+									<Competencias id="160">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="50"></Conclusion>
+									</Competencias>									
+								</Softwares>
+								<Softwares id="3">
+									<Software titulo="Android" nivel="0"></Software>
+									<Software titulo="C" nivel="0"></Software>
+									<Software titulo="Visual Basic" nivel="1"></Software>
+									<Competencias id="10">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="45"></Conclusion>
+									</Competencias>
+									<Competencias id="20">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="48.75"></Conclusion>
+									</Competencias>
+									<Competencias id="30">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="48.75"></Conclusion>
+									</Competencias>
+									<Competencias id="40">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>
+									<Competencias id="50">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="48.75"></Conclusion>
+									</Competencias>		
+									<Competencias id="60">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>
+									<Competencias id="70">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>								
+									<Competencias id="80">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="56.25"></Conclusion>
+									</Competencias>
+									<Competencias id="90">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="48.75"></Conclusion>
+									</Competencias>
+									<Competencias id="100">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>
+									<Competencias id="110">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>
+									<Competencias id="120">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="56.25"></Conclusion>
+									</Competencias>
+									<Competencias id="130">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>	
+									<Competencias id="140">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="56.25"></Conclusion>
+									</Competencias>
+									<Competencias id="150">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="56.25"></Conclusion>
+									</Competencias>									
+									<Competencias id="160">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="60"></Conclusion>
+									</Competencias>									
+								</Softwares>
+								<Softwares id="4">
+									<Software titulo="Android" nivel="0"></Software>
+									<Software titulo="C" nivel="1"></Software>
+									<Software titulo="Visual Basic" nivel="0"></Software>
+									<Competencias id="10">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="45"></Conclusion>
+									</Competencias>
+									<Competencias id="20">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="48.75"></Conclusion>
+									</Competencias>
+									<Competencias id="30">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="48.75"></Conclusion>
+									</Competencias>
+									<Competencias id="40">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>
+									<Competencias id="50">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="48.75"></Conclusion>
+									</Competencias>		
+									<Competencias id="60">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>
+									<Competencias id="70">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>								
+									<Competencias id="80">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="56.25"></Conclusion>
+									</Competencias>
+									<Competencias id="90">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="48.75"></Conclusion>
+									</Competencias>
+									<Competencias id="100">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>
+									<Competencias id="110">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>
+									<Competencias id="120">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="56.25"></Conclusion>
+									</Competencias>
+									<Competencias id="130">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>	
+									<Competencias id="140">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="56.25"></Conclusion>
+									</Competencias>
+									<Competencias id="150">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="56.25"></Conclusion>
+									</Competencias>									
+									<Competencias id="160">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="60"></Conclusion>
+									</Competencias>									
+								</Softwares>
+								<Softwares id="5">
+									<Software titulo="Android" nivel="0"></Software>
+									<Software titulo="C" nivel="1"></Software>
+									<Software titulo="Visual Basic" nivel="1"></Software>
+									<Competencias id="10">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="55"></Conclusion>
+									</Competencias>
+									<Competencias id="20">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="58.75"></Conclusion>
+									</Competencias>
+									<Competencias id="30">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="58.75"></Conclusion>
+									</Competencias>
+									<Competencias id="40">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>
+									<Competencias id="50">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="58.75"></Conclusion>
+									</Competencias>		
+									<Competencias id="60">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>
+									<Competencias id="70">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>								
+									<Competencias id="80">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="66.25"></Conclusion>
+									</Competencias>
+									<Competencias id="90">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="58.75"></Conclusion>
+									</Competencias>
+									<Competencias id="100">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>
+									<Competencias id="110">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>
+									<Competencias id="120">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="66.25"></Conclusion>
+									</Competencias>
+									<Competencias id="130">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>	
+									<Competencias id="140">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="66.25"></Conclusion>
+									</Competencias>
+									<Competencias id="150">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="66.25"></Conclusion>
+									</Competencias>									
+									<Competencias id="160">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="70"></Conclusion>
+									</Competencias>									
+								</Softwares>
+								<Softwares id="6">
+									<Software titulo="Android" nivel="1"></Software>
+									<Software titulo="C" nivel="0"></Software>
+									<Software titulo="Visual Basic" nivel="0"></Software>
+									<Competencias id="10">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="45"></Conclusion>
+									</Competencias>
+									<Competencias id="20">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="48.75"></Conclusion>
+									</Competencias>
+									<Competencias id="30">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="48.75"></Conclusion>
+									</Competencias>
+									<Competencias id="40">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>
+									<Competencias id="50">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="48.75"></Conclusion>
+									</Competencias>		
+									<Competencias id="60">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>
+									<Competencias id="70">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>								
+									<Competencias id="80">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="56.25"></Conclusion>
+									</Competencias>
+									<Competencias id="90">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="48.75"></Conclusion>
+									</Competencias>
+									<Competencias id="100">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>
+									<Competencias id="110">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>
+									<Competencias id="120">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="56.25"></Conclusion>
+									</Competencias>
+									<Competencias id="130">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="52.5"></Conclusion>
+									</Competencias>	
+									<Competencias id="140">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="56.25"></Conclusion>
+									</Competencias>
+									<Competencias id="150">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="56.25"></Conclusion>
+									</Competencias>									
+									<Competencias id="160">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="60"></Conclusion>
+									</Competencias>									
+								</Softwares>
+								<Softwares id="7">
+									<Software titulo="Android" nivel="1"></Software>
+									<Software titulo="C" nivel="0"></Software>
+									<Software titulo="Visual Basic" nivel="1"></Software>
+									<Competencias id="10">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="55"></Conclusion>
+									</Competencias>
+									<Competencias id="20">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="58.75"></Conclusion>
+									</Competencias>
+									<Competencias id="30">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="58.75"></Conclusion>
+									</Competencias>
+									<Competencias id="40">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>
+									<Competencias id="50">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="58.75"></Conclusion>
+									</Competencias>		
+									<Competencias id="60">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>
+									<Competencias id="70">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>								
+									<Competencias id="80">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="66.25"></Conclusion>
+									</Competencias>
+									<Competencias id="90">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="58.75"></Conclusion>
+									</Competencias>
+									<Competencias id="100">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>
+									<Competencias id="110">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>
+									<Competencias id="120">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="66.25"></Conclusion>
+									</Competencias>
+									<Competencias id="130">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>	
+									<Competencias id="140">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="66.25"></Conclusion>
+									</Competencias>
+									<Competencias id="150">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="66.25"></Conclusion>
+									</Competencias>									
+									<Competencias id="160">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="70"></Conclusion>
+									</Competencias>									
+								</Softwares>
+								<Softwares id="8">
+									<Software titulo="Android" nivel="1"></Software>
+									<Software titulo="C" nivel="1"></Software>
+									<Software titulo="Visual Basic" nivel="0"></Software>
+									<Competencias id="10">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="55"></Conclusion>
+									</Competencias>
+									<Competencias id="20">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="58.75"></Conclusion>
+									</Competencias>
+									<Competencias id="30">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="58.75"></Conclusion>
+									</Competencias>
+									<Competencias id="40">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>
+									<Competencias id="50">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="58.75"></Conclusion>
+									</Competencias>		
+									<Competencias id="60">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>
+									<Competencias id="70">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>								
+									<Competencias id="80">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="66.25"></Conclusion>
+									</Competencias>
+									<Competencias id="90">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="58.75"></Conclusion>
+									</Competencias>
+									<Competencias id="100">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>
+									<Competencias id="110">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>
+									<Competencias id="120">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="66.25"></Conclusion>
+									</Competencias>
+									<Competencias id="130">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="62.5"></Conclusion>
+									</Competencias>	
+									<Competencias id="140">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="66.25"></Conclusion>
+									</Competencias>
+									<Competencias id="150">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="66.25"></Conclusion>
+									</Competencias>									
+									<Competencias id="160">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="70"></Conclusion>
+									</Competencias>									
+								</Softwares>
+								<Softwares id="9">
+									<Software titulo="Android" nivel="1"></Software>
+									<Software titulo="C" nivel="1"></Software>
+									<Software titulo="Visual Basic" nivel="1"></Software>
+									<Competencias id="10">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="65"></Conclusion>
+									</Competencias>
+									<Competencias id="20">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="68.75"></Conclusion>
+									</Competencias>
+									<Competencias id="30">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="68.75"></Conclusion>
+									</Competencias>
+									<Competencias id="40">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="72.5"></Conclusion>
+									</Competencias>
+									<Competencias id="50">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="68.75"></Conclusion>
+									</Competencias>		
+									<Competencias id="60">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="72.5"></Conclusion>
+									</Competencias>
+									<Competencias id="70">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="72.5"></Conclusion>
+									</Competencias>								
+									<Competencias id="80">
+										<Competencia titulo="Analisis y sintesis" nivel="0"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="76.25"></Conclusion>
+									</Competencias>
+									<Competencias id="90">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="68.75"></Conclusion>
+									</Competencias>
+									<Competencias id="100">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="72.5"></Conclusion>
+									</Competencias>
+									<Competencias id="110">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="72.5"></Conclusion>
+									</Competencias>
+									<Competencias id="120">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="0"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="76.25"></Conclusion>
+									</Competencias>
+									<Competencias id="130">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="72.5"></Conclusion>
+									</Competencias>	
+									<Competencias id="140">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="0"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="76.25"></Conclusion>
+									</Competencias>
+									<Competencias id="150">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="0"></Competencia>
+										<Conclusion Puntaje="76.25"></Conclusion>
+									</Competencias>									
+									<Competencias id="160">
+										<Competencia titulo="Analisis y sintesis" nivel="1"></Competencia>
+										<Competencia titulo="Mejora continua" nivel="1"></Competencia>
+										<Competencia titulo="Metodologia para la calidad" nivel="1"></Competencia>
+										<Competencia titulo="Trabajo en equipo" nivel="1"></Competencia>
+										<Conclusion Puntaje="80"></Conclusion>
+									</Competencias>									
+								</Softwares>
+							</Premisas>
+						</Idioma>									
+					</Educacion>
+				</test_conocimiento>
+			</test_psicologico>
+		</Puesto>	
+	</regla>	
+	
+</Reglas>	

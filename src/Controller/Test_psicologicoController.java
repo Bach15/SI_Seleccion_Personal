@@ -9,8 +9,10 @@ import Model.Evaluacion;
 import Model.Pregunta;
 import Model.ProcesoSeleccion;
 import Model.Respuesta;
+import Model.TipoEvaluacion;
 import Model.database.EvaluacionDB;
 import Model.database.ProcesoSeleccionDB;
+import Model.database.TipoEvaluacionDB;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -57,6 +59,10 @@ public class Test_psicologicoController implements Initializable {
     private int id_usuario;
     
     private ObservableList<Pregunta> listPreguntasObservalble;
+    private List<Pregunta> listPreguntaSeleccionado;
+    
+    private Pregunta PreguntaSeleccionada;
+    
     /**
      * Initializes the controller class.
      */
@@ -78,25 +84,17 @@ public class Test_psicologicoController implements Initializable {
         List<Respuesta> listRespuesta = null;
         
         proceso = procesoSelecciondb.obtenerProcesoxPostulante(id_usuario);
-        evaluacion = evaluaciondb.obtenerEvaluacionxPuesto(proceso.getId_puesto());
+        evaluacion = evaluaciondb.obtenerEvaluacionxPuesto(proceso.getId_puesto(),0);
         listPregunta = evaluaciondb.obtenerPreguntasxEvaluacion(evaluacion.getId_evaluacion());
-        for(int i=0; i<listPregunta.size(); i++){
-//            tablaPsicologica.getItems().add(listPregunta.get(i));
+        for(int i=0; i<listPregunta.size(); i++)
             listPreguntasObservalble.add(listPregunta.get(i));
-        }
+
         colPregunta.setCellValueFactory(new PropertyValueFactory<>("texto"));
         colRespuesta.setCellValueFactory(new PropertyValueFactory<>("comboRespuesta"));
               
-//        colRespuesta.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Pregunta, ComboBox>>(){
-//            @Override
-//            public void handle(TableColumn.CellEditEvent<Pregunta, ComboBox> event) {
-//                System.out.println("Value : " + event.getNewValue());
-//            }
-//        });
-        
         tablaPsicologica.setItems(listPreguntasObservalble);
         tablaPsicologica.setEditable(true);
-    }
+    }  
 
     @FXML
     private void click_menu(MouseEvent event) throws IOException {
@@ -120,7 +118,27 @@ public class Test_psicologicoController implements Initializable {
 
     @FXML
     private void boton_siguiente(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Test/test_psicologico.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Views/Test/test_psicologico.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Views/Test/test_conocimientos.fxml"));
+        Parent root = fxmlLoader.load();  
+        Test_conocimientosController test_conocimientoMain = fxmlLoader.getController();
+        
+        double PuntajePsicologico=0;
+        for(int i=0; i<tablaPsicologica.getItems().size(); i++){
+            Pregunta pl = tablaPsicologica.getItems().get(i);
+            String respuestaEscogida = pl.getComboRespuesta().getSelectionModel().getSelectedItem();
+            if(respuestaEscogida.equals(pl.getRespuesta_correcta())) 
+                PuntajePsicologico+=1;
+        }
+        PuntajePsicologico = PuntajePsicologico/tablaPsicologica.getItems().size()*100;
+        
+        int valorPsicologico;
+        if(PuntajePsicologico > 60) valorPsicologico = 60;
+        else valorPsicologico = 0;
+        
+        test_conocimientoMain.afterInitialize(id_usuario);
+        test_conocimientoMain.setPuntajePsicologico(valorPsicologico);
+        
         Scene scene = new Scene(root);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
