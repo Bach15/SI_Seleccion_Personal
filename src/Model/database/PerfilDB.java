@@ -332,7 +332,7 @@ public class PerfilDB {
             } 
         }
         else if(tipo.equals("Competencias")){
-            String query = "SELECT * FROM puesto_x_competencia WHERE id_puesto = ?";
+            String query = "SELECT * FROM puesto_x_competencia WHERE id_puesto = ?;";
             
             Connection conn = _db.getConnection();
             try (PreparedStatement pstmt = conn.prepareStatement(query)){
@@ -406,7 +406,7 @@ public class PerfilDB {
             else if(tipo.equals("Estudiantes ultimos ciclos")) pstmt.setInt(3, 2);
             else if(tipo.equals("Egresado")) pstmt.setInt(3, 3);
             else if(tipo.equals("Bachiller")) pstmt.setInt(3, 4);
-            else if(tipo.equals("Titulo")) pstmt.setInt(3, 5);
+            else if(tipo.equals("Admini")) pstmt.setInt(3, 5);
             
             ResultSet rs = pstmt.executeQuery();
         } catch (SQLException e){
@@ -444,7 +444,6 @@ public class PerfilDB {
     public void agregarSoftwareXPuesto(int id_puesto, List<Perfil>listSoftware){
         
         for(int i=0; i<listSoftware.size(); i++){
-            if(listSoftware.get(i).getSoftwareSeleccionado()>0){
                 String query = "INSERT INTO puesto_x_software(id_puesto, id_software, software_min) "
                         + "VALUES(?,?,?);";
                 Connection conn = _db.getConnection();
@@ -456,8 +455,7 @@ public class PerfilDB {
                    ResultSet rs = pstmt.executeQuery();
                 } catch (SQLException e){
                     System.out.println(e.getMessage());
-                }
-            }    
+                }  
         }    
         _db.closeConnection();
     }
@@ -465,7 +463,6 @@ public class PerfilDB {
     public void agregarCompetenciaXPuesto(int id_puesto, List<Perfil>listCompetencia){
         
         for(int i=0; i<listCompetencia.size(); i++){
-            if(listCompetencia.get(i).getCompetenciaSeleccionado()>0){
                 String query = "INSERT INTO puesto_x_competencia(id_puesto, id_competencia, competencia_min) "
                         + "VALUES(?,?,?);";
                 Connection conn = _db.getConnection();
@@ -477,8 +474,7 @@ public class PerfilDB {
                    ResultSet rs = pstmt.executeQuery();
                 } catch (SQLException e){
                     System.out.println(e.getMessage());
-                }
-            }    
+                }  
         }    
         _db.closeConnection();
     }

@@ -23,6 +23,7 @@ public class Pregunta {
     private ComboBox<String> _comboRespuesta;
     private String _respuesta_correcta;
     private String _respuestaSeleccionada;
+    private int _puntaje;
     
     public Pregunta(){
         this._listRespuestas = new ArrayList();
@@ -107,5 +108,13 @@ public class Pregunta {
     
     public void setRespuestaSeleccionada(String _respuestaSeleccionada){
         this._respuestaSeleccionada  = _respuestaSeleccionada;
+    }
+    
+    public Integer getPuntaje(){
+        return _puntaje;
+    }
+    
+    public void setPuntaje(int _puntaje){
+        this._puntaje = _puntaje;
     }
 }

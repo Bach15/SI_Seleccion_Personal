@@ -82,7 +82,7 @@ public class MotorDeInferencia {
 
 
         try {
-            File archivo = new File("src/Motor/Reglas.xml");
+            File archivo = new File("src/Motor/Reglas-2.xml");
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = dbf.newDocumentBuilder();
             Document document = documentBuilder.parse(archivo);

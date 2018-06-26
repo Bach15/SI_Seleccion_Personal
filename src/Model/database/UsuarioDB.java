@@ -148,10 +148,6 @@ public class UsuarioDB {
                         usuario.setDireccion(rs2.getString("direccion"));
                         usuario.setTelefono(rs2.getString("telefono"));
                         
-                        usuario.setId_usuario(rs2.getInt("id_usuario"));
-                        usuario.setTipo_Usuario(rs2.getInt("tipo_usuario"));
-                        usuario.setNombre_usuario(rs2.getString("nombre_usuario"));
-                        usuario.setContrasena(rs2.getString("contrasena"));
                     }
                     
                 } catch (SQLException e) {

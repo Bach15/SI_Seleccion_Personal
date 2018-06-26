@@ -123,12 +123,18 @@ public class Test_psicologicoController implements Initializable {
         Parent root = fxmlLoader.load();  
         Test_conocimientosController test_conocimientoMain = fxmlLoader.getController();
         
+        EvaluacionDB evaluaciondb = new EvaluacionDB();
+        
         double PuntajePsicologico=0;
         for(int i=0; i<tablaPsicologica.getItems().size(); i++){
             Pregunta pl = tablaPsicologica.getItems().get(i);
             String respuestaEscogida = pl.getComboRespuesta().getSelectionModel().getSelectedItem();
-            if(respuestaEscogida.equals(pl.getRespuesta_correcta())) 
+            if(respuestaEscogida.equals(pl.getRespuesta_correcta())){ 
                 PuntajePsicologico+=1;
+                evaluaciondb.GuardarRespuestas(id_usuario, pl.getId_evaluacion(), pl.getId_pregunta(), 1);
+            }
+            else
+                evaluaciondb.GuardarRespuestas(id_usuario, pl.getId_evaluacion(), pl.getId_pregunta(), 0);
         }
         PuntajePsicologico = PuntajePsicologico/tablaPsicologica.getItems().size()*100;
         

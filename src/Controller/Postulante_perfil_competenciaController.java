@@ -121,7 +121,6 @@ public class Postulante_perfil_competenciaController implements Initializable {
         }
         colCompetencia.setCellValueFactory(new PropertyValueFactory<>("campos"));
         
-        opciones.add("Ninguno");
         opciones.add("Bajo");
         opciones.add("Medio Bajo");
         opciones.add("Medio Alto");
@@ -132,16 +131,14 @@ public class Postulante_perfil_competenciaController implements Initializable {
             @Override
             public void handle(TableColumn.CellEditEvent<Perfil, String> event) {
                 System.out.println("Value : " + event.getNewValue());
-                if(event.getNewValue().equals("Ninguno"))
+                if(event.getNewValue().equals("Bajo"))
                     competenciaSeleccionado.setPostulanteSelectCompetencia(0);
-                else if(event.getNewValue().equals("Bajo"))
-                    competenciaSeleccionado.setPostulanteSelectCompetencia(1);
                 else if(event.getNewValue().equals("Medio Bajo"))
-                    competenciaSeleccionado.setPostulanteSelectCompetencia(2);
+                    competenciaSeleccionado.setPostulanteSelectCompetencia(1);
                 else if(event.getNewValue().equals("Medio Alto"))
-                    competenciaSeleccionado.setPostulanteSelectCompetencia(3);
+                    competenciaSeleccionado.setPostulanteSelectCompetencia(2);
                 else if(event.getNewValue().equals("Alto"))   
-                    competenciaSeleccionado.setPostulanteSelectCompetencia(4);
+                    competenciaSeleccionado.setPostulanteSelectCompetencia(3);
                 agregarLista(competenciaSeleccionado);
             }
         });

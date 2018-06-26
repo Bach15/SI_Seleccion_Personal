@@ -266,7 +266,7 @@ public class CargaDataController implements Initializable {
         while((line=br.readLine())!=null){
             Area area = new Area();
             Puesto puesto = new Puesto();
-            String[] parts = line.split(",");
+            String[] parts = line.split(";");
             try{
                 area = areadb.obtenerAreaxNombre(parts[0]);
                 puesto.setId_area(area.getId_area());

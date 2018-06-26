@@ -5,13 +5,23 @@
  */
 package Controller;
 
+import Model.Evaluacion;
+import Model.Pregunta;
 import Model.ProcesoSeleccion;
+import Model.Respuesta;
 import Model.Usuario;
+import Model.database.EvaluacionDB;
 import Model.database.ProcesoSeleccionDB;
 import Model.database.PuestoDB;
 import Model.database.UsuarioDB;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -22,6 +32,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -31,6 +42,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
@@ -84,8 +96,11 @@ public class Proceso_Seleccion_postulanteController implements Initializable {
     @FXML
     private TextField textBoxApMaterno;
     
-     @FXML
+    @FXML
     private Button botonPerfilEscoger;
+     
+    @FXML
+    private Button saveReturnBtn;
     
 
     private int id_proceso;
@@ -205,6 +220,92 @@ public class Proceso_Seleccion_postulanteController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+    }
+    
+    @FXML
+    void handleSaveReturnBtn(ActionEvent event) {
+//        FileChooser fileChooser = new FileChooser();
+//        fileChooser.setTitle("Guardar reporte");
+//        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF(*.pdf)", "*.pdf"));
+//        
+//        Stage stage = (Stage) saveReturnBtn.getScene().getWindow();
+//        File file = fileChooser.showSaveDialog(stage);
+//        
+//        if (file != null) {
+//            if(!file.getName().contains("."))
+//                file = new File(file.getAbsolutePath() + ".pdf");
+//            
+//        }
+
+        ProcesoSeleccionDB procesoSelecciondb = new ProcesoSeleccionDB();
+        ProcesoSeleccion proceso = new ProcesoSeleccion(); 
+        EvaluacionDB evaluaciondb = new EvaluacionDB();
+        Evaluacion evaluacionPsico = new Evaluacion();
+        Evaluacion evaluacionCono = new Evaluacion();
+        List<Pregunta> listPreguntaPsico = new ArrayList<>();
+        List<Pregunta> listPreguntaCono = new ArrayList<>();
+        List<Pregunta> ListPreguntaUsuarioPsico = new ArrayList<>();
+        List<Pregunta> ListPreguntaUsuarioCono = new ArrayList<>();
+        
+        
+        Usuario postulante = tablaPostulantes.getSelectionModel().getSelectedItem();
+        proceso = procesoSelecciondb.obtenerProcesoxPostulante(postulante.getId_usuario());
+        evaluacionPsico = evaluaciondb.obtenerEvaluacionxPuesto(proceso.getId_puesto(),0);
+        listPreguntaPsico = evaluaciondb.obtenerPreguntasxEvaluacion(evaluacionPsico.getId_evaluacion());
+        evaluacionCono = evaluaciondb.obtenerEvaluacionxPuesto(proceso.getId_puesto(),1);
+        listPreguntaCono = evaluaciondb.obtenerPreguntasxEvaluacion(evaluacionCono.getId_evaluacion());
+        ListPreguntaUsuarioPsico = evaluaciondb.obtenerRespuesta(postulante.getId_usuario(), evaluacionPsico.getId_evaluacion());
+        ListPreguntaUsuarioCono = evaluaciondb.obtenerRespuesta(postulante.getId_usuario(), evaluacionCono.getId_evaluacion());
+        
+        
+        List<Respuesta> listRespuestaPsico = new ArrayList<>();
+        List<Respuesta> listRespuestaCono = new ArrayList<>();
+        
+        
+        Writer writer = null;
+
+        try {
+            writer = new BufferedWriter(new OutputStreamWriter(
+                  new FileOutputStream("Resultados de "+postulante.getApellidoPa()+" "+postulante.getApellidoMa()+".txt"), "utf-8"));
+            
+            writer.write("Test Psicologico"+System.getProperty( "line.separator" ));
+            for(int i=0; i<listPreguntaPsico.size(); i++){
+                writer.write("Pregunta ("+i+ System.getProperty( "line.separator" ));
+                listRespuestaPsico = listPreguntaPsico.get(i).getListaRespuesta();
+                for(int j=0; j<listRespuestaPsico.size(); j++){
+                    if(listRespuestaPsico.get(j).getTexto().equals(listPreguntaPsico.get(i).getRespuesta_correcta()))
+                        writer.write("     Respuesta ("+j+"   Puntaje = "+1 +System.getProperty( "line.separator" ));
+                    else
+                        writer.write("     Respuesta ("+j+"   Puntaje = "+0 +System.getProperty( "line.separator" ));
+                }
+                writer.write("Resultado = "+ ListPreguntaUsuarioPsico.get(i).getPuntaje() +System.getProperty( "line.separator" ));
+            }
+            writer.write(System.getProperty( "line.separator" ));
+            writer.write("Test Conocimiento"+System.getProperty( "line.separator" ));
+            for(int i=0; i<listPreguntaCono.size(); i++){
+                writer.write("Pregunta ("+i+ System.getProperty( "line.separator" ));
+                listRespuestaCono = listPreguntaCono.get(i).getListaRespuesta();
+                for(int j=0; j<listRespuestaCono.size(); j++){
+                    if(listRespuestaCono.get(j).getTexto().equals(listPreguntaCono.get(i).getRespuesta_correcta()))
+                        writer.write("     Respuesta ("+j+"   Puntaje = "+1 +System.getProperty( "line.separator" ));
+                    else
+                        writer.write("     Respuesta ("+j+"   Puntaje = "+0 +System.getProperty( "line.separator" ));
+                }
+                writer.write("Resultado = "+ ListPreguntaUsuarioCono.get(i).getPuntaje() +System.getProperty( "line.separator" ));
+            }
+            writer.close();
+            
+        } catch (IOException ex) {
+            // Report
+        } finally {
+           try {writer.close();} catch (Exception ex) {/*ignore*/}
+        }
+        
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Registro de Resultados");
+        alert.setHeaderText("Resultados impresos con éxito");
+        alert.setContentText("Los resultados de  "+ postulante.getApellidoPa()+" ha sido registrado con éxito.");
+        alert.showAndWait();
     }
     
     @FXML

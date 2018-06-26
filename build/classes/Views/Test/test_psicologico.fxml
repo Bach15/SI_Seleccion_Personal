@@ -32,7 +32,7 @@
                         </Button>
                      </children>
                   </Pane>
-                  <TableView fx:id="tablaPsicologica" layoutX="57.0" layoutY="280.0" prefHeight="416.0" prefWidth="1011.0">
+                  <TableView fx:id="tablaPsicologica" layoutX="57.0" layoutY="210.0" prefHeight="486.0" prefWidth="1011.0">
                      <columns>
                         <TableColumn fx:id="colPregunta" prefWidth="453.6000213623047" text="Pregunta" />
                         <TableColumn fx:id="colRespuesta" prefWidth="555.199951171875" text="Respuesta" />
@@ -49,7 +49,6 @@
                      </font>
                   </Label>
                   <Button layoutX="460.0" layoutY="731.0" mnemonicParsing="false" onAction="#boton_siguiente" prefHeight="40.0" prefWidth="180.0" text="Siguiente" />
-                  <Button layoutX="770.0" layoutY="217.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" text="Descargar prueba" />
                </children>
             </Pane>
          </children>

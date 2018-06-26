@@ -232,4 +232,43 @@ public class EvaluacionDB {
         return listPregunta;
     }
     
+    public void GuardarRespuestas(int id_usuario,int idEvaluacion,int idPregunta, int puntaje){
+        String query = "INSERT INTO Usuario_X_Pregunta(id_usuario, id_evaluacion, id_pregunta, puntaje) "
+                + "VALUES(?,?,?,?);";
+        Connection conn = _db.getConnection();
+        try(PreparedStatement pstmt = conn.prepareStatement(query)){
+            pstmt.setInt(1, id_usuario);
+            pstmt.setInt(2, idEvaluacion);
+            pstmt.setInt(3, idPregunta);
+            pstmt.setInt(4, puntaje);
+            
+            ResultSet rs = pstmt.executeQuery();         
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        _db.closeConnection();
+    }
+    
+    public List<Pregunta> obtenerRespuesta(int id_usuario, int idEvaluacion){
+        List<Pregunta> listPregunta = new ArrayList<>();
+        String query = "SELECT * FROM Usuario_X_Pregunta WHERE id_usuario = ? and id_evaluacion = ?;";
+        Connection conn = _db.getConnection();
+        try (PreparedStatement pstmt = conn.prepareStatement(query)){
+            pstmt.setInt(1, id_usuario);
+            pstmt.setInt(2, idEvaluacion);
+            
+            ResultSet rs = pstmt.executeQuery();
+            while(rs.next()){
+                Pregunta pregunta = new Pregunta();
+                pregunta.setId_pregunta(rs.getInt("id_pregunta"));
+                pregunta.setPuntaje(rs.getInt("puntaje"));
+                listPregunta.add(pregunta);
+            }
+        }  catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        _db.closeConnection();
+        return listPregunta;
+    }
+    
 }

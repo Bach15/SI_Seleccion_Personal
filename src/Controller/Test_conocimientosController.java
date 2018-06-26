@@ -112,13 +112,19 @@ public class Test_conocimientosController implements Initializable {
 
     public void evaluar(){
         ProcesoSeleccionDB procesoSelecciondb = new ProcesoSeleccionDB();
-               
+          
+        EvaluacionDB evaluaciondb = new EvaluacionDB();
+        
         double PuntajeConocimiento=0;
         for(int i=0; i<tablaConocimiento.getItems().size(); i++){
             Pregunta pl = tablaConocimiento.getItems().get(i);
             String respuestaEscogida = pl.getComboRespuesta().getSelectionModel().getSelectedItem();
-            if(respuestaEscogida.equals(pl.getRespuesta_correcta())) 
+            if(respuestaEscogida.equals(pl.getRespuesta_correcta())){ 
                 PuntajeConocimiento+=1;
+                evaluaciondb.GuardarRespuestas(id_usuario, pl.getId_evaluacion(), pl.getId_pregunta(), 1);
+            }
+            else
+                evaluaciondb.GuardarRespuestas(id_usuario, pl.getId_evaluacion(), pl.getId_pregunta(), 0);
         }
         double porcentajeConocimiento = PuntajeConocimiento/tablaConocimiento.getItems().size()*100;
         
